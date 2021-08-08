@@ -44,7 +44,7 @@
             }
           }
         },
-        "operationId": "get-categories",
+        "operationId": "Get categories",
         "description": "Returns a list of inventory categories, ordered by name.",
         "tags": [
           "Categories"
@@ -7264,9 +7264,6 @@
     "parameters": {}
   },
   "tags": [
-    {
-      "name": "Categories"
-    },
     {
       "name": "Inventory"
     },
