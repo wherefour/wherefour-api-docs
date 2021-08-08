@@ -30,9 +30,6 @@
     "/categories": {
       "get": {
         "summary": "List Categories",
-        "tags": [
-          "Category"
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -48,7 +45,10 @@
           }
         },
         "operationId": "get-categories",
-        "description": "Returns a list of inventory categories, ordered by name."
+        "description": "Returns a list of inventory categories, ordered by name.",
+        "tags": [
+          "Categories"
+        ]
       }
     },
     "/inventory": {
@@ -105,7 +105,9 @@
       },
       "post": {
         "summary": "Create inventory item",
-        "tags": [],
+        "tags": [
+          "Inventory"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -7262,6 +7264,9 @@
     "parameters": {}
   },
   "tags": [
+    {
+      "name": "Categories"
+    },
     {
       "name": "Inventory"
     },
