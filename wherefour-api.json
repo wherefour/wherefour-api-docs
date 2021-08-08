@@ -121,7 +121,7 @@
             }
           }
         },
-        "operationId": "post-inventory",
+        "operationId": "Create inventory item",
         "requestBody": {
           "content": {
             "application/json": {
@@ -131,7 +131,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Creates a new inventory item with the provided parameters."
       }
     },
     "/inventory/{inventory_id}/stocks": {
