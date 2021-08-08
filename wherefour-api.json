@@ -30,7 +30,9 @@
     "/categories": {
       "get": {
         "summary": "List Categories",
-        "tags": [],
+        "tags": [
+          "Category"
+        ],
         "responses": {
           "200": {
             "description": "OK",
