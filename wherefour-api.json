@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -721,7 +721,7 @@
         ]
       }
     },
-    "/customers/orders/{customer_id}": {
+    "/customers/{customer_id}/orders/": {
       "summary": "Create order",
       "description": "Creates a new order for a customer",
       "post": {
@@ -1097,7 +1097,7 @@
       ],
       "x-last-modified": 1599932642974
     },
-    "/customers/invoices/{customer_id}": {
+    "/customers/{customer_id}/invoices/": {
       "summary": "Create invoice",
       "description": "Creates a new invoice for a customer",
       "post": {
