@@ -150,8 +150,116 @@
           "content": {
             "application/json": {
               "schema": {
+                "description": "",
                 "type": "object",
-                "properties": {}
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "category_id": {
+                    "type": "number"
+                  },
+                  "unit_of_use": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "unit_of_purchase": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "unit_of_order": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "unit_of_invoice": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "unit_of_pick_and_ship": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "unit_of_weight": {},
+                  "unit_of_dimension": {},
+                  "purchase_conversion": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "property": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sku": {},
+                  "pull_strategy": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reorder_point": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "lead_time": {
+                    "type": "number"
+                  },
+                  "retired": {
+                    "type": "boolean"
+                  },
+                  "waste_percentage": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quantity_not_tracked": {
+                    "type": "boolean"
+                  },
+                  "weight": {},
+                  "height": {},
+                  "width": {},
+                  "length": {}
+                },
+                "required": [
+                  "name",
+                  "category_id",
+                  "unit_of_use",
+                  "unit_of_purchase",
+                  "unit_of_order",
+                  "unit_of_invoice",
+                  "unit_of_pick_and_ship",
+                  "purchase_conversion",
+                  "property",
+                  "pull_strategy",
+                  "reorder_point",
+                  "lead_time",
+                  "retired",
+                  "waste_percentage",
+                  "quantity_not_tracked"
+                ],
+                "x-examples": {
+                  "example-1": {
+                    "name": "Whole milk",
+                    "category_id": 1,
+                    "unit_of_use": "gallon",
+                    "unit_of_purchase": "gallon",
+                    "unit_of_order": "gallon",
+                    "unit_of_invoice": "gallon",
+                    "unit_of_pick_and_ship": "gallon",
+                    "unit_of_weight": null,
+                    "unit_of_dimension": null,
+                    "purchase_conversion": "1.0",
+                    "property": "raw_material",
+                    "sku": null,
+                    "pull_strategy": "Hand Pick",
+                    "reorder_point": "50.0",
+                    "lead_time": 1,
+                    "retired": false,
+                    "waste_percentage": "0.0",
+                    "quantity_not_tracked": false,
+                    "weight": null,
+                    "height": null,
+                    "width": null,
+                    "length": null
+                  }
+                }
               }
             }
           }
