@@ -151,33 +151,7 @@
             "application/json": {
               "schema": {
                 "description": "",
-                "type": "object",
-                "x-examples": {
-                  "example-1": {
-                    "name": "Whole milk",
-                    "category_id": 1,
-                    "unit_of_use": "gallon",
-                    "unit_of_purchase": "gallon",
-                    "unit_of_order": "gallon",
-                    "unit_of_invoice": "gallon",
-                    "unit_of_pick_and_ship": "gallon",
-                    "unit_of_weight": null,
-                    "unit_of_dimension": null,
-                    "purchase_conversion": "1.0",
-                    "property": "raw_material",
-                    "sku": null,
-                    "pull_strategy": "Hand Pick",
-                    "reorder_point": "50.0",
-                    "lead_time": 1,
-                    "retired": false,
-                    "waste_percentage": "0.0",
-                    "quantity_not_tracked": false,
-                    "weight": null,
-                    "height": null,
-                    "width": null,
-                    "length": null
-                  }
-                }
+                "type": "object"
               },
               "examples": {
                 "example": {
@@ -206,12 +180,6 @@
                     "length": null
                   }
                 }
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "type": "object",
-                "properties": {}
               }
             }
           },
