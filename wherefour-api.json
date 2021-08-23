@@ -68,36 +68,60 @@
                 "examples": {
                   "Example": {
                     "value": {
-                      "id": 3,
-                      "name": "Bulk chocolate",
+                      "id": 1,
+                      "name": "Whole milk",
                       "category_name": "Ingredients",
-                      "on_hand": "0.0",
-                      "unit_of_use": "pound",
-                      "unit_of_purchase": "pound",
-                      "unit_of_order": "pound",
-                      "unit_of_invoice": "pound",
-                      "unit_of_pick_and_ship": "pound",
+                      "on_hand": "1410.0",
+                      "unit_of_use": "gallon",
+                      "unit_of_purchase": "gallon",
+                      "unit_of_order": "gallon",
+                      "unit_of_invoice": "gallon",
+                      "unit_of_pick_and_ship": "gallon",
                       "unit_of_weight": null,
                       "unit_of_dimension": null,
                       "purchase_conversion": "1.0",
-                      "property": "work_in_progress",
+                      "property": "raw_material",
                       "sku": null,
                       "pull_strategy": "Hand Pick",
-                      "reorder_point": "10.0",
-                      "lead_time": 0,
+                      "reorder_point": "50.0",
+                      "lead_time": 1,
                       "retired": false,
                       "waste_percentage": "0.0",
+                      "quantity_not_tracked": false,
+                      "conversions": [],
                       "weight": null,
                       "height": null,
                       "width": null,
                       "length": null,
-                      "created_at": "2021-07-25T17:07:04.686Z",
-                      "updated_at": "2021-07-25T17:07:04.686Z"
+                      "created_at": "2021-08-23T14:08:17.077Z",
+                      "updated_at": "2021-08-23T14:08:17.077Z",
+                      "custom_field_values": [
+                        {
+                          "id": 1,
+                          "custom_field_id": 1,
+                          "inventory_id": 1,
+                          "active_stock_id": null,
+                          "value": "1",
+                          "value_type": "number",
+                          "created_at": "2021-08-23T14:25:37.200Z",
+                          "updated_at": "2021-08-23T14:25:37.200Z",
+                          "custom_field": {
+                            "id": 1,
+                            "name": "Test",
+                            "value_type": "number",
+                            "created_at": "2021-08-23T14:25:21.663Z",
+                            "updated_at": "2021-08-23T14:25:21.663Z"
+                          }
+                        }
+                      ]
                     }
                   }
                 }
               }
             }
+          },
+          "201": {
+            "description": "Created"
           }
         },
         "operationId": "Get inventory items",
@@ -6942,75 +6966,194 @@
         "title": "Shipment"
       },
       "inventory": {
+        "description": "",
         "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": 1,
+            "name": "Whole milk",
+            "lot_code": "WM001",
+            "status": "active",
+            "barcode": "WM-000001-18",
+            "details": "Whole milk",
+            "note": "buy lot WM001",
+            "count": "100.0",
+            "cost": "200.0",
+            "expiration_date": "2021-09-22",
+            "weight": null,
+            "height": null,
+            "width": null,
+            "length": null,
+            "created_at": "2021-08-23T14:08:17.015Z",
+            "updated_at": "2021-08-23T14:08:17.015Z",
+            "custom_field_values": [
+              {
+                "id": 1,
+                "custom_field_id": 1,
+                "inventory_id": 1,
+                "active_stock_id": null,
+                "value": "1",
+                "value_type": "number",
+                "created_at": "2021-08-23T14:25:37.200Z",
+                "updated_at": "2021-08-23T14:25:37.200Z",
+                "custom_field": {
+                  "id": 1,
+                  "name": "Test",
+                  "value_type": "number",
+                  "created_at": "2021-08-23T14:25:21.663Z",
+                  "updated_at": "2021-08-23T14:25:21.663Z"
+                }
+              }
+            ]
+          }
+        },
         "properties": {
           "id": {
             "type": "number"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
-          "category_name": {
-            "type": "string"
+          "lot_code": {
+            "type": "string",
+            "minLength": 1
           },
-          "on_hand": {
-            "type": "string"
+          "status": {
+            "type": "string",
+            "minLength": 1
           },
-          "unit_of_use": {
-            "type": "string"
+          "barcode": {
+            "type": "string",
+            "minLength": 1
           },
-          "unit_of_purchase": {
-            "type": "string"
+          "details": {
+            "type": "string",
+            "minLength": 1
           },
-          "purchase_conversion": {
-            "type": "string"
+          "note": {
+            "type": "string",
+            "minLength": 1
           },
-          "property": {
-            "type": "string"
+          "count": {
+            "type": "string",
+            "minLength": 1
           },
-          "sku": {
-            "type": "string"
+          "cost": {
+            "type": "string",
+            "minLength": 1
           },
-          "pull_strategy": {
-            "type": "string"
+          "expiration_date": {
+            "type": "string",
+            "minLength": 1
           },
-          "reorder_point": {
-            "type": "string"
-          },
-          "lead_time": {
-            "type": "number"
-          },
-          "retired": {
-            "type": "boolean"
-          },
-          "waste_percentage": {
-            "type": "string"
-          },
+          "weight": {},
+          "height": {},
+          "width": {},
+          "length": {},
           "created_at": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "updated_at": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
+          },
+          "custom_field_values": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "custom_field_id": {
+                  "type": "number"
+                },
+                "inventory_id": {
+                  "type": "number"
+                },
+                "active_stock_id": {},
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value_type": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "created_at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "updated_at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "custom_field": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "value_type": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "value_type",
+                    "created_at",
+                    "updated_at"
+                  ]
+                },
+                "": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "custom_field_id",
+                "inventory_id",
+                "value",
+                "value_type",
+                "created_at",
+                "updated_at"
+              ]
+            }
           }
         },
-        "example": {
-          "id": 2,
-          "name": "Line worker",
-          "category_name": "Labor",
-          "unit_of_use": "hour",
-          "unit_of_purchase": "hour",
-          "purchase_conversion": "1.0",
-          "property": "overhead",
-          "pull_strategy": "FIFO",
-          "reorder_point": "0.0",
-          "lead_time": 0,
-          "retired": false,
-          "waste_percentage": "0.0",
-          "created_at": "2020-09-11T13:57:46.825Z",
-          "updated_at": "2020-09-11T13:57:46.825Z"
-        },
-        "x-last-modified": 1599929582976,
-        "title": "Inventory"
+        "required": [
+          "id",
+          "name",
+          "lot_code",
+          "status",
+          "barcode",
+          "details",
+          "note",
+          "count",
+          "cost",
+          "expiration_date",
+          "created_at",
+          "updated_at",
+          "custom_field_values"
+        ]
       },
       "UnauthorizedError": {
         "required": [
