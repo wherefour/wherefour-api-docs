@@ -54,12 +54,42 @@
     "/inventory": {
       "get": {
         "summary": "List Inventory Items",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Inventory"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Count of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "Links containing the URLs for the next or previous pages of the results"
+              }              
+            },
             "content": {
               "application/json": {
                 "schema": {
