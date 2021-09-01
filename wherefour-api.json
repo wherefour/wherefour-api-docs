@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -30,9 +30,39 @@
     "/categories": {
       "get": {
         "summary": "List Categories",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -81,14 +111,14 @@
                 "schema": {
                   "type": "Integer"
                 },
-                "description": "Count of results per page"
+                "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
                   "type": "String"
                 },
-                "description": "Links containing the URLs for the next or previous pages of the results"
-              }              
+                "description": "URLs for the next or previous pages of the results"
+              }
             },
             "content": {
               "application/json": {
@@ -405,12 +435,42 @@
     "/inventory/search": {
       "get": {
         "summary": "Search for Inventory Item",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Inventory"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -480,12 +540,42 @@
     "/customers": {
       "get": {
         "summary": "List Customers",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Customers"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -1981,10 +2071,40 @@
           "Orders"
         ],
         "summary": "List shipments for order",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "description": "Returns the most recent shipment information for the order ID provided.",
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -3162,12 +3282,42 @@
     "/customers/search": {
       "get": {
         "summary": "Search for a Customer",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Customers"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -3247,10 +3397,40 @@
           "Orders"
         ],
         "summary": "List Orders",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "description": "Returns a paginated list of all orders.",
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -3540,6 +3720,16 @@
           "Orders"
         ],
         "description": "Locates an order by the order_number",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3560,6 +3750,26 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -3663,10 +3873,40 @@
           "Invoices"
         ],
         "summary": "List Invoices",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "description": "Returns a paginated list of all invoices.",
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -3948,6 +4188,16 @@
           "Invoices"
         ],
         "description": "Locates a invoice by the invoice_number",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3968,6 +4218,26 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -4207,6 +4477,16 @@
           "Quotes"
         ],
         "description": "Locates a quote by the quote_number",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4227,6 +4507,26 @@
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -4328,10 +4628,40 @@
           "Quotes"
         ],
         "summary": "List Quotes",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "description": "Returns a paginated list of all quotes.",
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -4471,12 +4801,42 @@
     "/shipments": {
       "get": {
         "summary": "List Shipments",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Shipments"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -4554,12 +4914,42 @@
     "/shipments/search": {
       "get": {
         "summary": "Search for Shipment",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Shipments"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -4655,12 +5045,42 @@
     "/purchases": {
       "get": {
         "summary": "List Purchases",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Purchases"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -4775,12 +5195,42 @@
     "/purchases/search": {
       "get": {
         "summary": "Search Purchases",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Purchases"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -4972,12 +5422,42 @@
     "/vendors/search": {
       "get": {
         "summary": "Search Vendors",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Vendors"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -5039,12 +5519,42 @@
     "/settings/delivery_methods": {
       "get": {
         "summary": "List Delivery Methods",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "Integer"
+             }
+          }
+        ],
         "tags": [
           "Settings"
         ],
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "Integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "String"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {

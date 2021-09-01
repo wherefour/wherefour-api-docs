@@ -14,3 +14,12 @@ Shins-as-a-service. Generate beautiful [Shins](https://github.com/mermade/shins)
 The last call returns the converted markdown, not the rendered HTML.
 
 The server runs by default on port 5678 or as specified in the `PORT` environment variable
+
+
+# Wherefour
+
+
+To view locally, run `yarn start` or `node index.js`
+
+Then in a browser: `http://localhost:5678/openapi#wherefour-api`
+
