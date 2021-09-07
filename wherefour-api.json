@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.0",
+  "openapi": "3.0.3",
   "info": {
     "title": "Wherefour API",
     "version": "1.0.12",
@@ -36,7 +36,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -46,19 +46,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -90,7 +90,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -103,19 +103,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -296,20 +296,28 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/inventory"
+                "$ref": "#/components/schemas/active_stock"
               },
               "examples": {
                 "Example": {
                   "value": {
-                    "location_id": 1,
+                    "id": 31,
+                    "name": "Chocolate bar",
                     "lot_code": "1234",
+                    "status": "active",
                     "barcode": null,
                     "details": "New",
                     "note": "This is a note!",
+                    "count": "100.0",
                     "cost": "100.0",
-                    "vendor_id": 1,
-                    "expiration_date": "4/1/20",
-                    "base_count": "100.0"
+                    "expiration_date": "2020-04-01",
+                    "weight": null,
+                    "height": null,
+                    "width": null,
+                    "length": null,
+                    "created_at": "2021-09-07T19:30:50.528Z",
+                    "updated_at": "2021-09-07T19:30:50.528Z",
+                    "custom_field_values": []
                   }
                 }
               }
@@ -441,7 +449,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -454,19 +462,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -546,7 +554,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -559,19 +567,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -1100,159 +1108,6 @@
                 }
               }
             }
-          },
-          "": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "Example": {
-                    "value": [
-                      {
-                        "id": 14,
-                        "order_date": "2020-09-04",
-                        "produce_date": "2020-09-04",
-                        "deliver_date": "2020-09-04",
-                        "po_number": "12345",
-                        "status": "open",
-                        "instructions": null,
-                        "subtotal": "100.0",
-                        "discount": "0.0",
-                        "tax": "0.0",
-                        "shipping": "0.0",
-                        "total": "0.0",
-                        "order_number": "SO100",
-                        "created_at": "2020-09-12T18:25:54.054Z",
-                        "updated_at": "2020-09-12T18:25:54.054Z",
-                        "invoiced_at": null,
-                        "customer": {
-                          "id": 1,
-                          "first_name": "",
-                          "last_name": "",
-                          "display_name": "Embarcadero Market & Deli",
-                          "email": "buyer@embarcaderodeli.com",
-                          "phone": "415-555-6687",
-                          "mobile": "",
-                          "fax": "",
-                          "website": "https://wherefour.com",
-                          "note": null,
-                          "kind": "retailer",
-                          "created_at": "2020-09-11T13:57:46.742Z",
-                          "updated_at": "2020-09-11T13:57:46.742Z",
-                          "custom_field_1": null,
-                          "custom_field_2": null,
-                          "custom_field_3": null,
-                          "custom_field_4": null,
-                          "business_license_number": null,
-                          "payment_terms": "Net 30",
-                          "salesperson": null,
-                          "delivery_method": "Route: Embarcadero North",
-                          "billing_address": {
-                            "id": 1,
-                            "line1": "1142 Main Street",
-                            "line2": "Suite 100",
-                            "line3": null,
-                            "line4": null,
-                            "line5": null,
-                            "city": "San Francisco",
-                            "country_subdivision_code": "CA",
-                            "postal_code": "94455",
-                            "country": null,
-                            "created_at": "2020-09-11T13:57:46.802Z",
-                            "updated_at": "2020-09-11T13:57:46.802Z"
-                          },
-                          "shipping_address": {
-                            "id": 2,
-                            "line1": "415 S. Pine Street",
-                            "line2": "Suite 210",
-                            "line3": "Apt. G",
-                            "line4": null,
-                            "line5": null,
-                            "city": "Petaluma",
-                            "country_subdivision_code": "CA",
-                            "postal_code": "94954",
-                            "country": null,
-                            "created_at": "2020-09-11T13:57:46.802Z",
-                            "updated_at": "2020-09-11T13:57:46.802Z"
-                          }
-                        },
-                        "delivery_method": {
-                          "id": 1,
-                          "name": "UPS Ground",
-                          "kind": "shipping",
-                          "instructions": null
-                        },
-                        "salesperson": null,
-                        "payment_term": null,
-                        "order_items": [
-                          {
-                            "id": 28,
-                            "name": "Chocolate bar",
-                            "inventory_id": 4,
-                            "category_name": "Products",
-                            "count": "10.0",
-                            "cost": "0.0",
-                            "sku": "SK0001",
-                            "created_at": "2020-09-12T18:25:54.062Z",
-                            "updated_at": "2020-09-12T18:25:54.062Z",
-                            "inventory": {
-                              "id": 4,
-                              "name": "Chocolate bar",
-                              "category_name": "Products",
-                              "on_hand": "1165.0",
-                              "unit_of_use": "each",
-                              "unit_of_purchase": "each",
-                              "purchase_conversion": "1.0",
-                              "property": "finished_good",
-                              "sku": "SK0001",
-                              "pull_strategy": "FEFO",
-                              "reorder_point": "0.0",
-                              "lead_time": 0,
-                              "retired": false,
-                              "waste_percentage": "0.0",
-                              "created_at": "2020-09-11T13:57:46.825Z",
-                              "updated_at": "2020-09-11T13:57:46.825Z"
-                            }
-                          },
-                          {
-                            "id": 29,
-                            "name": "Chocolate bar, finished case",
-                            "inventory_id": 6,
-                            "category_name": "Products",
-                            "count": "5.0",
-                            "cost": "0.0",
-                            "sku": "SK0002",
-                            "created_at": "2020-09-12T18:25:54.066Z",
-                            "updated_at": "2020-09-12T18:25:54.066Z",
-                            "inventory": {
-                              "id": 6,
-                              "name": "Chocolate bar, finished case",
-                              "category_name": "Products",
-                              "on_hand": "0.0",
-                              "unit_of_use": "case",
-                              "unit_of_purchase": "case",
-                              "purchase_conversion": "1.0",
-                              "property": "finished_good",
-                              "sku": "SK0002",
-                              "pull_strategy": "FIFO",
-                              "reorder_point": "0.0",
-                              "lead_time": 0,
-                              "retired": false,
-                              "waste_percentage": "0.0",
-                              "created_at": "2020-09-11T13:57:46.825Z",
-                              "updated_at": "2020-09-11T13:57:46.825Z"
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
-            }
           }
         },
         "operationId": "Create an order"
@@ -1267,8 +1122,7 @@
           "required": true,
           "description": "customer record ID"
         }
-      ],
-      "x-last-modified": 1599932642974
+      ]
     },
     "/customers/{customer_id}/invoices/": {
       "summary": "Create invoice",
@@ -1470,156 +1324,6 @@
                 }
               }
             }
-          },
-          "": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "Example": {
-                    "value": [
-                      {
-                        "id": 14,
-                        "invoice)date": "2020-09-04",
-                        "po_number": "12345",
-                        "status": "open",
-                        "instructions": null,
-                        "subtotal": "100.0",
-                        "discount": "0.0",
-                        "tax": "0.0",
-                        "shipping": "0.0",
-                        "total": "0.0",
-                        "invoice_number": "INV100",
-                        "created_at": "2020-09-12T18:25:54.054Z",
-                        "updated_at": "2020-09-12T18:25:54.054Z",
-                        "customer": {
-                          "id": 1,
-                          "first_name": "",
-                          "last_name": "",
-                          "display_name": "Embarcadero Market & Deli",
-                          "email": "buyer@embarcaderodeli.com",
-                          "phone": "415-555-6687",
-                          "mobile": "",
-                          "fax": "",
-                          "website": "https://wherefour.com",
-                          "note": null,
-                          "kind": "retailer",
-                          "created_at": "2020-09-11T13:57:46.742Z",
-                          "updated_at": "2020-09-11T13:57:46.742Z",
-                          "custom_field_1": null,
-                          "custom_field_2": null,
-                          "custom_field_3": null,
-                          "custom_field_4": null,
-                          "business_license_number": null,
-                          "payment_terms": "Net 30",
-                          "salesperson": null,
-                          "delivery_method": "Route: Embarcadero North",
-                          "billing_address": {
-                            "id": 1,
-                            "line1": "1142 Main Street",
-                            "line2": "Suite 100",
-                            "line3": null,
-                            "line4": null,
-                            "line5": null,
-                            "city": "San Francisco",
-                            "country_subdivision_code": "CA",
-                            "postal_code": "94455",
-                            "country": null,
-                            "created_at": "2020-09-11T13:57:46.802Z",
-                            "updated_at": "2020-09-11T13:57:46.802Z"
-                          },
-                          "shipping_address": {
-                            "id": 2,
-                            "line1": "415 S. Pine Street",
-                            "line2": "Suite 210",
-                            "line3": "Apt. G",
-                            "line4": null,
-                            "line5": null,
-                            "city": "Petaluma",
-                            "country_subdivision_code": "CA",
-                            "postal_code": "94954",
-                            "country": null,
-                            "created_at": "2020-09-11T13:57:46.802Z",
-                            "updated_at": "2020-09-11T13:57:46.802Z"
-                          }
-                        },
-                        "delivery_method": {
-                          "id": 1,
-                          "name": "UPS Ground",
-                          "kind": "shipping",
-                          "instructions": null
-                        },
-                        "salesperson": null,
-                        "payment_term": null,
-                        "invoice_items": [
-                          {
-                            "id": 28,
-                            "name": "Chocolate bar",
-                            "inventory_id": 4,
-                            "category_name": "Products",
-                            "count": "10.0",
-                            "cost": "0.0",
-                            "sku": "SK0001",
-                            "created_at": "2020-09-12T18:25:54.062Z",
-                            "updated_at": "2020-09-12T18:25:54.062Z",
-                            "inventory": {
-                              "id": 4,
-                              "name": "Chocolate bar",
-                              "category_name": "Products",
-                              "on_hand": "1165.0",
-                              "unit_of_use": "each",
-                              "unit_of_purchase": "each",
-                              "purchase_conversion": "1.0",
-                              "property": "finished_good",
-                              "sku": "SK0001",
-                              "pull_strategy": "FEFO",
-                              "reorder_point": "0.0",
-                              "lead_time": 0,
-                              "retired": false,
-                              "waste_percentage": "0.0",
-                              "created_at": "2020-09-11T13:57:46.825Z",
-                              "updated_at": "2020-09-11T13:57:46.825Z"
-                            }
-                          },
-                          {
-                            "id": 29,
-                            "name": "Chocolate bar, finished case",
-                            "inventory_id": 6,
-                            "category_name": "Products",
-                            "count": "5.0",
-                            "cost": "0.0",
-                            "sku": "SK0002",
-                            "created_at": "2020-09-12T18:25:54.066Z",
-                            "updated_at": "2020-09-12T18:25:54.066Z",
-                            "inventory": {
-                              "id": 6,
-                              "name": "Chocolate bar, finished case",
-                              "category_name": "Products",
-                              "on_hand": "0.0",
-                              "unit_of_use": "case",
-                              "unit_of_purchase": "case",
-                              "purchase_conversion": "1.0",
-                              "property": "finished_good",
-                              "sku": "SK0002",
-                              "pull_strategy": "FIFO",
-                              "reorder_point": "0.0",
-                              "lead_time": 0,
-                              "retired": false,
-                              "waste_percentage": "0.0",
-                              "created_at": "2020-09-11T13:57:46.825Z",
-                              "updated_at": "2020-09-11T13:57:46.825Z"
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
-            }
           }
         },
         "operationId": "Create a invoice"
@@ -1634,8 +1338,7 @@
           "required": true,
           "description": "customer record ID"
         }
-      ],
-      "x-last-modified": 1599932642974
+      ]
     },
     "/customers/{customer_id}/orders/{order_id}": {
       "summary": "Update order",
@@ -1660,7 +1363,6 @@
           "description": "customer record ID"
         }
       ],
-      "x-last-modified": 1599932318858,
       "patch": {
         "summary": "Update Order",
         "operationId": "Update an order",
@@ -1782,121 +1484,6 @@
                     }
                   }
                 }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/order"
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "id": 6,
-                      "order_date": "2020-09-04",
-                      "produce_date": "2020-09-04",
-                      "deliver_date": "2020-09-04",
-                      "po_number": "12345",
-                      "status": "open",
-                      "subtotal": "100.0",
-                      "discount": "0.0",
-                      "tax": "0.0",
-                      "shipping": "0.0",
-                      "total": "0.0",
-                      "order_number": "SO100",
-                      "created_at": "2020-09-12T16:13:45.549Z",
-                      "updated_at": "2020-09-12T16:13:45.549Z",
-                      "customer": {
-                        "id": 1,
-                        "first_name": "",
-                        "last_name": "",
-                        "display_name": "Embarcadero Market & Deli",
-                        "email": "buyer@embarcaderodeli.com",
-                        "phone": "415-555-6687",
-                        "mobile": "",
-                        "fax": "",
-                        "website": "https://wherefour.com",
-                        "kind": "retailer",
-                        "created_at": "2020-09-11T13:57:46.742Z",
-                        "updated_at": "2020-09-11T13:57:46.742Z",
-                        "payment_terms": "Net 30",
-                        "delivery_method": "Route: Embarcadero North",
-                        "billing_address": {
-                          "id": 1,
-                          "line1": "1142 Main Street",
-                          "line2": "Suite 100",
-                          "city": "San Francisco",
-                          "country_subdivision_code": "CA",
-                          "postal_code": "94455",
-                          "created_at": "2020-09-11T13:57:46.802Z",
-                          "updated_at": "2020-09-11T13:57:46.802Z"
-                        },
-                        "shipping_address": {
-                          "id": 2,
-                          "line1": "415 S. Pine Street",
-                          "line2": "Suite 210",
-                          "line3": "Apt. G",
-                          "city": "Petaluma",
-                          "country_subdivision_code": "CA",
-                          "postal_code": "94954",
-                          "created_at": "2020-09-11T13:57:46.802Z",
-                          "updated_at": "2020-09-11T13:57:46.802Z"
-                        }
-                      },
-                      "delivery_method": {
-                        "id": 1,
-                        "name": "UPS Ground",
-                        "kind": "shipping"
-                      },
-                      "order_items": [
-                        {
-                          "id": 10,
-                          "name": "Chocolate bar",
-                          "inventory_id": 4,
-                          "category_name": "Products",
-                          "count": "0.0",
-                          "cost": "0.0",
-                          "sku": "SK0001",
-                          "created_at": "2020-09-12T16:13:45.568Z",
-                          "updated_at": "2020-09-12T16:13:45.568Z",
-                          "inventory": {
-                            "id": 4,
-                            "name": "Chocolate bar",
-                            "category_name": "Products",
-                            "on_hand": "75.0",
-                            "unit_of_use": "each",
-                            "unit_of_purchase": "each",
-                            "property": "finished_good",
-                            "sku": "SK0001",
-                            "created_at": "2020-09-11T13:57:46.825Z",
-                            "updated_at": "2020-09-11T13:57:46.825Z"
-                          }
-                        },
-                        {
-                          "id": 11,
-                          "name": "Chocolate bar, finished case",
-                          "inventory_id": 6,
-                          "category_name": "Products",
-                          "count": "0.0",
-                          "cost": "0.0",
-                          "sku": "SK0002",
-                          "created_at": "2020-09-12T16:13:45.574Z",
-                          "updated_at": "2020-09-12T16:13:45.574Z",
-                          "inventory": {
-                            "id": 6,
-                            "name": "Chocolate bar, finished case",
-                            "category_name": "Products",
-                            "on_hand": "40.0",
-                            "unit_of_use": "case",
-                            "unit_of_purchase": "case",
-                            "property": "finished_good",
-                            "sku": "SK0002",
-                            "created_at": "2020-09-11T13:57:46.825Z",
-                            "updated_at": "2020-09-11T13:57:46.825Z"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
               }
             }
           }
@@ -1907,7 +1494,7 @@
         ]
       }
     },
-    "customers/{customer_id}/orders/{order_id}/last_shipment": {
+    "/customers/{customer_id}/orders/{order_id}/last_shipment": {
       "summary": "Get the last shipment for an order",
       "description": "Returns the most recent shipment information for the order ID provided.",
       "get": {
@@ -2010,7 +1597,6 @@
         },
         "operationId": "Get last shipment"
       },
-      "x-last-modified": 1599932976163,
       "parameters": [
         {
           "name": "customer_id",
@@ -2018,7 +1604,6 @@
           "example": "",
           "required": true,
           "deprecated": false,
-          "x-last-modified": 1599933001095,
           "schema": {
             "type": "integer"
           },
@@ -2063,7 +1648,7 @@
         "description": "Returns of list of customer types."
       }
     },
-    "customers/{customer_id}/orders/{order_id}/shipments": {
+    "/customers/{customer_id}/orders/{order_id}/shipments": {
       "summary": "List all the shipments for an order",
       "description": "Returns a paginated list of all the shipments for a specific order ID.",
       "get": {
@@ -2077,7 +1662,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -2088,19 +1673,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -2195,7 +1780,6 @@
         },
         "operationId": "List shipments"
       },
-      "x-last-modified": 1599933071181,
       "parameters": [
         {
           "name": "customer_id",
@@ -2203,7 +1787,6 @@
           "example": "",
           "required": true,
           "deprecated": false,
-          "x-last-modified": 1599933090200,
           "schema": {
             "type": "integer"
           },
@@ -2215,7 +1798,6 @@
           "example": "",
           "required": true,
           "deprecated": false,
-          "x-last-modified": 1599933098042,
           "schema": {
             "type": "integer"
           },
@@ -2246,7 +1828,6 @@
           "description": "customer record ID"
         }
       ],
-      "x-last-modified": 1599932318858,
       "patch": {
         "summary": "Update Invoice",
         "operationId": "Update an invoice",
@@ -2264,118 +1845,6 @@
                       "id": 6,
                       "invoice_date": "2020-09-04",
                       "status": "draft",
-                      "subtotal": "100.0",
-                      "discount": "0.0",
-                      "tax": "0.0",
-                      "shipping": "0.0",
-                      "total": "0.0",
-                      "invoice_number": "INV100",
-                      "created_at": "2020-09-12T16:13:45.549Z",
-                      "updated_at": "2020-09-12T16:13:45.549Z",
-                      "customer": {
-                        "id": 1,
-                        "first_name": "",
-                        "last_name": "",
-                        "display_name": "Embarcadero Market & Deli",
-                        "email": "buyer@embarcaderodeli.com",
-                        "phone": "415-555-6687",
-                        "mobile": "",
-                        "fax": "",
-                        "website": "https://wherefour.com",
-                        "kind": "retailer",
-                        "created_at": "2020-09-11T13:57:46.742Z",
-                        "updated_at": "2020-09-11T13:57:46.742Z",
-                        "payment_terms": "Net 30",
-                        "delivery_method": "Route: Embarcadero North",
-                        "billing_address": {
-                          "id": 1,
-                          "line1": "1142 Main Street",
-                          "line2": "Suite 100",
-                          "city": "San Francisco",
-                          "country_subdivision_code": "CA",
-                          "postal_code": "94455",
-                          "created_at": "2020-09-11T13:57:46.802Z",
-                          "updated_at": "2020-09-11T13:57:46.802Z"
-                        },
-                        "shipping_address": {
-                          "id": 2,
-                          "line1": "415 S. Pine Street",
-                          "line2": "Suite 210",
-                          "line3": "Apt. G",
-                          "city": "Petaluma",
-                          "country_subdivision_code": "CA",
-                          "postal_code": "94954",
-                          "created_at": "2020-09-11T13:57:46.802Z",
-                          "updated_at": "2020-09-11T13:57:46.802Z"
-                        }
-                      },
-                      "delivery_method": {
-                        "id": 1,
-                        "name": "UPS Ground",
-                        "kind": "shipping"
-                      },
-                      "invoice_items": [
-                        {
-                          "id": 10,
-                          "name": "Chocolate bar",
-                          "inventory_id": 4,
-                          "category_name": "Products",
-                          "count": "0.0",
-                          "cost": "0.0",
-                          "sku": "SK0001",
-                          "created_at": "2020-09-12T16:13:45.568Z",
-                          "updated_at": "2020-09-12T16:13:45.568Z",
-                          "inventory": {
-                            "id": 4,
-                            "name": "Chocolate bar",
-                            "category_name": "Products",
-                            "on_hand": "75.0",
-                            "unit_of_use": "each",
-                            "unit_of_purchase": "each",
-                            "property": "finished_good",
-                            "sku": "SK0001",
-                            "created_at": "2020-09-11T13:57:46.825Z",
-                            "updated_at": "2020-09-11T13:57:46.825Z"
-                          }
-                        },
-                        {
-                          "id": 11,
-                          "name": "Chocolate bar, finished case",
-                          "inventory_id": 6,
-                          "category_name": "Products",
-                          "count": "0.0",
-                          "cost": "0.0",
-                          "sku": "SK0002",
-                          "created_at": "2020-09-12T16:13:45.574Z",
-                          "updated_at": "2020-09-12T16:13:45.574Z",
-                          "inventory": {
-                            "id": 6,
-                            "name": "Chocolate bar, finished case",
-                            "category_name": "Products",
-                            "on_hand": "40.0",
-                            "unit_of_use": "case",
-                            "unit_of_purchase": "case",
-                            "property": "finished_good",
-                            "sku": "SK0002",
-                            "created_at": "2020-09-11T13:57:46.825Z",
-                            "updated_at": "2020-09-11T13:57:46.825Z"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/invoice"
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "id": 6,
-                      "invoice_date": "2020-09-04",
-                      "status": "accepted",
                       "subtotal": "100.0",
                       "discount": "0.0",
                       "tax": "0.0",
@@ -2689,157 +2158,6 @@
                 }
               }
             }
-          },
-          "": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "Example": {
-                    "value": [
-                      {
-                        "id": 14,
-                        "quote_date": "2020-09-04",
-                        "expiration_date": "2020-09-04",
-                        "po_number": "12345",
-                        "status": "open",
-                        "instructions": null,
-                        "subtotal": "100.0",
-                        "discount": "0.0",
-                        "tax": "0.0",
-                        "shipping": "0.0",
-                        "total": "0.0",
-                        "quote_number": "QO100",
-                        "created_at": "2020-09-12T18:25:54.054Z",
-                        "updated_at": "2020-09-12T18:25:54.054Z",
-                        "customer": {
-                          "id": 1,
-                          "first_name": "",
-                          "last_name": "",
-                          "display_name": "Embarcadero Market & Deli",
-                          "email": "buyer@embarcaderodeli.com",
-                          "phone": "415-555-6687",
-                          "mobile": "",
-                          "fax": "",
-                          "website": "https://wherefour.com",
-                          "note": null,
-                          "kind": "retailer",
-                          "created_at": "2020-09-11T13:57:46.742Z",
-                          "updated_at": "2020-09-11T13:57:46.742Z",
-                          "custom_field_1": null,
-                          "custom_field_2": null,
-                          "custom_field_3": null,
-                          "custom_field_4": null,
-                          "business_license_number": null,
-                          "payment_terms": "Net 30",
-                          "salesperson": null,
-                          "delivery_method": "Route: Embarcadero North",
-                          "billing_address": {
-                            "id": 1,
-                            "line1": "1142 Main Street",
-                            "line2": "Suite 100",
-                            "line3": null,
-                            "line4": null,
-                            "line5": null,
-                            "city": "San Francisco",
-                            "country_subdivision_code": "CA",
-                            "postal_code": "94455",
-                            "country": null,
-                            "created_at": "2020-09-11T13:57:46.802Z",
-                            "updated_at": "2020-09-11T13:57:46.802Z"
-                          },
-                          "shipping_address": {
-                            "id": 2,
-                            "line1": "415 S. Pine Street",
-                            "line2": "Suite 210",
-                            "line3": "Apt. G",
-                            "line4": null,
-                            "line5": null,
-                            "city": "Petaluma",
-                            "country_subdivision_code": "CA",
-                            "postal_code": "94954",
-                            "country": null,
-                            "created_at": "2020-09-11T13:57:46.802Z",
-                            "updated_at": "2020-09-11T13:57:46.802Z"
-                          }
-                        },
-                        "delivery_method": {
-                          "id": 1,
-                          "name": "UPS Ground",
-                          "kind": "shipping",
-                          "instructions": null
-                        },
-                        "salesperson": null,
-                        "payment_term": null,
-                        "quote_items": [
-                          {
-                            "id": 28,
-                            "name": "Chocolate bar",
-                            "inventory_id": 4,
-                            "category_name": "Products",
-                            "count": "10.0",
-                            "cost": "0.0",
-                            "sku": "SK0001",
-                            "created_at": "2020-09-12T18:25:54.062Z",
-                            "updated_at": "2020-09-12T18:25:54.062Z",
-                            "inventory": {
-                              "id": 4,
-                              "name": "Chocolate bar",
-                              "category_name": "Products",
-                              "on_hand": "1165.0",
-                              "unit_of_use": "each",
-                              "unit_of_purchase": "each",
-                              "purchase_conversion": "1.0",
-                              "property": "finished_good",
-                              "sku": "SK0001",
-                              "pull_strategy": "FEFO",
-                              "reorder_point": "0.0",
-                              "lead_time": 0,
-                              "retired": false,
-                              "waste_percentage": "0.0",
-                              "created_at": "2020-09-11T13:57:46.825Z",
-                              "updated_at": "2020-09-11T13:57:46.825Z"
-                            }
-                          },
-                          {
-                            "id": 29,
-                            "name": "Chocolate bar, finished case",
-                            "inventory_id": 6,
-                            "category_name": "Products",
-                            "count": "5.0",
-                            "cost": "0.0",
-                            "sku": "SK0002",
-                            "created_at": "2020-09-12T18:25:54.066Z",
-                            "updated_at": "2020-09-12T18:25:54.066Z",
-                            "inventory": {
-                              "id": 6,
-                              "name": "Chocolate bar, finished case",
-                              "category_name": "Products",
-                              "on_hand": "0.0",
-                              "unit_of_use": "case",
-                              "unit_of_purchase": "case",
-                              "purchase_conversion": "1.0",
-                              "property": "finished_good",
-                              "sku": "SK0002",
-                              "pull_strategy": "FIFO",
-                              "reorder_point": "0.0",
-                              "lead_time": 0,
-                              "retired": false,
-                              "waste_percentage": "0.0",
-                              "created_at": "2020-09-11T13:57:46.825Z",
-                              "updated_at": "2020-09-11T13:57:46.825Z"
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
-            }
           }
         },
         "operationId": "Create a quote"
@@ -2854,8 +2172,7 @@
           "required": true,
           "description": "customer record ID"
         }
-      ],
-      "x-last-modified": 1599932642974
+      ]
     },
     "/customers/{customer_id}/orders/auto_ship": {
       "summary": "Auto ship an order",
@@ -3000,7 +2317,6 @@
         "operationId": "Auto pick and ship",
         "parameters": []
       },
-      "x-last-modified": 1599933353969,
       "parameters": [
         {
           "schema": {
@@ -3036,7 +2352,6 @@
           "description": "customer record ID"
         }
       ],
-      "x-last-modified": 1599932318858,
       "patch": {
         "summary": "Update Quote",
         "operationId": "Update a quote",
@@ -3055,119 +2370,6 @@
                       "quote_date": "2020-09-04",
                       "expiration_date": "2020-09-04",
                       "status": "draft",
-                      "subtotal": "100.0",
-                      "discount": "0.0",
-                      "tax": "0.0",
-                      "shipping": "0.0",
-                      "total": "0.0",
-                      "quote_number": "QO100",
-                      "created_at": "2020-09-12T16:13:45.549Z",
-                      "updated_at": "2020-09-12T16:13:45.549Z",
-                      "customer": {
-                        "id": 1,
-                        "first_name": "",
-                        "last_name": "",
-                        "display_name": "Embarcadero Market & Deli",
-                        "email": "buyer@embarcaderodeli.com",
-                        "phone": "415-555-6687",
-                        "mobile": "",
-                        "fax": "",
-                        "website": "https://wherefour.com",
-                        "kind": "retailer",
-                        "created_at": "2020-09-11T13:57:46.742Z",
-                        "updated_at": "2020-09-11T13:57:46.742Z",
-                        "payment_terms": "Net 30",
-                        "delivery_method": "Route: Embarcadero North",
-                        "billing_address": {
-                          "id": 1,
-                          "line1": "1142 Main Street",
-                          "line2": "Suite 100",
-                          "city": "San Francisco",
-                          "country_subdivision_code": "CA",
-                          "postal_code": "94455",
-                          "created_at": "2020-09-11T13:57:46.802Z",
-                          "updated_at": "2020-09-11T13:57:46.802Z"
-                        },
-                        "shipping_address": {
-                          "id": 2,
-                          "line1": "415 S. Pine Street",
-                          "line2": "Suite 210",
-                          "line3": "Apt. G",
-                          "city": "Petaluma",
-                          "country_subdivision_code": "CA",
-                          "postal_code": "94954",
-                          "created_at": "2020-09-11T13:57:46.802Z",
-                          "updated_at": "2020-09-11T13:57:46.802Z"
-                        }
-                      },
-                      "delivery_method": {
-                        "id": 1,
-                        "name": "UPS Ground",
-                        "kind": "shipping"
-                      },
-                      "quote_items": [
-                        {
-                          "id": 10,
-                          "name": "Chocolate bar",
-                          "inventory_id": 4,
-                          "category_name": "Products",
-                          "count": "0.0",
-                          "cost": "0.0",
-                          "sku": "SK0001",
-                          "created_at": "2020-09-12T16:13:45.568Z",
-                          "updated_at": "2020-09-12T16:13:45.568Z",
-                          "inventory": {
-                            "id": 4,
-                            "name": "Chocolate bar",
-                            "category_name": "Products",
-                            "on_hand": "75.0",
-                            "unit_of_use": "each",
-                            "unit_of_purchase": "each",
-                            "property": "finished_good",
-                            "sku": "SK0001",
-                            "created_at": "2020-09-11T13:57:46.825Z",
-                            "updated_at": "2020-09-11T13:57:46.825Z"
-                          }
-                        },
-                        {
-                          "id": 11,
-                          "name": "Chocolate bar, finished case",
-                          "inventory_id": 6,
-                          "category_name": "Products",
-                          "count": "0.0",
-                          "cost": "0.0",
-                          "sku": "SK0002",
-                          "created_at": "2020-09-12T16:13:45.574Z",
-                          "updated_at": "2020-09-12T16:13:45.574Z",
-                          "inventory": {
-                            "id": 6,
-                            "name": "Chocolate bar, finished case",
-                            "category_name": "Products",
-                            "on_hand": "40.0",
-                            "unit_of_use": "case",
-                            "unit_of_purchase": "case",
-                            "property": "finished_good",
-                            "sku": "SK0002",
-                            "created_at": "2020-09-11T13:57:46.825Z",
-                            "updated_at": "2020-09-11T13:57:46.825Z"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/quote"
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "id": 6,
-                      "quote_date": "2020-09-04",
-                      "expiration_date": "2020-09-04",
-                      "status": "accepted",
                       "subtotal": "100.0",
                       "discount": "0.0",
                       "tax": "0.0",
@@ -3288,7 +2490,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -3301,19 +2503,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -3389,7 +2591,7 @@
         }
       }
     },
-    "orders": {
+    "/orders": {
       "summary": "List orders",
       "description": "Returns a paginated list of all orders.",
       "get": {
@@ -3403,7 +2605,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -3414,19 +2616,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -3567,7 +2769,6 @@
         },
         "operationId": "List orders"
       },
-      "x-last-modified": 1599932864561,
       "parameters": []
     },
     "/orders/{order_id}": {
@@ -3696,7 +2897,6 @@
         },
         "operationId": "Get an order"
       },
-      "x-last-modified": 1599932512601,
       "parameters": [
         {
           "name": "order_id",
@@ -3705,7 +2905,6 @@
           "required": true,
           "deprecated": false,
           "description": "ID for the order record",
-          "x-last-modified": 1599932539854,
           "schema": {
             "type": "integer"
           }
@@ -3726,7 +2925,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -3753,19 +2952,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -3851,21 +3050,23 @@
         "summary": "Search for Order",
         "operationId": "Search orders"
       },
-      "x-last-modified": 1599932689439,
       "parameters": [
         {
           "name": "order_number",
           "in": "query",
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          },
           "example": "{\n\t\"order_number\": \"SO1\"\n}",
           "required": false,
           "deprecated": false,
           "allowEmptyValue": false,
-          "description": "The sales order number in Wherefour to locate. All orders with matching results will be returned.",
-          "x-last-modified": 1599932780912
+          "description": "The sales order number in Wherefour to locate. All orders with matching results will be returned."
         }
       ]
     },
-    "invoices": {
+    "/invoices": {
       "summary": "List invoices",
       "description": "Returns a paginated list of all invoices.",
       "get": {
@@ -3879,7 +3080,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -3890,19 +3091,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -4039,7 +3240,6 @@
         },
         "operationId": "List invoices"
       },
-      "x-last-modified": 1599932864561,
       "parameters": []
     },
     "/invoices/{invoice_id}": {
@@ -4164,7 +3364,6 @@
         },
         "operationId": "Get an invoice"
       },
-      "x-last-modified": 1599932512601,
       "parameters": [
         {
           "name": "invoice_id",
@@ -4173,7 +3372,6 @@
           "required": true,
           "deprecated": false,
           "description": "ID for the invoice record",
-          "x-last-modified": 1599932539854,
           "schema": {
             "type": "integer"
           }
@@ -4194,7 +3392,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -4221,19 +3419,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -4316,17 +3514,19 @@
         "summary": "Search for invoice",
         "operationId": "Search invoices"
       },
-      "x-last-modified": 1599932689439,
       "parameters": [
         {
           "name": "invoice_number",
           "in": "query",
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          },
           "example": "{\n\t\"invoice_number\": \"INV1\"\n}",
           "required": false,
           "deprecated": false,
           "allowEmptyValue": false,
-          "description": "The invoice number in Wherefour to locate. All invoices with matching results will be returned.",
-          "x-last-modified": 1599932780912
+          "description": "The invoice number in Wherefour to locate. All invoices with matching results will be returned."
         }
       ]
     },
@@ -4453,7 +3653,6 @@
         },
         "operationId": "Get a quote"
       },
-      "x-last-modified": 1599932512601,
       "parameters": [
         {
           "name": "quote_id",
@@ -4462,7 +3661,6 @@
           "required": true,
           "deprecated": false,
           "description": "ID for the quote record",
-          "x-last-modified": 1599932539854,
           "schema": {
             "type": "integer"
           }
@@ -4483,7 +3681,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -4510,19 +3708,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -4606,21 +3804,23 @@
         "summary": "Search for quote",
         "operationId": "Search quotes"
       },
-      "x-last-modified": 1599932689439,
       "parameters": [
         {
           "name": "quote_number",
           "in": "query",
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          },
           "example": "{\n\t\"quote_number\": \"QO1\"\n}",
           "required": false,
           "deprecated": false,
           "allowEmptyValue": false,
-          "description": "The quote number in Wherefour to locate. All quotes with matching results will be returned.",
-          "x-last-modified": 1599932780912
+          "description": "The quote number in Wherefour to locate. All quotes with matching results will be returned."
         }
       ]
     },
-    "quotes": {
+    "/quotes": {
       "summary": "List quotes",
       "description": "Returns a paginated list of all quotes.",
       "get": {
@@ -4634,7 +3834,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -4645,19 +3845,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -4795,7 +3995,6 @@
         },
         "operationId": "List quotes"
       },
-      "x-last-modified": 1599932864561,
       "parameters": []
     },
     "/shipments": {
@@ -4807,7 +4006,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -4820,19 +4019,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -4920,7 +4119,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -4933,19 +4132,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -5051,7 +4250,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -5064,19 +4263,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -5201,7 +4400,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -5214,19 +4413,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -5428,7 +4627,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -5441,19 +4640,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -5525,7 +4724,7 @@
              "name": "page",
              "description": "Results page to view",
              "schema": {
-               "type": "Integer"
+               "type": "integer"
              }
           }
         ],
@@ -5538,19 +4737,19 @@
             "headers": {
               "Total": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Total count of results"
               },
               "Per-Page": {
                 "schema": {
-                  "type": "Integer"
+                  "type": "integer"
                 },
                 "description": "Number of results per page"
               },
               "Link": {
                 "schema": {
-                  "type": "String"
+                  "type": "string"
                 },
                 "description": "URLs for the next or previous pages of the results"
               }
@@ -5694,7 +4893,6 @@
             }
           ]
         },
-        "x-last-modified": 1599928038583,
         "properties": {
           "id": {
             "type": "integer"
@@ -6026,7 +5224,6 @@
             }
           ]
         },
-        "x-last-modified": 1599928038583,
         "properties": {
           "id": {
             "type": "integer"
@@ -6348,7 +5545,6 @@
             }
           ]
         },
-        "x-last-modified": 1599928038583,
         "properties": {
           "id": {
             "type": "integer"
@@ -6754,7 +5950,6 @@
             "updated_at": "2020-09-11T13:57:46.802Z"
           }
         },
-        "x-last-modified": 1599928980969,
         "title": "Customer"
       },
       "purchase": {
@@ -7132,7 +6327,6 @@
             }
           ]
         },
-        "x-last-modified": 1599929011545,
         "title": "Purchase"
       },
       "vendor": {
@@ -7347,7 +6541,6 @@
             "kind": "shipping"
           }
         },
-        "x-last-modified": 1599929194417,
         "title": "Vendor"
       },
       "shipment": {
@@ -7531,10 +6724,263 @@
             }
           ]
         },
-        "x-last-modified": 1599929317665,
         "title": "Shipment"
       },
       "inventory": {
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": 1,
+            "name": "Whole milk",
+            "category_name": "Ingredients",
+            "on_hand": "1410.0",
+            "unit_of_use": "gallon",
+            "unit_of_purchase": "gallon",
+            "unit_of_order": "gallon",
+            "unit_of_invoice": "gallon",
+            "unit_of_pick_and_ship": "gallon",
+            "unit_of_weight": null,
+            "unit_of_dimension": null,
+            "purchase_conversion": "1.0",
+            "property": "raw_material",
+            "sku": null,
+            "pull_strategy": "Hand Pick",
+            "reorder_point": "50.0",
+            "lead_time": 1,
+            "retired": false,
+            "waste_percentage": "0.0",
+            "quantity_not_tracked": false,
+            "conversions": [],
+            "weight": null,
+            "height": null,
+            "width": null,
+            "length": null,
+            "created_at": "2021-09-06T04:29:07.236Z",
+            "updated_at": "2021-09-06T04:29:07.236Z",
+            "custom_field_values": [
+              {
+                "id": 1,
+                "custom_field_id": 1,
+                "inventory_id": 1,
+                "active_stock_id": null,
+                "value": "1",
+                "value_type": "number",
+                "created_at": "2021-08-23T14:25:37.200Z",
+                "updated_at": "2021-08-23T14:25:37.200Z",
+                "custom_field": {
+                  "id": 1,
+                  "name": "Test",
+                  "value_type": "number",
+                  "created_at": "2021-08-23T14:25:21.663Z",
+                  "updated_at": "2021-08-23T14:25:21.663Z"
+                }
+              }
+            ]
+          }
+        },
+        "properties": {
+         "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "on_hand": {
+            "type": "number"
+          },
+          "unit_of_use": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_of_purchase": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_of_order": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_of_invoice": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_of_pick_and_ship": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_of_weight": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_of_dimension": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purchase_conversion": {
+            "type": "number"
+          },          
+          "property": {
+            "type": "string",
+            "minLength": 1
+          },       
+          "sku": {
+            "type": "string",
+            "minLength": 1
+          },  
+          "pull_strategy": {
+            "type": "string",
+            "minLength": 1
+          },          
+          "reorder_point": {
+            "type": "number"
+          },          
+          "lead_time": {
+            "type": "number"
+          },
+          "retired": {
+            "type": "boolean"
+          },          
+          "waste_percentage": {
+            "type": "number"
+          },
+          "quantity_not_tracked": {
+            "type": "boolean"
+          },
+          "conversions": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "properties": {
+                "to_count": {
+                  "type": "number"
+                },
+                "from_count": {
+                  "type": "number"
+                },
+                "catch_weight": {
+                  "type": "boolean"
+                },
+                "maximum_weight": {
+                  "type": "number"
+                },
+                "minimum_weight": {
+                  "type": "number"
+                },
+                "unit_of_measurement": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "weight": {
+            "type": "number"
+          },          
+          "height": {
+            "type": "number"
+          },          
+          "width": {
+            "type": "number"
+          },          
+          "length": {
+            "type": "number"
+          },
+          "created_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "updated_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "custom_field_values": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "custom_field_id": {
+                  "type": "number"
+                },
+                "inventory_id": {
+                  "type": "number"
+                },
+                "active_stock_id": {
+                  "type": "number"
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value_type": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "created_at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "updated_at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "custom_field": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "value_type": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "value_type",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "custom_field_id",
+                "inventory_id",
+                "value",
+                "value_type",
+                "created_at",
+                "updated_at"
+              ]
+            }
+          }
+        }
+      },
+      "active_stock": {
         "description": "",
         "type": "object",
         "x-examples": {
@@ -7739,8 +7185,7 @@
             "minimum": 401,
             "type": "integer"
           }
-        },
-        "x-last-modified": 1599931619517
+        }
       },
       "ServerError": {
         "required": [
@@ -7757,14 +7202,12 @@
             "minimum": 500,
             "type": "integer"
           }
-        },
-        "x-last-modified": 1599931621317
+        }
       }
     },
     "responses": {
       "200": {
-        "description": "Operation succeeded",
-        "x-last-modified": 1599931612572
+        "description": "Operation succeeded"
       },
       "401": {
         "content": {
@@ -7774,12 +7217,10 @@
             }
           }
         },
-        "description": "Unauthorized access.",
-        "x-last-modified": 1599931619517
+        "description": "Unauthorized access."
       },
       "404": {
-        "description": "Entity not found.",
-        "x-last-modified": 1599931616908
+        "description": "Entity not found."
       },
       "500": {
         "content": {
@@ -7789,8 +7230,7 @@
             }
           }
         },
-        "description": "Server Error",
-        "x-last-modified": 1599931621317
+        "description": "Server Error"
       }
     },
     "requestBodies": {
@@ -7927,8 +7367,7 @@
               ]
             }
           }
-        },
-        "x-last-modified": 1599931700111
+        }
       },
       "Auto Ship": {
         "content": {
@@ -7953,8 +7392,7 @@
               "delivery_method": "UPS Ground"
             }
           }
-        },
-        "x-last-modified": 1599933546637
+        }
       }
     },
     "headers": {
@@ -7968,10 +7406,8 @@
     "securitySchemes": {
       "BasicAuth": {
         "scheme": "Basic",
-        "bearerFormat": "",
         "type": "http",
-        "description": "Example: \n> Authorization: Basic ZGVtbzpwQDU1dzByZA ==",
-        "x-last-modified": 1599929785499
+        "description": "Example: \n> Authorization: Basic ZGVtbzpwQDU1dzByZA =="
       }
     },
     "parameters": {}
