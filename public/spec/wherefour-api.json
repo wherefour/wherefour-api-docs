@@ -4908,9 +4908,9 @@
               "examples": {
                 "Example": {
                   "value": {
-                     "report_type": "used",
-                     	"start_date": "10/01/2021",
-	                    "end_date": "11/01/2021"
+                    "report_type": "used",
+                    "start_date": "10/01/21",
+	                  "end_date": "11/01/21"
                   }
                 }
               }
