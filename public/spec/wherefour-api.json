@@ -4781,6 +4781,223 @@
         "operationId": "Get delivery methods",
         "description": "Returns all the delivery methods currently defined."
       }
+    },
+    "/settings/locations": {
+      "get": {
+        "summary": "List Locations",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "integer"
+             }
+          }
+        ],
+        "tags": [
+          "Settings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Example": {
+                    "value":  {
+                      "id": 1,
+                      "name": "North Warehouse",
+                      "location_code": "NORW"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "Get locations",
+        "description": "Returns all the locations currently defined."
+      }
+    },
+    "/reports/costs": {
+      "post": {
+        "summary": "",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "integer"
+             }
+          }
+        ],
+        "tags": [
+          "Reports"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "report_type": {
+                    "type": "string",
+                    "description": "Report type to run. Must be one of 'cogs', 'cogm', 'purchased', or 'used'",
+                  },
+                  "customer_type": {
+                    "type": "string",
+                    "description": "Customer type. This parameter is only used in COGS."
+                  },
+                  "inventory_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "category_ids": { 
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "location_ids": { 
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "start_date": {
+                    "type": "string",
+                    "description": "Start date of the report. Must be in the date format selected by the user in their user profile."
+                  },
+                  "end_date": {
+                    "type": "string",
+                    "description": "End date of the report. Must be in the date format selected by the user in their user profile."
+                  }
+                },
+                "required": [
+                   "report_type"
+                ]
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                     "report_type": "used",
+                     	"start_date": "10/01/2021",
+	                    "end_date": "11/01/2021"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Example - Used": {
+                    "value":  {
+                      "category_name": "Packaging",
+                      "results": [
+                        {
+                          "inventory_name": "Case box",
+                          "sku": null,
+                          "quantity": "-100.0",
+                          "unit_of_use": "each",
+                          "cost": "50.0"
+                        },
+                        {
+                          "inventory_name": "Empty case box",
+                          "sku": null,
+                          "quantity": "0.0",
+                          "unit_of_use": "each",
+                          "cost": "0.0"
+                        },
+                        {
+                          "inventory_name": "Foil wrapping",
+                          "sku": null,
+                          "quantity": "0.0",
+                          "unit_of_use": "each",
+                          "cost": "0.0"
+                        },
+                        {
+                          "inventory_name": "Label, front",
+                          "sku": null,
+                          "quantity": "-100.0",
+                          "unit_of_use": "each",
+                          "cost": "15.0"
+                        },
+                        {
+                          "inventory_name": "Paper sleeve",
+                          "sku": null,
+                          "quantity": "0.0",
+                          "unit_of_use": "each",
+                          "cost": "0.0"
+                        }
+                      ],
+                      "total": "65.0"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "Run Cost reports",
+        "description": "Runs specfied cost report."
+      }    
     }
   },
   "components": {
