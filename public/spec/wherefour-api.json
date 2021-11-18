@@ -4868,7 +4868,7 @@
                 "properties": {
                   "report_type": {
                     "type": "string",
-                    "description": "Report type to run. Must be one of 'cogs', 'cogm', 'purchased', or 'used'",
+                    "description": "Report type to run. Must be one of 'cogs', 'cogm', 'pulled', 'purchased', or 'used'",
                   },
                   "customer_type": {
                     "type": "string",
