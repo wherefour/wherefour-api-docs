@@ -29,7 +29,7 @@
   "paths": {
     "/categories": {
       "get": {
-        "summary": "List Categories",
+        "summary": "List categories",
         "parameters": [
           {
              "in": "query",
@@ -74,7 +74,7 @@
             }
           }
         },
-        "operationId": "Get categories",
+        "operationId": "get_categories",
         "description": "Returns a list of inventory categories, ordered by name.",
         "tags": [
           "Categories"
@@ -85,6 +85,14 @@
       "get": {
         "summary": "List Inventory Items",
         "parameters": [
+          {
+             "in": "query",
+             "name": "updated_at",
+             "description": "Oldest date/time for the records to return",
+             "schema": {
+               "type": "string"
+             }
+          },
           {
              "in": "query",
              "name": "page",
@@ -137,22 +145,22 @@
                       "unit_of_order": "gallon",
                       "unit_of_invoice": "gallon",
                       "unit_of_pick_and_ship": "gallon",
-                      "unit_of_weight": null,
-                      "unit_of_dimension": null,
-                      "purchase_conversion": "1.0",
+                      "unit_of_weight": "pound",
+                      "unit_of_dimension": "inch",
+                      "purchase_conversion": 1.0,
                       "property": "raw_material",
-                      "sku": null,
+                      "sku": "123456",
                       "pull_strategy": "Hand Pick",
-                      "reorder_point": "50.0",
+                      "reorder_point": 50.0,
                       "lead_time": 1,
                       "retired": false,
-                      "waste_percentage": "0.0",
+                      "waste_percentage": 0.0,
                       "quantity_not_tracked": false,
                       "conversions": [],
-                      "weight": null,
-                      "height": null,
-                      "width": null,
-                      "length": null,
+                      "weight": 1.0,
+                      "height": 2.0,
+                      "width": 3.0,
+                      "length": 4.0,
                       "created_at": "2021-08-23T14:08:17.077Z",
                       "updated_at": "2021-08-23T14:08:17.077Z",
                       "custom_field_values": [
@@ -160,7 +168,7 @@
                           "id": 1,
                           "custom_field_id": 1,
                           "inventory_id": 1,
-                          "active_stock_id": null,
+                          "active_stock_id": 1,
                           "value": "1",
                           "value_type": "number",
                           "created_at": "2021-08-23T14:25:37.200Z",
@@ -184,7 +192,7 @@
             "description": "Created"
           }
         },
-        "operationId": "Get inventory items",
+        "operationId": "get_inventory_items",
         "description": "Returns a paginated list of all inventory items."
       },
       "post": {
@@ -205,7 +213,7 @@
             }
           }
         },
-        "operationId": "Create inventory item",
+        "operationId": "create_inventory_item",
         "requestBody": {
           "content": {
             "application/json": {
@@ -250,8 +258,8 @@
     },
     "/inventory/{inventory_id}/stocks": {
       "post": {
-        "summary": "Add Stock Lot",
-        "operationId": "Add stock",
+        "summary": "Add stock lot",
+        "operationId": "add_stock_lot",
         "responses": {
           "200": {
             "description": "OK",
@@ -342,7 +350,7 @@
     },
     "/inventory/last_adjustment": {
       "get": {
-        "summary": "Get Last Stock Lot Change",
+        "summary": "Get last stock lot change",
         "tags": [
           "Inventory"
         ],
@@ -436,13 +444,13 @@
             }
           }
         },
-        "operationId": "Get last inventory change",
+        "operationId": "get_last_stock_lot_change",
         "description": "Gets the last stock lot change for the specified inventory item."
       }
     },
     "/inventory/search": {
       "get": {
-        "summary": "Search for Inventory Item",
+        "summary": "Search for inventory item",
         "parameters": [
           {
              "in": "query",
@@ -510,7 +518,7 @@
             }
           }
         },
-        "operationId": "Search inventory",
+        "operationId": "search_inventory",
         "description": "Returns inventory items that match the given name or SKU. Multiple matches may be returned.",
         "requestBody": {
           "content": {
@@ -547,8 +555,16 @@
     },
     "/customers": {
       "get": {
-        "summary": "List Customers",
+        "summary": "List customers",
         "parameters": [
+          {
+             "in": "query",
+             "name": "updated_at",
+             "description": "Oldest date/time for the records to return",
+             "schema": {
+               "type": "string"
+             }
+          },
           {
              "in": "query",
              "name": "page",
@@ -634,12 +650,12 @@
             }
           }
         },
-        "operationId": "Get customers",
+        "operationId": "get_customers",
         "description": "Returns a paginated list of customers."
       },
       "post": {
-        "summary": "Create a Customer",
-        "operationId": "Create a customer",
+        "summary": "Create a customer",
+        "operationId": "create_customer",
         "responses": {
           "200": {
             "description": "OK",
@@ -823,12 +839,12 @@
             }
           }
         },
-        "operationId": "Get customer",
+        "operationId": "get_customer",
         "description": "Returns the customer record for the specified ID."
       },
       "patch": {
         "summary": "Update a Customer",
-        "operationId": "Update a customer",
+        "operationId": "update_customer",
         "responses": {
           "200": {
             "description": "OK",
@@ -902,9 +918,166 @@
         ]
       }
     },
-    "/customers/{customer_id}/orders/": {
-      "summary": "Create order",
-      "description": "Creates a new order for a customer",
+    "/customers/{customer_id}/orders": {
+      "summary": "List all the orders for a customer",
+      "description": "Returns a paginated list of all the orders for a specific customer ID.",
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "List orders for a customer",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "updated_at",
+             "description": "Oldest date/time for the records to return",
+             "schema": {
+               "type": "string"
+             }
+          },
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "integer"
+             }
+          }
+        ],
+        "description": "Returns all the orders for the customer ID provided.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Total": {
+                "schema": {
+                  "type": "integer"
+                },
+                "description": "Total count of results"
+              },
+              "Per-Page": {
+                "schema": {
+                  "type": "integer"
+                },
+                "description": "Number of results per page"
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "URLs for the next or previous pages of the results"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/order"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": 1,
+                      "first_name": "",
+                      "last_name": "",
+                      "display_name": "Embarcadero Distribution",
+                      "email": "buyer@embarcado.com",
+                      "phone": "415-555-6687",
+                      "mobile": "",
+                      "fax": "",
+                      "website": "https://wherefour.com",
+                      "note": null,
+                      "kind": "retailer",
+                      "sales_channel_id": null,
+                      "created_at": "2024-02-22T18:29:42.249Z",
+                      "updated_at": "2024-02-22T18:29:42.249Z",
+                      "custom_field_1": null,
+                      "custom_field_2": null,
+                      "custom_field_3": null,
+                      "custom_field_4": null,
+                      "business_license_number": "404-X0001",
+                      "payment_terms": "Net 30",
+                      "salesperson": null,
+                      "delivery_method": "Route: Embarcadero North",
+                      "delivery_method_id": 6,
+                      "default_special_instructions": "Deliver to back dock 12",
+                      "sales_channel": null,
+                      "billing_address": {
+                        "id": 1,
+                        "type": "BillingAddress",
+                        "descriptive_name": "Default Billing",
+                        "line1": "1142 Main Street",
+                        "line2": "Suite 100",
+                        "line3": null,
+                        "line4": null,
+                        "line5": null,
+                        "city": "San Francisco",
+                        "country_subdivision_code": "CA",
+                        "postal_code": "94455",
+                        "country": "USA",
+                        "created_at": "2024-02-22T18:29:42.099Z",
+                        "updated_at": "2024-02-22T18:29:42.099Z"
+                      },
+                      "shipping_address": {
+                        "id": 2,
+                        "type": "ShippingAddress",
+                        "descriptive_name": "Default Shipping",
+                        "line1": "415 S. Pine Street",
+                        "line2": "Suite 210",
+                        "line3": "Apt. G",
+                        "line4": null,
+                        "line5": null,
+                        "city": "Petaluma",
+                        "country_subdivision_code": "CA",
+                        "postal_code": "94954",
+                        "country": "USA",
+                        "created_at": "2024-02-22T18:29:42.099Z",
+                        "updated_at": "2024-02-22T18:29:42.099Z"
+                      },
+                      "delivery_driver": null,
+                      "delivery_vehicle": null,
+                      "addresses": [
+                        {
+                          "id": 1,
+                          "type": "BillingAddress",
+                          "descriptive_name": "Default Billing",
+                          "line1": "1142 Main Street",
+                          "line2": "Suite 100",
+                          "line3": null,
+                          "line4": null,
+                          "line5": null,
+                          "city": "San Francisco",
+                          "country_subdivision_code": "CA",
+                          "postal_code": "94455",
+                          "country": "USA",
+                          "created_at": "2024-02-22T18:29:42.099Z",
+                          "updated_at": "2024-02-22T18:29:42.099Z"
+                        },
+                        {
+                          "id": 2,
+                          "type": "ShippingAddress",
+                          "descriptive_name": "Default Shipping",
+                          "line1": "415 S. Pine Street",
+                          "line2": "Suite 210",
+                          "line3": "Apt. G",
+                          "line4": null,
+                          "line5": null,
+                          "city": "Petaluma",
+                          "country_subdivision_code": "CA",
+                          "postal_code": "94954",
+                          "country": "USA",
+                          "created_at": "2024-02-22T18:29:42.099Z",
+                          "updated_at": "2024-02-22T18:29:42.099Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "list_orders"
+      },
       "post": {
         "tags": [
           "Orders"
@@ -1110,7 +1283,7 @@
             }
           }
         },
-        "operationId": "Create an order"
+        "operationId": "create_order"
       },
       "parameters": [
         {
@@ -1124,9 +1297,98 @@
         }
       ]
     },
-    "/customers/{customer_id}/invoices/": {
-      "summary": "Create invoice",
-      "description": "Creates a new invoice for a customer",
+    "/customers/{customer_id}/invoices": {
+      "summary": "Customer invoices",
+      "description": "Customer invoices",
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "description": "Lists invoices for a customer",
+        "summary": "List customer invoices",
+        "operationId": "list_customer_invoices",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/invoice"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": 2,
+                      "invoice_date": "2024-02-22",
+                      "status": "draft",
+                      "instructions": null,
+                      "subtotal": "300.0",
+                      "discount": "10.0",
+                      "tax": null,
+                      "shipping": "25.0",
+                      "total": "315.0",
+                      "invoice_number": "INV2",
+                      "created_at": "2024-02-22T18:29:42.330Z",
+                      "updated_at": "2024-02-22T18:29:42.330Z",
+                      "customer": {
+                        "id": 1,
+                        "first_name": "",
+                        "last_name": "",
+                        "display_name": "Embarcadero Distribution",
+                        "email": "buyer@embarcado.com",
+                        "phone": "415-555-6687",
+                        "mobile": "",
+                        "fax": "",
+                        "website": "https://wherefour.com",
+                        "note": null,
+                        "kind": "retailer",
+                        "sales_channel_id": null,
+                        "created_at": "2024-02-22T18:29:42.249Z",
+                        "updated_at": "2024-02-22T18:29:42.249Z",
+                        "custom_field_1": null,
+                        "custom_field_2": null,
+                        "custom_field_3": null,
+                        "custom_field_4": null,
+                        "business_license_number": "404-X0001",
+                        "payment_terms": "Net 30",
+                        "salesperson": null,
+                        "delivery_method": "Route: Embarcadero North",
+                        "delivery_method_id": 6,
+                        "default_special_instructions": "Deliver to back dock 12"
+                      },
+                      "sales_channel": null,
+                      "invoice_items": [
+                        {
+                          "id": 3,
+                          "name": "Finished good B",
+                          "inventory_id": 4,
+                          "category_name": "Products",
+                          "count": "20.0",
+                          "cost": "2.5",
+                          "sku": "SK0001",
+                          "created_at": "2024-02-22T18:29:42.323Z",
+                          "updated_at": "2024-02-22T18:29:42.323Z"
+                        },
+                        {
+                          "id": 4,
+                          "name": "Case of finished good B",
+                          "inventory_id": 6,
+                          "category_name": "Products",
+                          "count": "10.0",
+                          "cost": "25.0",
+                          "sku": "SK0002",
+                          "created_at": "2024-02-22T18:29:42.323Z",
+                          "updated_at": "2024-02-22T18:29:42.323Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "Invoices"
@@ -1326,7 +1588,7 @@
             }
           }
         },
-        "operationId": "Create a invoice"
+        "operationId": "create_invoice"
       },
       "parameters": [
         {
@@ -1365,7 +1627,7 @@
       ],
       "patch": {
         "summary": "Update Order",
-        "operationId": "Update an order",
+        "operationId": "update_order",
         "responses": {
           "200": {
             "description": "OK",
@@ -1595,7 +1857,7 @@
             }
           }
         },
-        "operationId": "Get last shipment"
+        "operationId": "get_last_shipment"
       },
       "parameters": [
         {
@@ -1622,7 +1884,7 @@
     },
     "/customers/kinds": {
       "get": {
-        "summary": "List Customer Kinds",
+        "summary": "List customer kinds",
         "tags": [
           "Customers"
         ],
@@ -1644,7 +1906,7 @@
             }
           }
         },
-        "operationId": "Get customer kinds",
+        "operationId": "get_customer_kinds",
         "description": "Returns of list of customer types."
       }
     },
@@ -1778,7 +2040,7 @@
             }
           }
         },
-        "operationId": "List shipments"
+        "operationId": "list_shipments"
       },
       "parameters": [
         {
@@ -1829,8 +2091,8 @@
         }
       ],
       "patch": {
-        "summary": "Update Invoice",
-        "operationId": "Update an invoice",
+        "summary": "Update invoice",
+        "operationId": "update_invoice",
         "responses": {
           "200": {
             "description": "OK",
@@ -1957,8 +2219,279 @@
       }
     },
     "/customers/{customer_id}/quotes": {
-      "summary": "Create quote",
-      "description": "Creates a new quote for a customer",
+      "summary": "Quotes for a customer",
+      "description": "Quotes for a customer",
+      "get": {
+        "tags": [
+          "Quotes"
+        ],
+        "description": "Lists the quotes for a the customer.",
+        "summary": "List quotes for a customer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "Example": {
+                  "value": { 
+                    "id": 1,
+                    "quote_date": "2024-02-22",
+                    "expiration_date": "2024-03-23",
+                    "status": "draft",
+                    "instructions": null,
+                    "subtotal": "300.0",
+                    "discount": "10.0",
+                    "tax": "0.0",
+                    "shipping": "25.0",
+                    "total": "340.0",
+                    "quote_number": "QO1",
+                    "created_at": "2024-02-22T18:29:42.552Z",
+                    "updated_at": "2024-02-22T18:29:42.552Z",
+                    "billing_address": {
+                      "id": 1,
+                      "type": "BillingAddress",
+                      "descriptive_name": "Default Billing",
+                      "line1": "1142 Main Street",
+                      "line2": "Suite 100",
+                      "line3": null,
+                      "line4": null,
+                      "line5": null,
+                      "city": "San Francisco",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94455",
+                      "country": "USA",
+                      "created_at": "2024-02-22T18:29:42.099Z",
+                      "updated_at": "2024-02-22T18:29:42.099Z"
+                    },
+                    "shipping_address": {
+                      "id": 2,
+                      "type": "ShippingAddress",
+                      "descriptive_name": "Default Shipping",
+                      "line1": "415 S. Pine Street",
+                      "line2": "Suite 210",
+                      "line3": "Apt. G",
+                      "line4": null,
+                      "line5": null,
+                      "city": "Petaluma",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94954",
+                      "country": "USA",
+                      "created_at": "2024-02-22T18:29:42.099Z",
+                      "updated_at": "2024-02-22T18:29:42.099Z"
+                    },
+                    "customer": {
+                      "id": 1,
+                      "first_name": "",
+                      "last_name": "",
+                      "display_name": "Embarcadero Distribution",
+                      "email": "buyer@embarcado.com",
+                      "phone": "415-555-6687",
+                      "mobile": "",
+                      "fax": "",
+                      "website": "https://wherefour.com",
+                      "note": null,
+                      "kind": "retailer",
+                      "sales_channel_id": null,
+                      "created_at": "2024-02-22T18:29:42.249Z",
+                      "updated_at": "2024-02-22T18:29:42.249Z",
+                      "custom_field_1": null,
+                      "custom_field_2": null,
+                      "custom_field_3": null,
+                      "custom_field_4": null,
+                      "business_license_number": "404-X0001",
+                      "payment_terms": "Net 30",
+                      "salesperson": null,
+                      "delivery_method": "Route: Embarcadero North",
+                      "delivery_method_id": 6,
+                      "default_special_instructions": "Deliver to back dock 12"
+                    },
+                    "sales_channel": null,
+                    "quote_items": [
+                      {
+                        "id": 1,
+                        "name": "Finished good B",
+                        "inventory_id": 4,
+                        "category_name": "Products",
+                        "count": "20.0",
+                        "cost": "2.5",
+                        "sku": "SK0001",
+                        "created_at": "2024-02-22T18:29:42.541Z",
+                        "updated_at": "2024-02-22T18:29:42.541Z"
+                      },
+                      {
+                        "id": 2,
+                        "name": "Case of finished good B",
+                        "inventory_id": 6,
+                        "category_name": "Products",
+                        "count": "10.0",
+                        "cost": "25.0",
+                        "sku": "SK0002",
+                        "created_at": "2024-02-22T18:29:42.541Z",
+                        "updated_at": "2024-02-22T18:29:42.541Z"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/quote"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": 14,
+                      "quote_date": "2020-09-04",
+                      "expiration_date": "2020-09-04",
+                      "po_number": "12345",
+                      "status": "open",
+                      "instructions": "",
+                      "subtotal": "100.0",
+                      "discount": "0.0",
+                      "tax": "0.0",
+                      "shipping": "0.0",
+                      "total": "0.0",
+                      "quote_number": "QO100",
+                      "created_at": "2020-09-12T18:25:54.054Z",
+                      "updated_at": "2020-09-12T18:25:54.054Z",
+                      "customer": {
+                        "id": 1,
+                        "first_name": "",
+                        "last_name": "",
+                        "display_name": "Embarcadero Market & Deli",
+                        "email": "buyer@embarcaderodeli.com",
+                        "phone": "415-555-6687",
+                        "mobile": "",
+                        "fax": "",
+                        "website": "https://wherefour.com",
+                        "note": "",
+                        "kind": "retailer",
+                        "created_at": "2020-09-11T13:57:46.742Z",
+                        "updated_at": "2020-09-11T13:57:46.742Z",
+                        "custom_field_1": "",
+                        "custom_field_2": "",
+                        "custom_field_3": "",
+                        "custom_field_4": "",
+                        "business_license_number": "",
+                        "payment_terms": "Net 30",
+                        "salesperson": "",
+                        "delivery_method": "Route: Embarcadero North",
+                        "billing_address": {
+                          "id": 1,
+                          "line1": "1142 Main Street",
+                          "line2": "Suite 100",
+                          "line3": "",
+                          "line4": "",
+                          "line5": "",
+                          "city": "San Francisco",
+                          "country_subdivision_code": "CA",
+                          "postal_code": "94455",
+                          "country": "",
+                          "created_at": "2020-09-11T13:57:46.802Z",
+                          "updated_at": "2020-09-11T13:57:46.802Z"
+                        },
+                        "shipping_address": {
+                          "id": 2,
+                          "line1": "415 S. Pine Street",
+                          "line2": "Suite 210",
+                          "line3": "Apt. G",
+                          "line4": "",
+                          "line5": "",
+                          "city": "Petaluma",
+                          "country_subdivision_code": "CA",
+                          "postal_code": "94954",
+                          "country": "",
+                          "created_at": "2020-09-11T13:57:46.802Z",
+                          "updated_at": "2020-09-11T13:57:46.802Z"
+                        }
+                      },
+                      "delivery_method": {
+                        "id": 1,
+                        "name": "UPS Ground",
+                        "kind": "shipping",
+                        "instructions": ""
+                      },
+                      "salesperson": "",
+                      "payment_term": "",
+                      "quote_items": [
+                        {
+                          "id": 28,
+                          "name": "Chocolate bar",
+                          "inventory_id": 4,
+                          "category_name": "Products",
+                          "count": "10.0",
+                          "cost": "0.0",
+                          "sku": "SK0001",
+                          "created_at": "2020-09-12T18:25:54.062Z",
+                          "updated_at": "2020-09-12T18:25:54.062Z",
+                          "inventory": {
+                            "id": 4,
+                            "name": "Chocolate bar",
+                            "category_name": "Products",
+                            "on_hand": "1165.0",
+                            "unit_of_use": "each",
+                            "unit_of_purchase": "each",
+                            "purchase_conversion": "1.0",
+                            "property": "finished_good",
+                            "sku": "SK0001",
+                            "pull_strategy": "FEFO",
+                            "reorder_point": "0.0",
+                            "lead_time": 0,
+                            "retired": false,
+                            "waste_percentage": "0.0",
+                            "created_at": "2020-09-11T13:57:46.825Z",
+                            "updated_at": "2020-09-11T13:57:46.825Z"
+                          }
+                        },
+                        {
+                          "id": 29,
+                          "name": "Chocolate bar, finished case",
+                          "inventory_id": 6,
+                          "category_name": "Products",
+                          "count": "5.0",
+                          "cost": "0.0",
+                          "sku": "SK0002",
+                          "created_at": "2020-09-12T18:25:54.066Z",
+                          "updated_at": "2020-09-12T18:25:54.066Z",
+                          "inventory": {
+                            "id": 6,
+                            "name": "Chocolate bar, finished case",
+                            "category_name": "Products",
+                            "on_hand": "0.0",
+                            "unit_of_use": "case",
+                            "unit_of_purchase": "case",
+                            "purchase_conversion": "1.0",
+                            "property": "finished_good",
+                            "sku": "SK0002",
+                            "pull_strategy": "FIFO",
+                            "reorder_point": "0.0",
+                            "lead_time": 0,
+                            "retired": false,
+                            "waste_percentage": "0.0",
+                            "created_at": "2020-09-11T13:57:46.825Z",
+                            "updated_at": "2020-09-11T13:57:46.825Z"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "create_quote"
+      },
       "post": {
         "tags": [
           "Quotes"
@@ -2160,7 +2693,7 @@
             }
           }
         },
-        "operationId": "Create a quote"
+        "operationId": "create_quote"
       },
       "parameters": [
         {
@@ -2314,7 +2847,7 @@
           }
         },
         "summary": "Auto Pick and Ship",
-        "operationId": "Auto pick and ship",
+        "operationId": "auto_pick_and_ship",
         "parameters": []
       },
       "parameters": [
@@ -2354,7 +2887,7 @@
       ],
       "patch": {
         "summary": "Update Quote",
-        "operationId": "Update a quote",
+        "operationId": "update_quote",
         "responses": {
           "200": {
             "description": "OK",
@@ -2483,7 +3016,7 @@
     },
     "/customers/search": {
       "get": {
-        "summary": "Search for a Customer",
+        "summary": "Search for a customer",
         "parameters": [
           {
              "in": "query",
@@ -2570,7 +3103,7 @@
             }
           }
         },
-        "operationId": "Search customers",
+        "operationId": "search_customers",
         "description": "Returns customer records with a match on the display name.",
         "requestBody": {
           "content": {
@@ -2600,6 +3133,38 @@
         ],
         "summary": "List Orders",
         "parameters": [
+          {
+             "in": "query",
+             "name": "updated_at",
+             "description": "Oldest date/time for the records returned",
+             "schema": {
+               "type": "string"
+             }
+          },
+          {
+             "in": "query",
+             "name": "status",
+             "description": "Order status",
+             "schema": {
+               "type": "string"
+             }
+          },
+          {
+             "in": "query",
+             "name": "search_start_date",
+             "description": "Oldest order date, produce on date, deliver on date, or ship on date to return",
+             "schema": {
+               "type": "string"
+             }
+          },
+          {
+             "in": "query",
+             "name": "search_end_date",
+             "description": "Newest order date, produce on date, deliver on date, or ship on date to return",
+             "schema": {
+               "type": "string"
+             }
+          },
           {
              "in": "query",
              "name": "page",
@@ -2767,7 +3332,7 @@
             }
           }
         },
-        "operationId": "List orders"
+        "operationId": "list_orders"
       },
       "parameters": []
     },
@@ -2895,7 +3460,7 @@
             }
           }
         },
-        "operationId": "Get an order"
+        "operationId": "get_order"
       },
       "parameters": [
         {
@@ -3048,7 +3613,7 @@
           }
         },
         "summary": "Search for Order",
-        "operationId": "Search orders"
+        "operationId": "search_orders"
       },
       "parameters": [
         {
@@ -3075,6 +3640,14 @@
         ],
         "summary": "List Invoices",
         "parameters": [
+          {
+             "in": "query",
+             "name": "updated_at",
+             "description": "Oldest date/time for the records returned",
+             "schema": {
+               "type": "string"
+             }
+          },
           {
              "in": "query",
              "name": "page",
@@ -3238,7 +3811,7 @@
             }
           }
         },
-        "operationId": "List invoices"
+        "operationId": "list_invoices"
       },
       "parameters": []
     },
@@ -3362,7 +3935,7 @@
             }
           }
         },
-        "operationId": "Get an invoice"
+        "operationId": "get_invoice"
       },
       "parameters": [
         {
@@ -3512,7 +4085,7 @@
           }
         },
         "summary": "Search for invoice",
-        "operationId": "Search invoices"
+        "operationId": "search_invoices"
       },
       "parameters": [
         {
@@ -3651,7 +4224,7 @@
             }
           }
         },
-        "operationId": "Get a quote"
+        "operationId": "get_quote"
       },
       "parameters": [
         {
@@ -3802,7 +4375,7 @@
           }
         },
         "summary": "Search for quote",
-        "operationId": "Search quotes"
+        "operationId": "search_quotes"
       },
       "parameters": [
         {
@@ -3829,6 +4402,14 @@
         ],
         "summary": "List Quotes",
         "parameters": [
+          {
+             "in": "query",
+             "name": "updated_at",
+             "description": "Oldest date/time for the records to return",
+             "schema": {
+               "type": "string"
+             }
+          },
           {
              "in": "query",
              "name": "page",
@@ -3993,13 +4574,13 @@
             }
           }
         },
-        "operationId": "List quotes"
+        "operationId": "list_quotes"
       },
       "parameters": []
     },
     "/shipments": {
       "get": {
-        "summary": "List Shipments",
+        "summary": "List shipments",
         "parameters": [
           {
              "in": "query",
@@ -4106,13 +4687,13 @@
             }
           }
         },
-        "operationId": "Get shipments",
+        "operationId": "get_shipments",
         "description": "Returns a paginated list of all shipments."
       }
     },
     "/shipments/search": {
       "get": {
-        "summary": "Search for Shipment",
+        "summary": "Search for shipment",
         "parameters": [
           {
              "in": "query",
@@ -4219,7 +4800,7 @@
             }
           }
         },
-        "operationId": "Search shipments",
+        "operationId": "search_shipments",
         "description": "Returns a paginated list of shipments for the specified order number.",
         "requestBody": {
           "content": {
@@ -4243,8 +4824,16 @@
     },
     "/purchases": {
       "get": {
-        "summary": "List Purchases",
+        "summary": "List purchases",
         "parameters": [
+          {
+           "in": "query",
+           "name": "updated_at",
+           "description": "Oldest date/time for the records returned.",
+           "schema": {
+             "type": "string"
+            }
+          },
           {
              "in": "query",
              "name": "page",
@@ -4386,7 +4975,7 @@
             }
           }
         },
-        "operationId": "List purchases",
+        "operationId": "list_purchases",
         "description": "Returns a paginated list of purchase orders."
       },
       "parameters": []
@@ -4450,12 +5039,12 @@
                       "purchase_date": "2024-02-21",
                       "purchase_number": "PO1",
                       "status": "draft",
-                      "deliver_by_date": null,
-                      "instructions": null,
+                      "deliver_by_date": "2024-02-21",
+                      "instructions": "",
                       "subtotal": "424.4875",
-                      "discount": null,
-                      "tax": null,
-                      "shipping": null,
+                      "discount": "",
+                      "tax": "",
+                      "shipping": "",
                       "total": "455.71",
                       "created_at": "2024-02-21T18:36:22.516Z",
                       "updated_at": "2024-02-21T18:36:22.516Z",
@@ -4552,8 +5141,93 @@
             }
           }
         },
-        "operationId": "Search purchase orders",
+        "operationId": "search_purchase_orders",
         "description": "Searches for a purchase order based on the purchase order number provided. Multiple matches may be returned."
+      }
+    },
+    "/vendors": {
+      "get": {
+        "summary": "List Vendors",
+        "parameters": [
+          {
+             "in": "query",
+             "name": "updated_at",
+             "description": "Oldest date/time for the records to return",
+             "schema": {
+               "type": "string"
+             }
+          },
+          {
+             "in": "query",
+             "name": "page",
+             "description": "Results page to view",
+             "schema": {
+               "type": "integer"
+             }
+          }
+        ],
+        "tags": [
+          "Vendors"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vendor"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": 1,
+                      "first_name": "Joe",
+                      "last_name": "Sample",
+                      "display_name": "Pacific Foods Co.",
+                      "email": "jsample@pacificfoods.com",
+                      "phone": "415-555-6758",
+                      "website": "https://wherefour.com",
+                      "kind": "distributor",
+                      "created_at": "2020-09-11T13:57:47.005Z",
+                      "updated_at": "2020-09-11T13:57:47.005Z",
+                      "billing_address": {
+                        "id": 39,
+                        "line1": "144 S. Broadway",
+                        "city": "San Francisco",
+                        "country_subdivision_code": "CA",
+                        "postal_code": "95440",
+                        "country": "USA",
+                        "created_at": "2020-09-11T13:57:46.802Z",
+                        "updated_at": "2020-09-11T13:57:46.802Z"
+                      },
+                      "shipping_address": {
+                        "id": 40,
+                        "line1": "144 S. Broadway",
+                        "city": "San Francisco",
+                        "country_subdivision_code": "CA",
+                        "country": "USA",
+                        "created_at": "2020-09-11T13:57:46.802Z",
+                        "updated_at": "2020-09-11T13:57:46.802Z"
+                      },
+                      "payment_term": {
+                        "id": 3,
+                        "name": "Net 15",
+                        "net": 15
+                      },
+                      "delivery_method": {
+                        "id": 3,
+                        "name": "Pickup",
+                        "kind": "shipping"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "list_vendors",
+        "description": "Returns a paginated list of vendors"
       }
     },
     "/vendors/{vendor_id}": {
@@ -4619,7 +5293,7 @@
             }
           }
         },
-        "operationId": "Get vendor",
+        "operationId": "get_vendor",
         "description": "Returns the vendor record for the specified ID."
       },
       "parameters": [
@@ -4727,7 +5401,7 @@
             }
           }
         },
-        "operationId": "Search vendors",
+        "operationId": "search_vendors",
         "description": "Searches vendor records for matches on the display name provided. Multiple matches may be returned."
       }
     },
@@ -4794,7 +5468,7 @@
             }
           }
         },
-        "operationId": "Get delivery methods",
+        "operationId": "get_delivery_methods",
         "description": "Returns all the delivery methods currently defined."
       }
     }
