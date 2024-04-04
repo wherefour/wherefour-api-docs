@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -5563,10 +5563,10 @@
         "operationId": "get_delivery_methods"
       }
     },
-    "/reports/activity": {
+    "/reports/activities": {
       "post": {
         "summary": "Get inventory adjustment activity for a date range",
-        "description": "Lists inventory adjustment activities for a date range. The IDs of record returned are for the adjustment record.",
+        "description": "Lists inventory adjustment activity for a date range. The IDs of records returned are for the adjustment record.",
         "parameters": [
           {
             "in": "query",
