@@ -1,3 +1,6 @@
-source 'https://rubygems.org'
-gem 'rack'
-gem 'puma'
+source "https://rubygems.org"
+
+ruby RUBY_VERSION
+
+gem "rack"
+gem "puma"
