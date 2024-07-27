@@ -1,8 +1,8 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.3",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -649,6 +649,7 @@
                       "updated_at": "2020-09-11T13:57:46.742Z",
                       "payment_terms": "Net 30",
                       "delivery_method": "Route: Embarcadero North",
+                      "block_shipments": false,
                       "billing_address": {
                         "id": 1,
                         "line1": "1142 Main Street",
@@ -708,6 +709,7 @@
                       "updated_at": "2020-09-11T13:57:46.742Z",
                       "payment_terms": "Net 30",
                       "delivery_method": "Route: Embarcadero North",
+                      "block_shipments": false,
                       "billing_address": {
                         "id": 1,
                         "line1": "1142 Main Street",
@@ -762,6 +764,7 @@
                       "custom_field_3": null,
                       "custom_field_4": null,
                       "business_license_number": "123",
+                      "block_shipments": false,
                       "billing_address_attributes": {
                         "line1": "123 Main",
                         "line2": null,
@@ -838,6 +841,7 @@
                       "updated_at": "2020-09-11T13:57:46.742Z",
                       "payment_terms": "Net 30",
                       "delivery_method": "Route: Embarcadero North",
+                      "block_shipments": false,
                       "billing_address": {
                         "id": 1,
                         "line1": "1142 Main Street",
@@ -911,6 +915,7 @@
                       "custom_field_3": null,
                       "custom_field_4": null,
                       "business_license_number": "123",
+                      "block_shipments": false,
                       "billing_address_attributes": {
                         "line1": "123 Main",
                         "line2": null,
@@ -3106,6 +3111,7 @@
                       "updated_at": "2020-09-11T13:57:46.742Z",
                       "payment_terms": "Net 30",
                       "delivery_method": "Route: Embarcadero North",
+                      "block_shipments": false,
                       "billing_address": {
                         "id": 1,
                         "line1": "1142 Main Street",
