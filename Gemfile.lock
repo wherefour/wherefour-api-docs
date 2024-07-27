@@ -13,5 +13,8 @@ DEPENDENCIES
   puma
   rack
 
+RUBY VERSION
+   ruby 3.3.3p89
+
 BUNDLED WITH
    2.5.16
