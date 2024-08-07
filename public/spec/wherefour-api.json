@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -156,6 +156,7 @@
                       "retired": false,
                       "waste_percentage": "0.0",
                       "quantity_not_tracked": false,
+                      "standard_cost": "0.0",
                       "conversions": [],
                       "weight": "100.0",
                       "height": "10.0",
@@ -269,6 +270,7 @@
                     "retired": false,
                     "waste_percentage": 0,
                     "quantity_not_tracked": false,
+                    "standard_cost": "0.0",
                     "weight": null,
                     "height": null,
                     "width": null,
