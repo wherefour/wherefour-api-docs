@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.17",
+    "version": "1.0.18",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -150,6 +150,7 @@
                       "purchase_conversion": "0.0",
                       "property": "finished_good",
                       "sku": null,
+                      "upc": null,
                       "pull_strategy": "FIFO",
                       "reorder_point": "0.0",
                       "lead_time": 0,
@@ -264,6 +265,7 @@
                     "purchase_conversion": 1,
                     "property": "raw_material",
                     "sku": null,
+                    "upc": null,
                     "pull_strategy": "fifo",
                     "reorder_point": 50,
                     "lead_time": 1,
@@ -436,7 +438,8 @@
                           "unit_of_use": "gallon",
                           "unit_of_purchase": "gallon",
                           "property": "raw_material",
-                          "sku": null,
+                          "sku": null, 
+                          "upc": null,           
                           "created_at": "2020-09-11T13:57:46.825Z",
                           "updated_at": "2020-09-11T13:57:46.825Z"
                         },
@@ -533,6 +536,7 @@
                       "purchase_conversion": 1.0,
                       "property": "work_in_progress",
                       "sku": "123456",
+                      "upc": "78910",
                       "pull_strategy": "Hand Pick",
                       "reorder_point": 10.0,
                       "lead_time": 0,
@@ -1262,6 +1266,7 @@
                           "count": "10.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null, 
                           "created_at": "2020-09-12T18:25:54.062Z",
                           "updated_at": "2020-09-12T18:25:54.062Z",
                           "inventory": {
@@ -1274,6 +1279,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null, 
                             "pull_strategy": "FEFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -1291,6 +1297,7 @@
                           "count": "5.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null, 
                           "created_at": "2020-09-12T18:25:54.066Z",
                           "updated_at": "2020-09-12T18:25:54.066Z",
                           "inventory": {
@@ -1303,6 +1310,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null, 
                             "pull_strategy": "FIFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -1403,6 +1411,7 @@
                           "count": "20.0",
                           "cost": "2.5",
                           "sku": "SK0001",
+                          "upc": null, 
                           "created_at": "2024-02-22T18:29:42.323Z",
                           "updated_at": "2024-02-22T18:29:42.323Z"
                         },
@@ -1414,6 +1423,7 @@
                           "count": "10.0",
                           "cost": "25.0",
                           "sku": "SK0002",
+                          "upc": null, 
                           "created_at": "2024-02-22T18:29:42.323Z",
                           "updated_at": "2024-02-22T18:29:42.323Z"
                         }
@@ -1568,6 +1578,7 @@
                           "count": "10.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null, 
                           "created_at": "2020-09-12T18:25:54.062Z",
                           "updated_at": "2020-09-12T18:25:54.062Z",
                           "inventory": {
@@ -1580,6 +1591,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null, 
                             "pull_strategy": "FEFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -1597,6 +1609,7 @@
                           "count": "5.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null, 
                           "created_at": "2020-09-12T18:25:54.066Z",
                           "updated_at": "2020-09-12T18:25:54.066Z",
                           "inventory": {
@@ -1609,6 +1622,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null, 
                             "pull_strategy": "FIFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -1742,6 +1756,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null, 
                           "created_at": "2020-09-12T16:13:45.568Z",
                           "updated_at": "2020-09-12T16:13:45.568Z",
                           "inventory": {
@@ -1753,6 +1768,7 @@
                             "unit_of_purchase": "each",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null, 
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -1765,6 +1781,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null, 
                           "created_at": "2020-09-12T16:13:45.574Z",
                           "updated_at": "2020-09-12T16:13:45.574Z",
                           "inventory": {
@@ -1776,6 +1793,7 @@
                             "unit_of_purchase": "case",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null, 
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -1858,6 +1876,7 @@
                           "count": "10.0",
                           "inventory_name": "Chocolate bar",
                           "inventory_sku": "SK0001",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 25,
@@ -1875,6 +1894,7 @@
                           "count": "40.0",
                           "inventory_name": "Chocolate bar, finished case",
                           "inventory_sku": "SK0002",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 26,
@@ -2041,6 +2061,7 @@
                           "count": "10.0",
                           "inventory_name": "Chocolate bar",
                           "inventory_sku": "SK0001",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 25,
@@ -2058,6 +2079,7 @@
                           "count": "40.0",
                           "inventory_name": "Chocolate bar, finished case",
                           "inventory_sku": "SK0002",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 26,
@@ -2204,6 +2226,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.568Z",
                           "updated_at": "2020-09-12T16:13:45.568Z",
                           "inventory": {
@@ -2215,6 +2238,7 @@
                             "unit_of_purchase": "each",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -2227,6 +2251,8 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null,
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.574Z",
                           "updated_at": "2020-09-12T16:13:45.574Z",
                           "inventory": {
@@ -2238,6 +2264,8 @@
                             "unit_of_purchase": "case",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null,
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -2263,7 +2291,7 @@
         "tags": [
           "Quotes"
         ],
-        "description": "Lists the quotes for a the customer.",
+        "description": "Lists the quotes for a customer.",
         "summary": "List quotes for a customer",
         "requestBody": {
           "content": {
@@ -2356,6 +2384,7 @@
                         "count": "20.0",
                         "cost": "2.5",
                         "sku": "SK0001",
+                        "upc": null,
                         "created_at": "2024-02-22T18:29:42.541Z",
                         "updated_at": "2024-02-22T18:29:42.541Z"
                       },
@@ -2367,6 +2396,7 @@
                         "count": "10.0",
                         "cost": "25.0",
                         "sku": "SK0002",
+                        "upc": null,
                         "created_at": "2024-02-22T18:29:42.541Z",
                         "updated_at": "2024-02-22T18:29:42.541Z"
                       }
@@ -2470,6 +2500,7 @@
                           "count": "10.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T18:25:54.062Z",
                           "updated_at": "2020-09-12T18:25:54.062Z",
                           "inventory": {
@@ -2482,6 +2513,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null,
                             "pull_strategy": "FEFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -2499,6 +2531,7 @@
                           "count": "5.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-12T18:25:54.066Z",
                           "updated_at": "2020-09-12T18:25:54.066Z",
                           "inventory": {
@@ -2511,6 +2544,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null,
                             "pull_strategy": "FIFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -2673,6 +2707,7 @@
                           "count": "10.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T18:25:54.062Z",
                           "updated_at": "2020-09-12T18:25:54.062Z",
                           "inventory": {
@@ -2685,6 +2720,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null,
                             "pull_strategy": "FEFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -2702,6 +2738,7 @@
                           "count": "5.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-12T18:25:54.066Z",
                           "updated_at": "2020-09-12T18:25:54.066Z",
                           "inventory": {
@@ -2714,6 +2751,7 @@
                             "purchase_conversion": "1.0",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null,
                             "pull_strategy": "FIFO",
                             "reorder_point": "0.0",
                             "lead_time": 0,
@@ -2864,6 +2902,7 @@
                           "count": "10.0",
                           "inventory_name": "Chocolate bar",
                           "inventory_sku": "SK0001",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 43,
@@ -3000,6 +3039,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.568Z",
                           "updated_at": "2020-09-12T16:13:45.568Z",
                           "inventory": {
@@ -3011,6 +3051,7 @@
                             "unit_of_purchase": "each",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -3023,6 +3064,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.574Z",
                           "updated_at": "2020-09-12T16:13:45.574Z",
                           "inventory": {
@@ -3034,6 +3076,7 @@
                             "unit_of_purchase": "case",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -3325,6 +3368,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.568Z",
                           "updated_at": "2020-09-12T16:13:45.568Z",
                           "inventory": {
@@ -3336,6 +3380,7 @@
                             "unit_of_purchase": "each",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -3348,6 +3393,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.574Z",
                           "updated_at": "2020-09-12T16:13:45.574Z",
                           "inventory": {
@@ -3359,6 +3405,7 @@
                             "unit_of_purchase": "case",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -3455,6 +3502,7 @@
                           "count": "20.0",
                           "cost": "2.5",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-11T13:57:47.050Z",
                           "updated_at": "2020-09-11T13:57:47.050Z"
                         },
@@ -3466,6 +3514,7 @@
                           "count": "10.0",
                           "cost": "25.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-11T13:57:47.050Z",
                           "updated_at": "2020-09-11T13:57:47.050Z"
                         },
@@ -3477,6 +3526,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": null,
+                          "upc": null,
                           "created_at": "2020-09-12T16:22:26.858Z",
                           "updated_at": "2020-09-12T16:22:26.858Z"
                         },
@@ -3488,6 +3538,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T16:22:26.863Z",
                           "updated_at": "2020-09-12T16:22:26.863Z"
                         }
@@ -3630,6 +3681,7 @@
                           "count": "20.0",
                           "cost": "2.5",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-07-16T19:49:19.640Z",
                           "updated_at": "2020-07-16T19:49:19.640Z"
                         },
@@ -3640,6 +3692,7 @@
                           "count": "10.0",
                           "cost": "25.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-07-16T19:49:19.640Z",
                           "updated_at": "2020-07-16T19:49:19.640Z"
                         }
@@ -3804,6 +3857,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.568Z",
                           "updated_at": "2020-09-12T16:13:45.568Z",
                           "inventory": {
@@ -3815,6 +3869,7 @@
                             "unit_of_purchase": "each",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -3827,6 +3882,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.574Z",
                           "updated_at": "2020-09-12T16:13:45.574Z",
                           "inventory": {
@@ -3838,6 +3894,7 @@
                             "unit_of_purchase": "case",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -3930,6 +3987,7 @@
                           "count": "20.0",
                           "cost": "2.5",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-11T13:57:47.050Z",
                           "updated_at": "2020-09-11T13:57:47.050Z"
                         },
@@ -3941,6 +3999,7 @@
                           "count": "10.0",
                           "cost": "25.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-11T13:57:47.050Z",
                           "updated_at": "2020-09-11T13:57:47.050Z"
                         },
@@ -3952,6 +4011,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": null,
+                          "upc": null,
                           "created_at": "2020-09-12T16:22:26.858Z",
                           "updated_at": "2020-09-12T16:22:26.858Z"
                         },
@@ -3963,6 +4023,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T16:22:26.863Z",
                           "updated_at": "2020-09-12T16:22:26.863Z"
                         }
@@ -4102,6 +4163,7 @@
                           "count": "20.0",
                           "cost": "2.5",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-07-16T19:49:19.640Z",
                           "updated_at": "2020-07-16T19:49:19.640Z"
                         },
@@ -4112,6 +4174,7 @@
                           "count": "10.0",
                           "cost": "25.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-07-16T19:49:19.640Z",
                           "updated_at": "2020-07-16T19:49:19.640Z"
                         }
@@ -4219,6 +4282,7 @@
                           "count": "20.0",
                           "cost": "2.5",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-11T13:57:47.050Z",
                           "updated_at": "2020-09-11T13:57:47.050Z"
                         },
@@ -4230,6 +4294,7 @@
                           "count": "10.0",
                           "cost": "25.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-11T13:57:47.050Z",
                           "updated_at": "2020-09-11T13:57:47.050Z"
                         },
@@ -4241,19 +4306,9 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": null,
+                          "upc": null,
                           "created_at": "2020-09-12T16:22:26.858Z",
                           "updated_at": "2020-09-12T16:22:26.858Z"
-                        },
-                        {
-                          "id": 13,
-                          "name": "Chocolate bar",
-                          "inventory_id": 4,
-                          "category_name": "Products",
-                          "count": "0.0",
-                          "cost": "0.0",
-                          "sku": "SK0001",
-                          "created_at": "2020-09-12T16:22:26.863Z",
-                          "updated_at": "2020-09-12T16:22:26.863Z"
                         }
                       ]
                     }
@@ -4392,6 +4447,7 @@
                           "count": "20.0",
                           "cost": "2.5",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-07-16T19:49:19.640Z",
                           "updated_at": "2020-07-16T19:49:19.640Z"
                         },
@@ -4402,6 +4458,7 @@
                           "count": "10.0",
                           "cost": "25.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-07-16T19:49:19.640Z",
                           "updated_at": "2020-07-16T19:49:19.640Z"
                         }
@@ -4567,6 +4624,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0001",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.568Z",
                           "updated_at": "2020-09-12T16:13:45.568Z",
                           "inventory": {
@@ -4578,6 +4636,7 @@
                             "unit_of_purchase": "each",
                             "property": "finished_good",
                             "sku": "SK0001",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -4590,6 +4649,7 @@
                           "count": "0.0",
                           "cost": "0.0",
                           "sku": "SK0002",
+                          "upc": null,
                           "created_at": "2020-09-12T16:13:45.574Z",
                           "updated_at": "2020-09-12T16:13:45.574Z",
                           "inventory": {
@@ -4601,6 +4661,7 @@
                             "unit_of_purchase": "case",
                             "property": "finished_good",
                             "sku": "SK0002",
+                            "upc": null,
                             "created_at": "2020-09-11T13:57:46.825Z",
                             "updated_at": "2020-09-11T13:57:46.825Z"
                           }
@@ -4689,6 +4750,7 @@
                           "count": "10.0",
                           "inventory_name": "Chocolate bar",
                           "inventory_sku": "SK0001",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 25,
@@ -4706,6 +4768,7 @@
                           "count": "40.0",
                           "inventory_name": "Chocolate bar, finished case",
                           "inventory_sku": "SK0002",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 26,
@@ -4802,6 +4865,7 @@
                           "count": "10.0",
                           "inventory_name": "Chocolate bar",
                           "inventory_sku": "SK0001",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 25,
@@ -4819,6 +4883,7 @@
                           "count": "40.0",
                           "inventory_name": "Chocolate bar, finished case",
                           "inventory_sku": "SK0002",
+                          "inventory_upc": null,
                           "auto_ship": [
                             {
                               "adjustment_id": 26,
@@ -5159,6 +5224,7 @@
                           "count": "1000.0",
                           "cost": "0.25",
                           "sku": "CSECSECSECSE",
+                          "upc": null,
                           "created_at": "2024-02-21T18:36:22.513Z",
                           "updated_at": "2024-02-21T18:36:22.513Z"
                         },
@@ -5169,6 +5235,7 @@
                           "count": "58.75",
                           "cost": "2.97",
                           "sku": "AAAAAAAAAAA",
+                          "upc": null,
                           "created_at": "2024-02-21T18:36:22.513Z",
                           "updated_at": "2024-02-21T18:36:22.513Z"
                         }
@@ -6130,6 +6197,7 @@
                 "unit_of_purchase": "each",
                 "property": "finished_good",
                 "sku": "SK0001",
+                "upc": null,
                 "created_at": "2020-09-11T13:57:46.825Z",
                 "updated_at": "2020-09-11T13:57:46.825Z"
               }
@@ -6153,6 +6221,7 @@
                 "unit_of_purchase": "case",
                 "property": "finished_good",
                 "sku": "SK0002",
+                "upc": null,
                 "created_at": "2020-09-11T13:57:46.825Z",
                 "updated_at": "2020-09-11T13:57:46.825Z"
               }
@@ -6440,6 +6509,7 @@
               "count": "0.0",
               "cost": "0.0",
               "sku": "SK0001",
+              "upc": null,
               "created_at": "2020-09-12T16:13:45.568Z",
               "updated_at": "2020-09-12T16:13:45.568Z",
               "inventory": {
@@ -6451,6 +6521,7 @@
                 "unit_of_purchase": "each",
                 "property": "finished_good",
                 "sku": "SK0001",
+                "upc": null,
                 "created_at": "2020-09-11T13:57:46.825Z",
                 "updated_at": "2020-09-11T13:57:46.825Z"
               }
@@ -6463,6 +6534,7 @@
               "count": "0.0",
               "cost": "0.0",
               "sku": "SK0002",
+              "upc": null,
               "created_at": "2020-09-12T16:13:45.574Z",
               "updated_at": "2020-09-12T16:13:45.574Z",
               "inventory": {
@@ -6474,6 +6546,7 @@
                 "unit_of_purchase": "case",
                 "property": "finished_good",
                 "sku": "SK0002",
+                "upc": null,
                 "created_at": "2020-09-11T13:57:46.825Z",
                 "updated_at": "2020-09-11T13:57:46.825Z"
               }
@@ -7206,6 +7279,9 @@
                 "sku": {
                   "type": "string"
                 },
+                "upc": {
+                  "type": "string"
+                },
                 "created_at": {
                   "type": "string"
                 },
@@ -7237,6 +7313,9 @@
                       "type": "string"
                     },
                     "sku": {
+                      "type": "string"
+                    },
+                    "upc": {
                       "type": "string"
                     },
                     "created_at": {
@@ -7337,6 +7416,7 @@
               "count": "1000.0",
               "cost": "0.25",
               "sku": "CSECSECSECSE",
+              "upc": null,
               "created_at": "2024-02-21T18:36:22.513Z",
               "updated_at": "2024-02-21T18:36:22.513Z"
             },
@@ -7347,6 +7427,7 @@
               "count": "58.75",
               "cost": "2.97",
               "sku": "AAAAAAAAAAA",
+              "upc": null,
               "created_at": "2024-02-21T18:36:22.513Z",
               "updated_at": "2024-02-21T18:36:22.513Z"
             }
@@ -7659,6 +7740,9 @@
                 "inventory_sku": {
                   "type": "string"
                 },
+                "inventory_upc": {
+                  "type": "string"
+                },
                 "auto_ship": {
                   "type": "array",
                   "items": {
@@ -7718,6 +7802,7 @@
               "count": "10.0",
               "inventory_name": "Chocolate bar",
               "inventory_sku": "SK0001",
+              "inventory_upc": null,
               "auto_ship": [
                 {
                   "adjustment_id": 25,
@@ -7735,6 +7820,7 @@
               "count": "40.0",
               "inventory_name": "Chocolate bar, finished case",
               "inventory_sku": "SK0002",
+              "inventory_upc": null,
               "auto_ship": [
                 {
                   "adjustment_id": 26,
@@ -7769,6 +7855,7 @@
             "purchase_conversion": "1.0",
             "property": "raw_material",
             "sku": null,
+            "upc": null,
             "pull_strategy": "Hand Pick",
             "reorder_point": "50.0",
             "lead_time": 1,
@@ -7854,6 +7941,10 @@
             "minLength": 1
           },       
           "sku": {
+            "type": "string",
+            "minLength": 1
+          },         
+          "upc": {
             "type": "string",
             "minLength": 1
           },  
