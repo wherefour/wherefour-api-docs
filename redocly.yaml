@@ -1,0 +1,17 @@
+theme:
+  openapi:
+    disableSearch: false
+    expandResponses: 200,202
+    jsonSampleExpandLevel: 1
+
+    theme:
+      sidebar:
+        backgroundColor: "#fafafa"
+        textColor: "#333333"
+      # colors:
+      #   primary:
+      #     main: 
+      typography:
+        fontSize: 14px
+        headings:
+          fontWeight: bold
