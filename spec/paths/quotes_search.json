@@ -1,0 +1,153 @@
+{
+  "summary": "Search for a quote",
+  "description": "Locates a quote by the quote_number",
+  "get": {
+    "tags": [
+      "Quotes"
+    ],
+    "description": "Locates a quote by the quote_number",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object"
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "quote_number": "QO1"
+              }
+            }
+          }
+        }
+      },
+      "description": ""
+    },
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/quote.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "quote_date": "2020-09-04",
+                  "expiration_date": "2020-09-04",
+                  "status": "invoiced",
+                  "salesperson_id": null,
+                  "delivery_method_id": 1,
+                  "instructions": "",
+                  "subtotal": "300.0",
+                  "discount": "10.0",
+                  "tax": "0.00",
+                  "shipping": "25.0",
+                  "total": "315.0",
+                  "quote_number": "QO1",
+                  "payment_term_id": 1,
+                  "created_at": "2020-07-16T19:49:19.481Z",
+                  "updated_at": "2020-07-16T19:49:19.481Z",
+                  "customer": {
+                    "id": 1,
+                    "first_name": "",
+                    "last_name": "",
+                    "display_name": "Embarcadero Market & Deli",
+                    "email": "buyer@embarcaderodeli.com",
+                    "phone": "415-555-6687",
+                    "mobile": "",
+                    "fax": "",
+                    "website": "https://wherefour.com",
+                    "note": "",
+                    "kind": "retailer",
+                    "created_at": "2020-07-16T19:49:19.394Z",
+                    "updated_at": "2020-07-16T19:49:19.394Z",
+                    "custom_field_1": "",
+                    "custom_field_2": "",
+                    "custom_field_3": "",
+                    "custom_field_4": "",
+                    "business_license_number": "",
+                    "payment_terms": "Net 30",
+                    "salesperson": "",
+                    "delivery_method": "Route: Embarcadero North"
+                  },
+                  "quote_items": [
+                    {
+                      "id": 1,
+                      "name": "Chocolate bar",
+                      "category_name": "Products",
+                      "count": "20.0",
+                      "cost": "2.5",
+                      "sku": "SK0001",
+                      "created_at": "2020-07-16T19:49:19.640Z",
+                      "updated_at": "2020-07-16T19:49:19.640Z"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Chocolate bar, finished case",
+                      "category_name": "Products",
+                      "count": "10.0",
+                      "cost": "25.0",
+                      "sku": "SK0002",
+                      "created_at": "2020-07-16T19:49:19.640Z",
+                      "updated_at": "2020-07-16T19:49:19.640Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": "Search for quote",
+    "operationId": "search_quotes"
+  },
+  "parameters": [
+    {
+      "name": "quote_number",
+      "in": "query",
+      "schema": {
+        "type": "string",
+        "minLength": 1
+      },
+      "example": "{\n\t\"quote_number\": \"QO1\"\n}",
+      "required": false,
+      "deprecated": false,
+      "allowEmptyValue": false,
+      "description": "The quote number in Wherefour to locate. All quotes with matching results will be returned."
+    }
+  ]
+}

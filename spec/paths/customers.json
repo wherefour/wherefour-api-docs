@@ -1,0 +1,219 @@
+{
+  "get": {
+    "summary": "List customers",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "updated_at",
+        "description": "Oldest date/time for the records to return",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "tags": [
+      "Customers"
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/customer.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "first_name": "",
+                  "last_name": "",
+                  "display_name": "Embarcadero Market & Deli",
+                  "email": "buyer@embarcaderodeli.com",
+                  "phone": "415-555-6687",
+                  "mobile": "",
+                  "fax": "",
+                  "website": "https://wherefour.com",
+                  "kind": "retailer",
+                  "created_at": "2020-09-11T13:57:46.742Z",
+                  "updated_at": "2020-09-11T13:57:46.742Z",
+                  "payment_terms": "Net 30",
+                  "delivery_method": "Route: Embarcadero North",
+                  "block_shipments": false,
+                  "billing_address": {
+                    "id": 1,
+                    "line1": "1142 Main Street",
+                    "line2": "Suite 100",
+                    "city": "San Francisco",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94455",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  },
+                  "shipping_address": {
+                    "id": 2,
+                    "line1": "415 S. Pine Street",
+                    "line2": "Suite 210",
+                    "line3": "Apt. G",
+                    "city": "Petaluma",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94954",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "get_customers",
+    "description": "Returns a paginated list of customers."
+  },
+  "post": {
+    "summary": "Create a customer",
+    "operationId": "create_customer",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/customer.json"
+            },
+            "examples": {
+              "example-1": {
+                "value": {
+                  "id": 1,
+                  "first_name": "",
+                  "last_name": "",
+                  "display_name": "Embarcadero Market & Deli",
+                  "email": "buyer@embarcaderodeli.com",
+                  "phone": "415-555-6687",
+                  "mobile": "",
+                  "fax": "",
+                  "website": "https://wherefour.com",
+                  "kind": "retailer",
+                  "created_at": "2020-09-11T13:57:46.742Z",
+                  "updated_at": "2020-09-11T13:57:46.742Z",
+                  "payment_terms": "Net 30",
+                  "delivery_method": "Route: Embarcadero North",
+                  "block_shipments": false,
+                  "billing_address": {
+                    "id": 1,
+                    "line1": "1142 Main Street",
+                    "line2": "Suite 100",
+                    "city": "San Francisco",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94455",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  },
+                  "shipping_address": {
+                    "id": 2,
+                    "line1": "415 S. Pine Street",
+                    "line2": "Suite 210",
+                    "line3": "Apt. G",
+                    "city": "Petaluma",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94954",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "description": "Creates a new customer record.",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../components/schemas/customer.json"
+          },
+          "examples": {
+            "example-1": {
+              "value": {
+                "customer": {
+                  "first_name": "John",
+                  "middle_name": null,
+                  "last_name": "Smith",
+                  "display_name": "John Smith",
+                  "email": "test@example.com",
+                  "phone": "555-1212",
+                  "mobile": "555-2222",
+                  "fax": "555-3333",
+                  "website": "https://website.com",
+                  "note": "This is a customer note.",
+                  "custom_field_1": null,
+                  "custom_field_2": null,
+                  "custom_field_3": null,
+                  "custom_field_4": null,
+                  "business_license_number": "123",
+                  "block_shipments": false,
+                  "billing_address_attributes": {
+                    "line1": "123 Main",
+                    "line2": null,
+                    "line3": null,
+                    "line4": null,
+                    "line5": null,
+                    "city": null,
+                    "country_subdivision_code": null,
+                    "postal_code": null,
+                    "country": null
+                  },
+                  "shipping_address_attributes": {
+                    "line1": "555 Main",
+                    "line2": null,
+                    "line3": null,
+                    "line4": null,
+                    "line5": null,
+                    "city": null,
+                    "country_subdivision_code": null,
+                    "postal_code": null,
+                    "country": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tags": [
+      "Customers"
+    ]
+  }
+}

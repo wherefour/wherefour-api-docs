@@ -1,0 +1,382 @@
+{
+  "summary": "List all the orders for a customer",
+  "description": "Returns a paginated list of all the orders for a specific customer ID.",
+  "get": {
+    "tags": [
+      "Orders"
+    ],
+    "summary": "List orders for a customer",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "updated_at",
+        "description": "Oldest date/time for the records to return",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "description": "Returns all the orders for the customer ID provided.",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/order.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "first_name": "",
+                  "last_name": "",
+                  "display_name": "Embarcadero Distribution",
+                  "email": "buyer@embarcado.com",
+                  "phone": "415-555-6687",
+                  "mobile": "",
+                  "fax": "",
+                  "website": "https://wherefour.com",
+                  "note": null,
+                  "kind": "retailer",
+                  "sales_channel_id": null,
+                  "origin": "wherefour",
+                  "created_at": "2024-02-22T18:29:42.249Z",
+                  "updated_at": "2024-02-22T18:29:42.249Z",
+                  "custom_field_1": null,
+                  "custom_field_2": null,
+                  "custom_field_3": null,
+                  "custom_field_4": null,
+                  "business_license_number": "404-X0001",
+                  "payment_terms": "Net 30",
+                  "salesperson": "",
+                  "delivery_method": {},
+                  "delivery_method_id": 6,
+                  "default_special_instructions": "Deliver to back dock 12",
+                  "sales_channel": null,
+                  "billing_address": {
+                    "id": 1,
+                    "type": "BillingAddress",
+                    "descriptive_name": "Default Billing",
+                    "line1": "1142 Main Street",
+                    "line2": "Suite 100",
+                    "line3": null,
+                    "line4": null,
+                    "line5": null,
+                    "city": "San Francisco",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94455",
+                    "country": "USA",
+                    "created_at": "2024-02-22T18:29:42.099Z",
+                    "updated_at": "2024-02-22T18:29:42.099Z"
+                  },
+                  "shipping_address": {
+                    "id": 2,
+                    "type": "ShippingAddress",
+                    "descriptive_name": "Default Shipping",
+                    "line1": "415 S. Pine Street",
+                    "line2": "Suite 210",
+                    "line3": "Apt. G",
+                    "line4": null,
+                    "line5": null,
+                    "city": "Petaluma",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94954",
+                    "country": "USA",
+                    "created_at": "2024-02-22T18:29:42.099Z",
+                    "updated_at": "2024-02-22T18:29:42.099Z"
+                  },
+                  "delivery_driver": null,
+                  "delivery_vehicle": null,
+                  "addresses": [
+                    {
+                      "id": 1,
+                      "type": "BillingAddress",
+                      "descriptive_name": "Default Billing",
+                      "line1": "1142 Main Street",
+                      "line2": "Suite 100",
+                      "line3": null,
+                      "line4": null,
+                      "line5": null,
+                      "city": "San Francisco",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94455",
+                      "country": "USA",
+                      "created_at": "2024-02-22T18:29:42.099Z",
+                      "updated_at": "2024-02-22T18:29:42.099Z"
+                    },
+                    {
+                      "id": 2,
+                      "type": "ShippingAddress",
+                      "descriptive_name": "Default Shipping",
+                      "line1": "415 S. Pine Street",
+                      "line2": "Suite 210",
+                      "line3": "Apt. G",
+                      "line4": null,
+                      "line5": null,
+                      "city": "Petaluma",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94954",
+                      "country": "USA",
+                      "created_at": "2024-02-22T18:29:42.099Z",
+                      "updated_at": "2024-02-22T18:29:42.099Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "list_orders"
+  },
+  "post": {
+    "tags": [
+      "Orders"
+    ],
+    "description": "Creates a new order for the customer.",
+    "summary": "Create Order",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "order_number": "SO100",
+                "order_date": "2020-09-04",
+                "deliver_date": "2020-09-04",
+                "produce_date": "2020-09-04",
+                "po_number": "12345",
+                "payment_term_id": null,
+                "status": "open",
+                "origin": "wherefour",
+                "salesperson_id": null,
+                "payment_terms": null,
+                "delivery_method_id": 1,
+                "instructions": null,
+                "subtotal": 100,
+                "discount": 0,
+                "tax": 0,
+                "shipping": 0,
+                "total": 0,
+                "order_items_attributes": [
+                  {
+                    "inventory_id": 4,
+                    "count": 10,
+                    "unit_price": 100,
+                    "override_unit_price": 0
+                  },
+                  {
+                    "inventory_id": 6,
+                    "count": 5,
+                    "unit_price": 0,
+                    "override_unit_price": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/order.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 14,
+                  "order_date": "2020-09-04",
+                  "produce_date": "2020-09-04",
+                  "deliver_date": "2020-09-04",
+                  "po_number": "12345",
+                  "status": "open",
+                  "instructions": "",
+                  "subtotal": "100.0",
+                  "discount": "0.0",
+                  "tax": "0.0",
+                  "shipping": "0.0",
+                  "total": "0.0",
+                  "origin": "wherefour",
+                  "order_number": "SO100",
+                  "created_at": "2020-09-12T18:25:54.054Z",
+                  "updated_at": "2020-09-12T18:25:54.054Z",
+                  "invoiced_at": "2020-09-12T18:25:54.054Z",
+                  "customer": {
+                    "id": 1,
+                    "first_name": "",
+                    "last_name": "",
+                    "display_name": "Embarcadero Market & Deli",
+                    "email": "buyer@embarcaderodeli.com",
+                    "phone": "415-555-6687",
+                    "mobile": "",
+                    "fax": "",
+                    "website": "https://wherefour.com",
+                    "note": "",
+                    "kind": "retailer",
+                    "created_at": "2020-09-11T13:57:46.742Z",
+                    "updated_at": "2020-09-11T13:57:46.742Z",
+                    "custom_field_1": "",
+                    "custom_field_2": "",
+                    "custom_field_3": "",
+                    "custom_field_4": "",
+                    "business_license_number": "",
+                    "payment_terms": "Net 30",
+                    "salesperson": "",
+                    "delivery_method": "Route: Embarcadero North",
+                    "billing_address": {
+                      "id": 1,
+                      "line1": "1142 Main Street",
+                      "line2": "Suite 100",
+                      "line3": "",
+                      "line4": "",
+                      "line5": "",
+                      "city": "San Francisco",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94455",
+                      "country": "",
+                      "created_at": "2020-09-11T13:57:46.802Z",
+                      "updated_at": "2020-09-11T13:57:46.802Z"
+                    },
+                    "shipping_address": {
+                      "id": 2,
+                      "line1": "415 S. Pine Street",
+                      "line2": "Suite 210",
+                      "line3": "Apt. G",
+                      "line4": "",
+                      "line5": "",
+                      "city": "Petaluma",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94954",
+                      "country": "",
+                      "created_at": "2020-09-11T13:57:46.802Z",
+                      "updated_at": "2020-09-11T13:57:46.802Z"
+                    }
+                  },
+                  "delivery_method": {
+                    "id": 1,
+                    "name": "UPS Ground",
+                    "kind": "shipping",
+                    "instructions": ""
+                  },
+                  "salesperson": "",
+                  "payment_term": "",
+                  "order_items": [
+                    {
+                      "id": 28,
+                      "name": "Chocolate bar",
+                      "inventory_id": 4,
+                      "category_name": "Products",
+                      "count": "10.0",
+                      "cost": "0.0",
+                      "sku": "SK0001",
+                      "created_at": "2020-09-12T18:25:54.062Z",
+                      "updated_at": "2020-09-12T18:25:54.062Z",
+                      "inventory": {
+                        "id": 4,
+                        "name": "Chocolate bar",
+                        "category_name": "Products",
+                        "on_hand": "1165.0",
+                        "unit_of_use": "each",
+                        "unit_of_purchase": "each",
+                        "purchase_conversion": "1.0",
+                        "property": "finished_good",
+                        "sku": "SK0001",
+                        "pull_strategy": "FEFO",
+                        "reorder_point": "0.0",
+                        "lead_time": 0,
+                        "retired": false,
+                        "waste_percentage": "0.0",
+                        "created_at": "2020-09-11T13:57:46.825Z",
+                        "updated_at": "2020-09-11T13:57:46.825Z"
+                      }
+                    },
+                    {
+                      "id": 29,
+                      "name": "Chocolate bar, finished case",
+                      "inventory_id": 6,
+                      "category_name": "Products",
+                      "count": "5.0",
+                      "cost": "0.0",
+                      "sku": "SK0002",
+                      "created_at": "2020-09-12T18:25:54.066Z",
+                      "updated_at": "2020-09-12T18:25:54.066Z",
+                      "inventory": {
+                        "id": 6,
+                        "name": "Chocolate bar, finished case",
+                        "category_name": "Products",
+                        "on_hand": "0.0",
+                        "unit_of_use": "case",
+                        "unit_of_purchase": "case",
+                        "purchase_conversion": "1.0",
+                        "property": "finished_good",
+                        "sku": "SK0002",
+                        "pull_strategy": "FIFO",
+                        "reorder_point": "0.0",
+                        "lead_time": 0,
+                        "retired": false,
+                        "waste_percentage": "0.0",
+                        "created_at": "2020-09-11T13:57:46.825Z",
+                        "updated_at": "2020-09-11T13:57:46.825Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "create_order"
+  },
+  "parameters": [
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "customer_id",
+      "in": "path",
+      "required": true,
+      "description": "customer record ID"
+    }
+  ]
+}

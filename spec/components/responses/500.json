@@ -1,0 +1,10 @@
+{
+  "content": {
+    "application/json": {
+      "schema": {
+        "$ref": "../schemas/ServerError.json"
+      }
+    }
+  },
+  "description": "Server Error"
+}

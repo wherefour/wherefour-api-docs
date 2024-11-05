@@ -1,0 +1,164 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "user_id": {
+      "type": "number"
+    },
+    "inventory_id": {
+      "type": "number"
+    },
+    "location_id": {
+      "type": "number"
+    },
+    "lot_code": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "count": {
+      "type": "number"
+    },
+    "cost": {
+      "type": "number"
+    },
+    "vendor_id": {
+      "type": "number"
+    },
+    "expiration_date": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "base_count": {
+      "type": "number"
+    },
+    "rate": {
+      "type": "number"
+    },
+    "purchase_id": {
+      "type": "number"
+    },
+    "global_identifier": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "number"
+    },
+    "expiration_notified_at": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "height": {
+      "type": "number"
+    },
+    "width": {
+      "type": "number"
+    },
+    "length": {
+      "type": "number"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "generate_barcode": {
+      "type": "boolean"
+    },
+    "generate_lot_code": {
+      "type": "boolean"
+    },
+    "generate_serial_number": {
+      "type": "boolean"
+    },
+    "custom_field_values": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "custom_field_id": {
+            "type": "number"
+          },
+          "inventory_id": {
+            "type": "number"
+          },
+          "active_stock_id": {
+            "type": "number"
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "created_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "updated_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "custom_field": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value_type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "created_at": {
+                "type": "string",
+                "minLength": 1
+              },
+              "updated_at": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name",
+              "value_type"
+            ]
+          }
+        },
+        "required": [
+          "custom_field_id",
+          "inventory_id",
+          "value",
+          "value_type"
+        ]
+      }
+    }
+  }
+}

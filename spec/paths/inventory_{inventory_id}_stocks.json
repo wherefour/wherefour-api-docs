@@ -1,0 +1,95 @@
+{
+  "post": {
+    "summary": "Add stock lot",
+    "operationId": "add_stock_lot",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/new_active_stock.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 35,
+                  "user_id": 6,
+                  "inventory_id": 4,
+                  "location_id": 1,
+                  "lot_code": "1234",
+                  "status": "active",
+                  "barcode": null,
+                  "details": "New stock",
+                  "note": "",
+                  "count": "100.0",
+                  "cost": "100.0",
+                  "vendor_id": 1,
+                  "expiration_date": "2025-11-05",
+                  "created_at": "2024-11-05T17:42:31.000Z",
+                  "updated_at": "2024-11-05T17:42:31.000Z",
+                  "base_count": "100.0",
+                  "rate": null,
+                  "purchase_id": null,
+                  "global_identifier": "18c63c87-fcac-40d3-b334-22ef41c85cf5",
+                  "organization_id": 1,
+                  "expiration_notified_at": null,
+                  "weight": null,
+                  "height": null,
+                  "width": null,
+                  "length": null,
+                  "serial_number": null,
+                  "generate_barcode": false,
+                  "generate_lot_code": false,
+                  "generate_serial_number": false,
+                  "custom_field_values": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "description": "Adds a new stock lot to the specified inventory item.",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../components/schemas/active_stock.json"
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "delivery_method_id": 1,
+                "location_id": 1,
+                "vendor_id": 1,
+                "lot_code": "1234",
+                "stock_description": "New stock",
+                "count": 100,
+                "cost": 100,
+                "cost_entered_is_total_cost": true,
+                "status": "active",
+                "expiration_date": "11/05/25",
+                "received_date": "11/05/2024 02:39 PM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "tags": [
+      "Inventory"
+    ]
+  },
+  "parameters": [
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "inventory_id",
+      "in": "path",
+      "required": true,
+      "description": "inventory item record ID"
+    }
+  ]
+}

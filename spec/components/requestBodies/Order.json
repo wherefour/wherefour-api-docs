@@ -1,0 +1,135 @@
+{
+  "content": {
+    "application/json": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "order_number": {
+            "type": "string"
+          },
+          "order_date": {
+            "type": "string"
+          },
+          "deliver_date": {
+            "type": "string"
+          },
+          "produce_date": {
+            "type": "string"
+          },
+          "po_number": {
+            "type": "string"
+          },
+          "payment_term_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "salesperson_id": {
+            "type": "string"
+          },
+          "payment_terms": {
+            "type": "string"
+          },
+          "delivery_method_id": {
+            "type": "number"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "subtotal": {
+            "type": "number"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "tax": {
+            "type": "number"
+          },
+          "shipping": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          },
+          "order_items_attributes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "inventory_id": {
+                  "type": "number"
+                },
+                "count": {
+                  "type": "number"
+                },
+                "unit_price": {
+                  "type": "number"
+                },
+                "override_unit_price": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "example": {
+          "order_number": "SO100",
+          "order_date": "2020-09-04",
+          "deliver_date": "2020-09-04",
+          "produce_date": "2020-09-04",
+          "po_number": "12345",
+          "status": "open",
+          "delivery_method_id": 1,
+          "subtotal": 100,
+          "discount": 0,
+          "tax": 0,
+          "shipping": 0,
+          "total": 0,
+          "order_items_attributes": [
+            {
+              "inventory_id": 4,
+              "count": 0,
+              "unit_price": 100,
+              "override_unit_price": 0
+            },
+            {
+              "inventory_id": 6,
+              "count": 0,
+              "unit_price": 0,
+              "override_unit_price": 0
+            }
+          ]
+        }
+      },
+      "example": {
+        "order_number": "SO100",
+        "order_date": "2020-09-04",
+        "deliver_date": "2020-09-04",
+        "produce_date": "2020-09-04",
+        "po_number": "12345",
+        "status": "open",
+        "delivery_method_id": 1,
+        "subtotal": 100,
+        "discount": 0,
+        "tax": 0,
+        "shipping": 0,
+        "total": 0,
+        "order_items_attributes": [
+          {
+            "inventory_id": 4,
+            "count": 0,
+            "unit_price": 100,
+            "override_unit_price": 0
+          },
+          {
+            "inventory_id": 6,
+            "count": 0,
+            "unit_price": 0,
+            "override_unit_price": 0
+          }
+        ]
+      }
+    }
+  }
+}

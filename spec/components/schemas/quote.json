@@ -1,0 +1,322 @@
+{
+  "type": "object",
+  "example": {
+    "id": 6,
+    "quote_date": "2020-09-04",
+    "expiration_date": "2020-09-04",
+    "status": "draft",
+    "subtotal": "100.0",
+    "discount": "0.0",
+    "tax": "0.0",
+    "shipping": "0.0",
+    "total": "0.0",
+    "quote_number": "SO100",
+    "created_at": "2020-09-12T16:13:45.549Z",
+    "updated_at": "2020-09-12T16:13:45.549Z",
+    "customer": {
+      "id": 1,
+      "first_name": "",
+      "last_name": "",
+      "display_name": "Embarcadero Market & Deli",
+      "email": "buyer@embarcaderodeli.com",
+      "phone": "415-555-6687",
+      "mobile": "",
+      "fax": "",
+      "website": "https://wherefour.com",
+      "kind": "retailer",
+      "created_at": "2020-09-11T13:57:46.742Z",
+      "updated_at": "2020-09-11T13:57:46.742Z",
+      "payment_terms": "Net 30",
+      "delivery_method": "Route: Embarcadero North",
+      "billing_address": {
+        "id": 1,
+        "line1": "1142 Main Street",
+        "line2": "Suite 100",
+        "city": "San Francisco",
+        "country_subdivision_code": "CA",
+        "postal_code": "94455",
+        "created_at": "2020-09-11T13:57:46.802Z",
+        "updated_at": "2020-09-11T13:57:46.802Z"
+      },
+      "shipping_address": {
+        "id": 2,
+        "line1": "415 S. Pine Street",
+        "line2": "Suite 210",
+        "line3": "Apt. G",
+        "city": "Petaluma",
+        "country_subdivision_code": "CA",
+        "postal_code": "94954",
+        "created_at": "2020-09-11T13:57:46.802Z",
+        "updated_at": "2020-09-11T13:57:46.802Z"
+      }
+    },
+    "delivery_method": {
+      "id": 1,
+      "name": "UPS Ground",
+      "kind": "shipping"
+    },
+    "quote_items": [
+      {
+        "id": 10,
+        "name": "Chocolate bar",
+        "inventory_id": 4,
+        "category_name": "Products",
+        "count": "0.0",
+        "cost": "0.0",
+        "sku": "SK0001",
+        "created_at": "2020-09-12T16:13:45.568Z",
+        "updated_at": "2020-09-12T16:13:45.568Z",
+        "inventory": {
+          "id": 4,
+          "name": "Chocolate bar",
+          "category_name": "Products",
+          "on_hand": "75.0",
+          "unit_of_use": "each",
+          "unit_of_purchase": "each",
+          "property": "finished_good",
+          "sku": "SK0001",
+          "created_at": "2020-09-11T13:57:46.825Z",
+          "updated_at": "2020-09-11T13:57:46.825Z"
+        }
+      },
+      {
+        "id": 11,
+        "name": "Chocolate bar, finished case",
+        "inventory_id": 6,
+        "category_name": "Products",
+        "count": "0.0",
+        "cost": "0.0",
+        "sku": "SK0002",
+        "created_at": "2020-09-12T16:13:45.574Z",
+        "updated_at": "2020-09-12T16:13:45.574Z",
+        "inventory": {
+          "id": 6,
+          "name": "Chocolate bar, finished case",
+          "category_name": "Products",
+          "on_hand": "40.0",
+          "unit_of_use": "case",
+          "unit_of_purchase": "case",
+          "property": "finished_good",
+          "sku": "SK0002",
+          "created_at": "2020-09-11T13:57:46.825Z",
+          "updated_at": "2020-09-11T13:57:46.825Z"
+        }
+      }
+    ]
+  },
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "quote_date": {
+      "type": "string"
+    },
+    "expiration_date": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "subtotal": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "string"
+    },
+    "tax": {
+      "type": "string"
+    },
+    "shipping": {
+      "type": "string"
+    },
+    "total": {
+      "type": "string"
+    },
+    "quote_number": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "customer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "custom_field_1": {
+          "type": "string"
+        },
+        "custom_field_2": {
+          "type": "string"
+        },
+        "custom_field_3": {
+          "type": "string"
+        },
+        "custom_field_4": {
+          "type": "string"
+        },
+        "business_license_number": {
+          "type": "string"
+        },
+        "payment_terms": {
+          "type": "string"
+        },
+        "salesperson": {
+          "type": "string"
+        },
+        "delivery_method": {
+          "type": "string"
+        },
+        "billing_address": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "line1": {
+              "type": "string"
+            },
+            "line2": {
+              "type": "string"
+            },
+            "line3": {
+              "type": "string"
+            },
+            "line4": {
+              "type": "string"
+            },
+            "line5": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "country_subdivision_code": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        },
+        "shipping_address": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "line1": {
+              "type": "string"
+            },
+            "line2": {
+              "type": "string"
+            },
+            "line3": {
+              "type": "string"
+            },
+            "line4": {
+              "type": "string"
+            },
+            "line5": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "country_subdivision_code": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "delivery_method": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        }
+      }
+    },
+    "salesperson": {
+      "type": "string"
+    },
+    "payment_term": {
+      "type": "string"
+    }
+  },
+  "title": "Quote"
+}

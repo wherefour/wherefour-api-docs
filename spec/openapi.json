@@ -1,0 +1,188 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Wherefour API",
+    "version": "1.0.18",
+    "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
+    "termsOfService": "https://my.wherefour.com/terms_of_service",
+    "contact": {
+      "email": "noreply@wherefour.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-logo": {
+      "url": ""
+    }
+  },
+  "servers": [
+    {
+      "url": "https://my.wherefour.com/api/v1",
+      "description": "Production base URL"
+    },
+    {
+      "url": "https://sandbox.wherefour.com/api/v1",
+      "description": "Sandbox base URL"
+    }
+  ],
+  "paths": {
+    "/categories": {
+      "$ref": "paths/categories.json"
+    },
+    "/inventory": {
+      "$ref": "paths/inventory.json"
+    },
+    "/inventory/{inventory_id}/stocks": {
+      "$ref": "paths/inventory_{inventory_id}_stocks.json"
+    },
+    "/inventory/last_adjustment": {
+      "$ref": "paths/inventory_last_adjustment.json"
+    },
+    "/inventory/search": {
+      "$ref": "paths/inventory_search.json"
+    },
+    "/customers": {
+      "$ref": "paths/customers.json"
+    },
+    "/customers/{customer_id}": {
+      "$ref": "paths/customers_{customer_id}.json"
+    },
+    "/customers/{customer_id}/orders": {
+      "$ref": "paths/customers_{customer_id}_orders.json"
+    },
+    "/customers/{customer_id}/invoices": {
+      "$ref": "paths/customers_{customer_id}_invoices.json"
+    },
+    "/customers/{customer_id}/orders/{order_id}": {
+      "$ref": "paths/customers_{customer_id}_orders_{order_id}.json"
+    },
+    "/customers/{customer_id}/orders/{order_id}/last_shipment": {
+      "$ref": "paths/customers_{customer_id}_orders_{order_id}_last_shipment.json"
+    },
+    "/customers/kinds": {
+      "$ref": "paths/customers_kinds.json"
+    },
+    "/customers/{customer_id}/orders/{order_id}/shipments": {
+      "$ref": "paths/customers_{customer_id}_orders_{order_id}_shipments.json"
+    },
+    "/customers/{customer_id}/invoices/{invoice_id}": {
+      "$ref": "paths/customers_{customer_id}_invoices_{invoice_id}.json"
+    },
+    "/customers/{customer_id}/quotes": {
+      "$ref": "paths/customers_{customer_id}_quotes.json"
+    },
+    "/customers/{customer_id}/orders/auto_ship": {
+      "$ref": "paths/customers_{customer_id}_orders_auto_ship.json"
+    },
+    "/customers/{customer_id}/quotes/{quote_id}": {
+      "$ref": "paths/customers_{customer_id}_quotes_{quote_id}.json"
+    },
+    "/customers/search": {
+      "$ref": "paths/customers_search.json"
+    },
+    "/orders": {
+      "$ref": "paths/orders.json"
+    },
+    "/orders/{order_id}": {
+      "$ref": "paths/orders_{order_id}.json"
+    },
+    "/orders/search": {
+      "$ref": "paths/orders_search.json"
+    },
+    "/invoices": {
+      "$ref": "paths/invoices.json"
+    },
+    "/invoices/{invoice_id}": {
+      "$ref": "paths/invoices_{invoice_id}.json"
+    },
+    "/invoices/search": {
+      "$ref": "paths/invoices_search.json"
+    },
+    "/quotes/{quote_id}": {
+      "$ref": "paths/quotes_{quote_id}.json"
+    },
+    "/quotes/search": {
+      "$ref": "paths/quotes_search.json"
+    },
+    "/quotes": {
+      "$ref": "paths/quotes.json"
+    },
+    "/shipments": {
+      "$ref": "paths/shipments.json"
+    },
+    "/shipments/search": {
+      "$ref": "paths/shipments_search.json"
+    },
+    "/purchases": {
+      "$ref": "paths/purchases.json"
+    },
+    "/purchases/search": {
+      "$ref": "paths/purchases_search.json"
+    },
+    "/vendors": {
+      "$ref": "paths/vendors.json"
+    },
+    "/vendors/{vendor_id}": {
+      "$ref": "paths/vendors_{vendor_id}.json"
+    },
+    "/vendors/search": {
+      "$ref": "paths/vendors_search.json"
+    },
+    "/settings/delivery_methods": {
+      "$ref": "paths/settings_delivery_methods.json"
+    },
+    "/reports/activities": {
+      "$ref": "paths/reports_activities.json"
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BasicAuth": {
+        "scheme": "Basic",
+        "type": "http",
+        "description": "Example: \n> Authorization: Basic ZGVtbzpwQDU1dzByZA =="
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Categories"
+    },
+    {
+      "name": "Inventory"
+    },
+    {
+      "name": "Invoices"
+    },
+    {
+      "name": "Orders"
+    },
+    {
+      "name": "Quotes"
+    },
+    {
+      "name": "Shipments"
+    },
+    {
+      "name": "Purchases"
+    },
+    {
+      "name": "Customers"
+    },
+    {
+      "name": "Vendors"
+    },
+    {
+      "name": "Reports"
+    },
+    {
+      "name": "Settings"
+    }
+  ],
+  "security": [
+    {
+      "BasicAuth": []
+    }
+  ]
+}

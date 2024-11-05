@@ -1,0 +1,28 @@
+{
+  "get": {
+    "summary": "List customer kinds",
+    "tags": [
+      "Customers"
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "examples": {
+              "Example": {
+                "value": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "get_customer_kinds",
+    "description": "Returns of list of customer types."
+  }
+}

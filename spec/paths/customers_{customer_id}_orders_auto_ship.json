@@ -1,0 +1,155 @@
+{
+  "summary": "Auto ship an order",
+  "description": "Performs a \"pick and ship\" for the specified order. Wherefour will auto-select available lot coded inventory, based on each inventory items pull strategy, to fulfill the order. If not enough inventory is available, a partial shipment will be created. Results of the shipment, with the selected stock lots, will be returned.",
+  "post": {
+    "tags": [
+      "Orders"
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "description": "Name of the Wherefour delivery method to use for the shipment. Name lookup will use the closest found match for the name provided or \"null\" for no match.",
+            "properties": {
+              "delivery_method": {
+                "type": "string"
+              },
+              "location_name": {
+                "type": "string",
+                "description": "Name of the Wherefour location to pull stock from. If not provided, auto ship will pull available stock lots from any location. Name lookup will use the closest found match for the name provided or \"null\" for no match."
+              },
+              "tracking_number": {
+                "type": "string",
+                "description": "Tracking number to record for the shipment."
+              },
+              "ship_date": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "delivery_method"
+            ]
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "tracking_number": "123456",
+                "delivery_method": "UPS Ground",
+                "location_name": "North Warehouse"
+              }
+            }
+          }
+        },
+        "application/xml": {
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "multipart/form-data": {
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "text/html": {
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "description": ""
+    },
+    "description": "Performs a \"pick and ship\" for the specified order. Wherefour will auto-select available lot coded inventory, based on each inventory item's pull strategy, to fulfill the order. If the location is specified, only inventory at that location will be considered. If not enough inventory is available, a partial shipment will be created. Results of the shipment, with the selected stock lots, will be returned.\n\nThe optional ship_date param can be used to specify the timestamp of the shipment. Date/time should be in the format \"2021-02-02 12:00 AM\" and in the same time zone as the user's Wherefour settings.",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/order.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 2,
+                  "order_id": 14,
+                  "user_name": "Tony Fiorello",
+                  "ship_date": "2020-09-12T18:26:00.000Z",
+                  "shipment_number": 1,
+                  "tracking_number": null,
+                  "note": null,
+                  "created_at": "2020-09-12T18:26:02.037Z",
+                  "updated_at": "2020-09-12T18:26:02.037Z",
+                  "delivery_method": {
+                    "id": 1,
+                    "name": "UPS Ground",
+                    "kind": "shipping",
+                    "instructions": ""
+                  },
+                  "order": {
+                    "id": 14,
+                    "order_date": "2020-09-04",
+                    "produce_date": "2020-09-04",
+                    "deliver_date": "2020-09-04",
+                    "po_number": "12345",
+                    "status": "open",
+                    "salesperson_id": null,
+                    "salesperson_name": null,
+                    "delivery_method_id": 1,
+                    "instructions": "\nShipment #1: 09/12/20\n10.0 Each - Chocolate bar (lot code: 1234)\n",
+                    "subtotal": "100.0",
+                    "discount": "0.0",
+                    "tax": "0.0",
+                    "shipping": "0.0",
+                    "total": "0.0",
+                    "order_number": "SO100",
+                    "payment_term_id": null,
+                    "created_at": "2020-09-12T18:25:54.054Z",
+                    "updated_at": "2020-09-12T18:26:02.139Z",
+                    "invoiced_at": null
+                  },
+                  "shipment_items": [
+                    {
+                      "id": 3,
+                      "count": "10.0",
+                      "inventory_name": "Chocolate bar",
+                      "inventory_sku": "SK0001",
+                      "auto_ship": [
+                        {
+                          "adjustment_id": 43,
+                          "stock_id": 39,
+                          "lot_code": "1234",
+                          "barcode": null,
+                          "count": "10.0",
+                          "change": "-10.0",
+                          "reason": "shipment"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": "Auto Pick and Ship",
+    "operationId": "auto_pick_and_ship",
+    "parameters": []
+  },
+  "parameters": [
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "customer_id",
+      "in": "path",
+      "required": true,
+      "description": "customer record ID"
+    }
+  ]
+}

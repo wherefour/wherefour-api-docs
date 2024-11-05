@@ -1,0 +1,72 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "delivery_method_id": {
+      "type": "number"
+    },
+    "location_id": {
+      "type": "number"
+    },
+    "vendor_id": {
+      "type": "number"
+    },
+    "vendor_reference": {
+      "type": "string"
+    },
+    "count": {
+      "type": "number"
+    },
+    "lot_code": {
+      "type": "string",
+      "description": "required if automatic sequencing is not enabled or generate_lot_code is false"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "expiration_date": {
+      "type": "string",
+      "description": "must be in the preferred date format of the API user"
+    },
+    "received_date": {
+      "type": "string",
+      "description": "must be in the preferred date time format of the API user"
+    },
+    "generate_lot_code": {
+      "type": "boolean"
+    },
+    "generate_barcode": {
+      "type": "boolean"
+    },
+    "generate_serial_number": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "number"
+    },
+    "cost_entered_is_total_code": {
+      "type": "boolean",
+      "description": "if cost_entered_is_total_code is false, the cost will be treated as a per unit cost"
+    },
+    "stock_description": {
+      "type": "string"
+    },
+    "vendor_item_number": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "inactive", "on_hold", "quarantined"]
+    }
+  },
+  "required": [
+    "delivery_method_id",
+    "count",
+    "received_date",
+    "lot_code",
+    "cost"
+  ]
+}

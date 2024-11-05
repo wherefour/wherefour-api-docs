@@ -1,0 +1,25 @@
+{
+  "content": {
+    "application/json": {
+      "schema": {
+        "type": "object",
+        "example": {
+          "tracking_number": "123456",
+          "delivery_method": "UPS Ground"
+        },
+        "properties": {
+          "tracking_number": {
+            "type": "string"
+          },
+          "delivery_method": {
+            "type": "string"
+          }
+        }
+      },
+      "example": {
+        "tracking_number": "123456",
+        "delivery_method": "UPS Ground"
+      }
+    }
+  }
+}

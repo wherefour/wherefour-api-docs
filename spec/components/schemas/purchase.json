@@ -1,0 +1,467 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "purchase_date": {
+      "type": "string"
+    },
+    "purchase_number": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "deliver_by_date": {
+      "type": "string"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "subtotal": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "string"
+    },
+    "tax": {
+      "type": "string"
+    },
+    "shipping": {
+      "type": "string"
+    },
+    "total": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "vendor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "custom_field_1": {
+          "type": "string"
+        },
+        "custom_field_2": {
+          "type": "string"
+        },
+        "custom_field_3": {
+          "type": "string"
+        },
+        "custom_field_4": {
+          "type": "string"
+        },
+        "business_license_number": {
+          "type": "string"
+        },
+        "billing_address": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "line1": {
+              "type": "string"
+            },
+            "line2": {
+              "type": "string"
+            },
+            "line3": {
+              "type": "string"
+            },
+            "line4": {
+              "type": "string"
+            },
+            "line5": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "country_subdivision_code": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        },
+        "shipping_address": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "line1": {
+              "type": "string"
+            },
+            "line2": {
+              "type": "string"
+            },
+            "line3": {
+              "type": "string"
+            },
+            "line4": {
+              "type": "string"
+            },
+            "line5": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "country_subdivision_code": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "deliver_to_address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "line3": {
+          "type": "string"
+        },
+        "line4": {
+          "type": "string"
+        },
+        "line5": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country_subdivision_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "ship_to_address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "line3": {
+          "type": "string"
+        },
+        "line4": {
+          "type": "string"
+        },
+        "line5": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country_subdivision_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "delivery_method": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        }
+      }
+    },
+    "payment_term": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "net": {
+          "type": "number"
+        }
+      }
+    },
+    "purchase_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category_name": {
+            "type": "string"
+          },
+          "count": {
+            "type": "string"
+          },
+          "cost": {
+            "type": "string"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "inventory": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              },
+              "category_name": {
+                "type": "string"
+              },
+              "on_hand": {
+                "type": "string"
+              },
+              "unit_of_use": {
+                "type": "string"
+              },
+              "unit_of_purchase": {
+                "type": "string"
+              },
+              "property": {
+                "type": "string"
+              },
+              "sku": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "example": {
+    "id": 1,
+    "purchase_date": "2024-02-21",
+    "purchase_number": "PO1",
+    "status": "draft",
+    "deliver_by_date": "",
+    "instructions": "",
+    "subtotal": "424.4875",
+    "discount": "",
+    "tax": "",
+    "shipping": "",
+    "total": "455.71",
+    "created_at": "2024-02-21T18:36:22.516Z",
+    "updated_at": "2024-02-21T18:36:22.516Z",
+    "facility_address": "",
+    "bill_to_address": {
+      "id": 4,
+      "type": "OrganizationAddress",
+      "descriptive_name": "Main Address",
+      "line1": "1390 N. McDowell Blvd.",
+      "line2": "Suite G133",
+      "line3": "",
+      "line4": "",
+      "line5": "",
+      "city": "Petaluma",
+      "country_subdivision_code": "CA",
+      "postal_code": "94954",
+      "country": "USA",
+      "created_at": "2024-02-21T18:36:22.094Z",
+      "updated_at": "2024-02-21T18:36:22.094Z"
+    },
+    "deliver_to_address": {
+      "id": 4,
+      "type": "OrganizationAddress",
+      "descriptive_name": "Main Address",
+      "line1": "1390 N. McDowell Blvd.",
+      "line2": "Suite G133",
+      "line3": "",
+      "line4": "",
+      "line5": "",
+      "city": "Petaluma",
+      "country_subdivision_code": "CA",
+      "postal_code": "94954",
+      "country": "USA",
+      "created_at": "2024-02-21T18:36:22.094Z",
+      "updated_at": "2024-02-21T18:36:22.094Z"
+    },
+    "vendor": {
+      "id": 1,
+      "first_name": "Joe",
+      "last_name": "Sample",
+      "display_name": "Pacific Supply Co.",
+      "email": "jsample@pacificfoods.com",
+      "phone": "415-555-6758",
+      "mobile": "",
+      "fax": "",
+      "website": "https://wherefour.com",
+      "note": "",
+      "kind": "distributor",
+      "created_at": "2024-02-21T18:36:22.638Z",
+      "updated_at": "2024-02-21T18:36:22.638Z",
+      "custom_field_1": "",
+      "custom_field_2": "",
+      "custom_field_3": "",
+      "custom_field_4": "",
+      "business_license_number": ""
+    },
+    "delivery_method": {
+      "id": 3,
+      "name": "Pickup",
+      "kind": "shipping",
+      "instructions": "These are some delivery instructions"
+    },
+    "payment_term": {
+      "id": 3,
+      "name": "Net 15",
+      "net": 15
+    },
+    "purchase_items": [
+      {
+        "id": 1,
+        "name": "Case box",
+        "category_name": "Packaging",
+        "count": "1000.0",
+        "cost": "0.25",
+        "sku": "CSECSECSECSE",
+        "created_at": "2024-02-21T18:36:22.513Z",
+        "updated_at": "2024-02-21T18:36:22.513Z"
+      },
+      {
+        "id": 2,
+        "name": "Raw material A",
+        "category_name": "Ingredients",
+        "count": "58.75",
+        "cost": "2.97",
+        "sku": "AAAAAAAAAAA",
+        "created_at": "2024-02-21T18:36:22.513Z",
+        "updated_at": "2024-02-21T18:36:22.513Z"
+      }
+    ]
+  },
+  "title": "Purchase"
+}

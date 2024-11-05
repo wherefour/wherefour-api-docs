@@ -1,0 +1,82 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category_id": {
+      "type": "number"
+    },
+    "unit_of_use": {
+      "type": "string"
+    },
+    "unit_of_purchase": {
+      "type": "string"
+    },
+    "unit_of_order": {
+      "type": "string"
+    },
+    "unit_of_invoice": {
+      "type": "string"
+    },
+    "unit_of_pick_and_ship": {
+      "type": "string"
+    },
+    "unit_of_weight": {
+      "type": "string"
+    },
+    "unit_of_dimension": {
+      "type": "string"
+    },
+    "purchase_conversion": {
+      "type": "number"
+    },
+    "property": {
+      "type": "string",
+      "enum": ["raw_material", "overhead", "work_in_progress", "finished_good"]
+    },
+    "sku": {
+      "type": "string"
+    },
+    "upc": {
+      "type": "string"
+    },
+    "pull_strategy": {
+      "type": "string",
+      "enum": ["FIFO", "Hand Pick", "FEFO", "LIFO"]
+    },
+    "reorder_point": {
+      "type": "number"
+    },
+    "rate": {
+      "type": "number"
+    },
+    "lead_time": {
+      "type": "number"
+    },
+    "retired": {
+      "type": "boolean"
+    },
+    "waste_percentage": {
+      "type": "number"
+    },
+    "quantity_not_tracked": {
+      "type": "boolean"
+    },
+    "standard_cost": {
+      "type": "number"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "height": {
+      "type": "number"
+    },
+    "width": {
+      "type": "number"
+    },
+    "length": {
+      "type": "number"
+    }
+  }
+}

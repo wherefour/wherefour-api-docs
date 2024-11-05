@@ -1,0 +1,100 @@
+{
+  "get": {
+    "summary": "Get last stock lot change",
+    "tags": [
+      "Inventory"
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "user_id": 1,
+                  "user_first_name": "Tony",
+                  "user_last_name": "Fiorello",
+                  "reason": "purchase",
+                  "lot_code": "WM001",
+                  "old_lot_code": "WM001",
+                  "barcode": "WM-000001-18",
+                  "old_barcode": "WM-000001-18",
+                  "details": "Whole milk",
+                  "rate": null,
+                  "cost": "200.0",
+                  "count": "100.0",
+                  "change": "100.0",
+                  "absolute_change": "100.0",
+                  "note": "buy lot 1",
+                  "work_order": null,
+                  "expiration_date": "2020-05-31",
+                  "created_at": "2020-09-11T13:57:47.026Z",
+                  "updated_at": "2020-09-11T13:57:47.026Z",
+                  "stock": {
+                    "id": 1,
+                    "name": "Whole milk",
+                    "lot_code": "WM001",
+                    "status": "active",
+                    "barcode": "WM-000001-18",
+                    "details": "Whole milk",
+                    "note": "buy lot WM001",
+                    "count": "100.0",
+                    "cost": "200.0",
+                    "expiration_date": "2020-10-11",
+                    "created_at": "2020-09-11T13:57:47.058Z",
+                    "updated_at": "2020-09-11T13:57:47.058Z",
+                    "inventory": {
+                      "id": 1,
+                      "name": "Whole milk",
+                      "category_name": "Ingredients",
+                      "on_hand": "1410.0",
+                      "unit_of_use": "gallon",
+                      "unit_of_purchase": "gallon",
+                      "property": "raw_material",
+                      "sku": null,
+                      "created_at": "2020-09-11T13:57:46.825Z",
+                      "updated_at": "2020-09-11T13:57:46.825Z"
+                    },
+                    "location": {
+                      "id": 1,
+                      "name": "North Warehouse"
+                    },
+                    "vendor": {
+                      "id": 1,
+                      "first_name": "Joe",
+                      "last_name": "Sample",
+                      "display_name": "Pacific Foods Co.",
+                      "email": "jsample@pacificfoods.com",
+                      "phone": "415-555-6758",
+                      "mobile": null,
+                      "fax": null,
+                      "website": "https://wherefour.com",
+                      "note": null,
+                      "kind": "distributor",
+                      "created_at": "2020-09-11T13:57:47.005Z",
+                      "updated_at": "2020-09-11T13:57:47.005Z",
+                      "custom_field_1": null,
+                      "custom_field_2": null,
+                      "custom_field_3": null,
+                      "custom_field_4": null,
+                      "business_license_number": null
+                    },
+                    "purchase": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "get_last_stock_lot_change",
+    "description": "Gets the last stock lot change for the specified inventory item."
+  }
+}

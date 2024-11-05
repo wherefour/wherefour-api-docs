@@ -1,0 +1,183 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "order_id": {
+      "type": "number"
+    },
+    "customer_id": {
+      "type": "number"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "ship_date": {
+      "type": "string"
+    },
+    "shipment_number": {
+      "type": "number"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "shipment_address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "line3": {
+          "type": "string"
+        },
+        "line4": {
+          "type": "string"
+        },
+        "line5": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country_subdivision_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "shipment_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "count": {
+            "type": "string"
+          },
+          "inventory_name": {
+            "type": "string"
+          },
+          "inventory_sku": {
+            "type": "string"
+          },
+          "auto_ship": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "adjustment_id": {
+                  "type": "number"
+                },
+                "stock_id": {
+                  "type": "number"
+                },
+                "lot_code": {
+                  "type": "string"
+                },
+                "barcode": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "string"
+                },
+                "change": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "example": {
+    "id": 1,
+    "order_id": 2,
+    "customer_id": 1,
+    "user_name": "Tony Fiorello",
+    "ship_date": "2020-09-12T16:48:00.000Z",
+    "shipment_number": 1,
+    "created_at": "2020-09-12T16:48:13.512Z",
+    "updated_at": "2020-09-12T16:48:13.512Z",
+    "shipment_address": {
+      "id": 2,
+      "line1": "415 S. Pine Street",
+      "line2": "Suite 210",
+      "line3": "Apt. G",
+      "city": "Petaluma",
+      "country_subdivision_code": "CA",
+      "postal_code": "94954",
+      "created_at": "2020-09-11T13:57:46.802Z",
+      "updated_at": "2020-09-11T13:57:46.802Z"
+    },
+    "shipment_items": [
+      {
+        "id": 1,
+        "count": "10.0",
+        "inventory_name": "Chocolate bar",
+        "inventory_sku": "SK0001",
+        "auto_ship": [
+          {
+            "adjustment_id": 25,
+            "stock_id": 13,
+            "lot_code": "SC-00000",
+            "barcode": "CH-000001-18",
+            "count": "10.0",
+            "change": "-10.0",
+            "reason": "shipment"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "count": "40.0",
+        "inventory_name": "Chocolate bar, finished case",
+        "inventory_sku": "SK0002",
+        "auto_ship": [
+          {
+            "adjustment_id": 26,
+            "stock_id": 14,
+            "lot_code": "SCC-0000",
+            "barcode": "CHCA-000001-18",
+            "count": "40.0",
+            "change": "-40.0",
+            "reason": "shipment"
+          }
+        ]
+      }
+    ]
+  },
+  "title": "Shipment"
+}

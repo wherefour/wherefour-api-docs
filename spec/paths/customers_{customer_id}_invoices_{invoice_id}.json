@@ -1,0 +1,128 @@
+{
+  "summary": "Update invoice",
+  "description": "Updates an existing invoice",
+  "parameters": [
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "invoice_id",
+      "in": "path",
+      "required": true,
+      "description": "invoice record ID"
+    },
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "customer_id",
+      "in": "path",
+      "required": true,
+      "description": "customer record ID"
+    }
+  ],
+  "patch": {
+    "summary": "Update invoice",
+    "operationId": "update_invoice",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/invoice.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 6,
+                  "invoice_date": "2020-09-04",
+                  "status": "draft",
+                  "subtotal": "100.0",
+                  "discount": "0.0",
+                  "tax": "0.0",
+                  "shipping": "0.0",
+                  "total": "0.0",
+                  "invoice_number": "INV100",
+                  "created_at": "2020-09-12T16:13:45.549Z",
+                  "updated_at": "2020-09-12T16:13:45.549Z",
+                  "customer": {
+                    "id": 1,
+                    "first_name": "",
+                    "last_name": "",
+                    "display_name": "Embarcadero Market & Deli",
+                    "email": "buyer@embarcaderodeli.com",
+                    "phone": "415-555-6687",
+                    "mobile": "",
+                    "fax": "",
+                    "website": "https://wherefour.com",
+                    "kind": "retailer",
+                    "created_at": "2020-09-11T13:57:46.742Z",
+                    "updated_at": "2020-09-11T13:57:46.742Z",
+                    "payment_terms": "Net 30",
+                    "delivery_method": "Route: Embarcadero North",
+                    "billing_address": {
+                      "id": 1,
+                      "line1": "1142 Main Street",
+                      "line2": "Suite 100",
+                      "city": "San Francisco",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94455",
+                      "created_at": "2020-09-11T13:57:46.802Z",
+                      "updated_at": "2020-09-11T13:57:46.802Z"
+                    },
+                    "shipping_address": {
+                      "id": 2,
+                      "line1": "415 S. Pine Street",
+                      "line2": "Suite 210",
+                      "line3": "Apt. G",
+                      "city": "Petaluma",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94954",
+                      "created_at": "2020-09-11T13:57:46.802Z",
+                      "updated_at": "2020-09-11T13:57:46.802Z"
+                    }
+                  },
+                  "delivery_method": {
+                    "id": 1,
+                    "name": "UPS Ground",
+                    "kind": "shipping"
+                  },
+                  "invoice_items": [
+                    {
+                      "id": 10,
+                      "name": "Chocolate bar",
+                      "inventory_id": 4,
+                      "category_name": "Products",
+                      "count": "0.0",
+                      "cost": "0.0",
+                      "sku": "SK0001",
+                      "created_at": "2020-09-12T16:13:45.568Z",
+                      "updated_at": "2020-09-12T16:13:45.568Z",
+                      "inventory": {
+                        "id": 4,
+                        "name": "Chocolate bar",
+                        "category_name": "Products",
+                        "on_hand": "75.0",
+                        "unit_of_use": "each",
+                        "unit_of_purchase": "each",
+                        "property": "finished_good",
+                        "sku": "SK0001",
+                        "created_at": "2020-09-11T13:57:46.825Z",
+                        "updated_at": "2020-09-11T13:57:46.825Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "description": "Updates an existing invoice",
+    "tags": [
+      "Invoices"
+    ]
+  }
+}

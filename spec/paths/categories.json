@@ -1,0 +1,78 @@
+{
+  "get": {
+    "summary": "List categories",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/category.json"
+            },
+            "examples": {
+              "Example": {
+                "value": [
+                  {
+                    "id": 1,
+                    "name": "Ingredients"
+                  },
+                  {
+                    "id": 5,
+                    "name": "Labor"
+                  },
+                  {
+                    "id": 2,
+                    "name": "Packaging"
+                  },
+                  {
+                    "id": 8,
+                    "name": "Parts"
+                  },
+                  {
+                    "id": 3,
+                    "name": "Products"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "get_categories",
+    "description": "Returns a list of inventory categories, ordered by name.",
+    "tags": [
+      "Categories"
+    ]
+  }
+}

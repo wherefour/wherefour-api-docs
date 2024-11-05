@@ -1,0 +1,113 @@
+{
+  "get": {
+    "summary": "List shipments",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "tags": [
+      "Shipments"
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/shipment.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "order_id": 2,
+                  "customer_id": 1,
+                  "user_name": "Tony Fiorello",
+                  "ship_date": "2020-09-12T16:48:00.000Z",
+                  "shipment_number": 1,
+                  "created_at": "2020-09-12T16:48:13.512Z",
+                  "updated_at": "2020-09-12T16:48:13.512Z",
+                  "shipment_address": {
+                    "id": 2,
+                    "line1": "415 S. Pine Street",
+                    "line2": "Suite 210",
+                    "line3": "Apt. G",
+                    "city": "Petaluma",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94954",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  },
+                  "shipment_items": [
+                    {
+                      "id": 1,
+                      "count": "10.0",
+                      "inventory_name": "Chocolate bar",
+                      "inventory_sku": "SK0001",
+                      "auto_ship": [
+                        {
+                          "adjustment_id": 25,
+                          "stock_id": 13,
+                          "lot_code": "SC-00000",
+                          "barcode": "CH-000001-18",
+                          "count": "10.0",
+                          "change": "-10.0",
+                          "reason": "shipment"
+                        }
+                      ]
+                    },
+                    {
+                      "id": 2,
+                      "count": "40.0",
+                      "inventory_name": "Chocolate bar, finished case",
+                      "inventory_sku": "SK0002",
+                      "auto_ship": [
+                        {
+                          "adjustment_id": 26,
+                          "stock_id": 14,
+                          "lot_code": "SCC-0000",
+                          "barcode": "CHCA-000001-18",
+                          "count": "40.0",
+                          "change": "-40.0",
+                          "reason": "shipment"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "get_shipments",
+    "description": "Returns a paginated list of all shipments."
+  }
+}

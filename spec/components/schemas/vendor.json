@@ -1,0 +1,214 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "fax": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "custom_field_1": {
+      "type": "string"
+    },
+    "custom_field_2": {
+      "type": "string"
+    },
+    "custom_field_3": {
+      "type": "string"
+    },
+    "custom_field_4": {
+      "type": "string"
+    },
+    "business_license_number": {
+      "type": "string"
+    },
+    "billing_address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "line3": {
+          "type": "string"
+        },
+        "line4": {
+          "type": "string"
+        },
+        "line5": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country_subdivision_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "shipping_address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "line3": {
+          "type": "string"
+        },
+        "line4": {
+          "type": "string"
+        },
+        "line5": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country_subdivision_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "payment_term": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "net": {
+          "type": "number"
+        }
+      }
+    },
+    "delivery_method": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "example": {
+    "id": 1,
+    "first_name": "Joe",
+    "last_name": "Sample",
+    "display_name": "Pacific Foods Co.",
+    "email": "jsample@pacificfoods.com",
+    "phone": "415-555-6758",
+    "website": "https://wherefour.com",
+    "kind": "distributor",
+    "created_at": "2020-09-11T13:57:47.005Z",
+    "updated_at": "2020-09-11T13:57:47.005Z",
+    "billing_address": {
+      "id": 39,
+      "line1": "144 S. Broadway",
+      "city": "San Francisco",
+      "country_subdivision_code": "CA",
+      "postal_code": "95440",
+      "country": "USA",
+      "created_at": "2020-09-11T13:57:46.802Z",
+      "updated_at": "2020-09-11T13:57:46.802Z"
+    },
+    "shipping_address": {
+      "id": 40,
+      "line1": "144 S. Broadway",
+      "city": "San Francisco",
+      "country_subdivision_code": "CA",
+      "country": "USA",
+      "created_at": "2020-09-11T13:57:46.802Z",
+      "updated_at": "2020-09-11T13:57:46.802Z"
+    },
+    "payment_term": {
+      "id": 3,
+      "name": "Net 15",
+      "net": 15
+    },
+    "delivery_method": {
+      "id": 3,
+      "name": "Pickup",
+      "kind": "shipping"
+    }
+  },
+  "title": "Vendor"
+}

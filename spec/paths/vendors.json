@@ -1,0 +1,85 @@
+{
+  "get": {
+    "summary": "List Vendors",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "updated_at",
+        "description": "Oldest date/time for the records to return",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "tags": [
+      "Vendors"
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/vendor.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "first_name": "Joe",
+                  "last_name": "Sample",
+                  "display_name": "Pacific Foods Co.",
+                  "email": "jsample@pacificfoods.com",
+                  "phone": "415-555-6758",
+                  "website": "https://wherefour.com",
+                  "kind": "distributor",
+                  "created_at": "2020-09-11T13:57:47.005Z",
+                  "updated_at": "2020-09-11T13:57:47.005Z",
+                  "billing_address": {
+                    "id": 39,
+                    "line1": "144 S. Broadway",
+                    "city": "San Francisco",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "95440",
+                    "country": "USA",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  },
+                  "shipping_address": {
+                    "id": 40,
+                    "line1": "144 S. Broadway",
+                    "city": "San Francisco",
+                    "country_subdivision_code": "CA",
+                    "country": "USA",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  },
+                  "payment_term": {
+                    "id": 3,
+                    "name": "Net 15",
+                    "net": 15
+                  },
+                  "delivery_method": {
+                    "id": 3,
+                    "name": "Pickup",
+                    "kind": "shipping"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "list_vendors",
+    "description": "Returns a paginated list of vendors"
+  }
+}

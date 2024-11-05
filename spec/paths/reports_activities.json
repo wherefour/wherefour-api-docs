@@ -1,0 +1,206 @@
+{
+  "post": {
+    "summary": "Get inventory adjustment activity for a date range",
+    "description": "Lists inventory adjustment activity for a date range. The IDs of records returned are for the adjustment record.",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "start_date_time",
+        "description": "Start date/time for the oldest adjustment record to return, based on the adjustment's effective_at timestamp",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "name": "end_date_time",
+        "description": "End date/time for the newest adjustment record to return, based on the adjustment's effective_at timestamp",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "name": "activity_types",
+        "description": "Restrict records to the provided adjustment activity types",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "category_ids",
+        "description": "Restrict records to inventory and stock lot that belong to the provided category IDs",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "customer_ids",
+        "description": "Restrict records to activity associated with specific customer IDs",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "inventory_ids",
+        "description": "Restrict records to the provided inventory IDs",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "location_ids",
+        "description": "Restrict records to the provided location IDs",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "statuses",
+        "description": "Restrict records to stock lots with the provided statuses",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "user_ids",
+        "description": "Restrict records to adjustments made by the provided used IDs",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "vendor_ids",
+        "description": "Restrict records to activity associated with specific vendor IDs",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "lot_code",
+        "description": "Restrict records to adjustments made only to stock lots with the provided lot code",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "barcode",
+        "description": "Restrict records to adjustments made only to stock lots with the provided barcode",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "serial_number",
+        "description": "Restrict records to adjustments made only to stock lots with the provided serial number",
+        "schema": {
+          "type": "array"
+        }
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "tags": [
+      "Reports"
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 31,
+                  "organization_id": 1,
+                  "organization_name": "ABC Product Co.",
+                  "created_at": "2024-02-24T22:25:04.623Z",
+                  "effective_at": "2024-02-24T22:25:05.840Z",
+                  "category_name": "Ingredients",
+                  "inventory": "Raw material A",
+                  "inventory_id": 1,
+                  "property": "raw_material",
+                  "sku": "AAAAAAAAAAA",
+                  "unit_of_use": "gallon",
+                  "unit_of_purchase": "gallon",
+                  "purchase_conversion": "1.0",
+                  "lot_code": "BCCD001",
+                  "barcode": "BCCD-000001",
+                  "serial_number": null,
+                  "active_stock_id": 30,
+                  "order_id": null,
+                  "order_number": null,
+                  "customer_id": null,
+                  "customer_display_name": null,
+                  "wo_number": null,
+                  "work_order_id": null,
+                  "vendor": "Pacific Supply Co.",
+                  "purchase_number": null,
+                  "purchase_id": null,
+                  "reason": "purchase",
+                  "change": "100.0",
+                  "purchase_change": "100.0",
+                  "cost_per_unit": "2.0",
+                  "cost_applied": "200.0",
+                  "old_location": "North Warehouse",
+                  "location": "North Warehouse",
+                  "transfer_request_number": null,
+                  "note": "buy lot 1",
+                  "system_note": null,
+                  "backdated": null,
+                  "superseded": null,
+                  "user": "Tony Fiorello",
+                  "global_identifier": "e3d1e35d-7f89-4468-80de-e90469185003",
+                  "custom_fields": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "activity_report"
+  }
+}

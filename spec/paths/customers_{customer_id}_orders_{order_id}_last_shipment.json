@@ -1,0 +1,126 @@
+{
+  "summary": "Get the last shipment for an order",
+  "description": "Returns the most recent shipment information for the order ID provided.",
+  "get": {
+    "tags": [
+      "Orders"
+    ],
+    "summary": "Get Last Shipment",
+    "description": "Returns the most recent shipment information for the order ID provided.",
+    "parameters": [],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/order.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "order_id": 2,
+                  "user_name": "Tony Fiorello",
+                  "ship_date": "2020-09-12T16:48:00.000Z",
+                  "shipment_number": 1,
+                  "tracking_number": null,
+                  "note": null,
+                  "created_at": "2020-09-12T16:48:13.512Z",
+                  "updated_at": "2020-09-12T16:48:13.512Z",
+                  "delivery_method": {
+                    "id": 1,
+                    "name": "UPS Ground",
+                    "kind": "shipping",
+                    "instructions": ""
+                  },
+                  "order": {
+                    "id": 2,
+                    "order_date": "2020-09-10",
+                    "produce_date": "2020-09-11",
+                    "deliver_date": "2020-09-11",
+                    "po_number": "123456-55",
+                    "status": "invoiced",
+                    "salesperson_id": null,
+                    "salesperson_name": null,
+                    "delivery_method_id": 1,
+                    "instructions": "\nShipment #1: 09/12/20\n10.0 Each - Chocolate bar (lot code: SC-00000)\n40.0 Cases - Chocolate bar, finished case (lot code: SCC-0000)\n",
+                    "subtotal": "1400.0",
+                    "discount": "0.00",
+                    "tax": "0.00",
+                    "shipping": "0.00",
+                    "total": "1400.0",
+                    "order_number": "SO2",
+                    "payment_term_id": 1,
+                    "created_at": "2020-09-11T13:57:46.842Z",
+                    "updated_at": "2020-09-12T16:48:13.688Z",
+                    "invoiced_at": "2020-09-11T00:00:00.000Z"
+                  },
+                  "shipment_items": [
+                    {
+                      "id": 1,
+                      "count": "10.0",
+                      "inventory_name": "Chocolate bar",
+                      "inventory_sku": "SK0001",
+                      "auto_ship": [
+                        {
+                          "adjustment_id": 25,
+                          "stock_id": 13,
+                          "lot_code": "SC-00000",
+                          "barcode": "CH-000001-18",
+                          "count": "10.0",
+                          "change": "-10.0",
+                          "reason": "shipment"
+                        }
+                      ]
+                    },
+                    {
+                      "id": 2,
+                      "count": "40.0",
+                      "inventory_name": "Chocolate bar, finished case",
+                      "inventory_sku": "SK0002",
+                      "auto_ship": [
+                        {
+                          "adjustment_id": 26,
+                          "stock_id": 14,
+                          "lot_code": "SCC-0000",
+                          "barcode": "CHCA-000001-18",
+                          "count": "40.0",
+                          "change": "-40.0",
+                          "reason": "shipment"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "get_last_shipment"
+  },
+  "parameters": [
+    {
+      "name": "customer_id",
+      "in": "path",
+      "example": 1,
+      "required": true,
+      "deprecated": false,
+      "schema": {
+        "type": "integer"
+      },
+      "description": "customer record ID"
+    },
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "order_id",
+      "in": "path",
+      "required": true,
+      "description": "order record ID"
+    }
+  ]
+}

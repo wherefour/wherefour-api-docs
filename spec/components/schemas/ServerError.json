@@ -1,0 +1,17 @@
+{
+  "required": [
+    "message",
+    "code"
+  ],
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "code": {
+      "maximum": 599,
+      "minimum": 500,
+      "type": "integer"
+    }
+  }
+}
