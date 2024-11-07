@@ -54,6 +54,7 @@
                   "purchase_conversion": 1,
                   "property": "work_in_progress",
                   "sku": "123456",
+                  "upc": "AAABBB",
                   "pull_strategy": "Hand Pick",
                   "reorder_point": 10,
                   "lead_time": 0,
