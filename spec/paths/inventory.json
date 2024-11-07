@@ -239,6 +239,7 @@
                 "purchase_conversion": 1,
                 "property": "raw_material",
                 "sku": null,
+                "upc": null,
                 "pull_strategy": "FIFO",
                 "reorder_point": 50,
                 "lead_time": 1,

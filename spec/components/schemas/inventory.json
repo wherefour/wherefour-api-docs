@@ -16,6 +16,7 @@
       "purchase_conversion": "1.0",
       "property": "raw_material",
       "sku": null,
+      "upc": null,
       "pull_strategy": "Hand Pick",
       "reorder_point": "50.0",
       "lead_time": 1,
@@ -101,6 +102,10 @@
       "minLength": 1
     },
     "sku": {
+      "type": "string",
+      "minLength": 1
+    },
+    "upc": {
       "type": "string",
       "minLength": 1
     },
