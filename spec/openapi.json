@@ -48,11 +48,17 @@
     "/customers/{customer_id}": {
       "$ref": "paths/customers_{customer_id}.json"
     },
+    "/customers/{customer_id}/credits": {
+      "$ref": "paths/customers_{customer_id}_credits.json"
+    },
     "/customers/{customer_id}/orders": {
       "$ref": "paths/customers_{customer_id}_orders.json"
     },
     "/customers/{customer_id}/invoices": {
       "$ref": "paths/customers_{customer_id}_invoices.json"
+    },
+    "/customers/{customer_id}/credits/{credit_id}": {
+      "$ref": "paths/customers_{customer_id}_credits_{credit_id}.json"
     },
     "/customers/{customer_id}/orders/{order_id}": {
       "$ref": "paths/customers_{customer_id}_orders_{order_id}.json"

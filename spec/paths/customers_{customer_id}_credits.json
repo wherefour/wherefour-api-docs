@@ -1,0 +1,121 @@
+{
+  "summary": "Customer credits",
+  "description": "Customer credits",
+  "get": {
+    "tags": [
+      "Credits"
+    ],
+    "description": "Lists credits for a customer",
+    "summary": "List customer credits",
+    "operationId": "list_customer_credits",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/credit.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "$ref": "../components/examples/credit.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "post": {
+    "tags": [
+      "Credits"
+    ],
+    "description": "Creates a new credit for the customer.",
+    "summary": "Create Credit",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "order_id": 1,
+                "invoice_id": 1,
+                "salesperson_id": 2,
+                "credit_from_address_id": 1,
+                "credit_number": "CRED100",
+                "credit_date": "2020-09-04",
+                "status": "active",
+                "total": 0,
+                "customer_message": null,
+                "internal_notes": null,
+                "credit_items_attributes": [
+                  {
+                    "inventory_id": 4,
+                    "count": 10,
+                    "unit_price": 100,
+                    "override_unit_price": 0
+                  },
+                  {
+                    "inventory_id": 6,
+                    "count": 5,
+                    "unit_price": 0,
+                    "override_unit_price": 0
+                  }
+                ],
+                "custom_line_items_attributes": [
+                  {
+                    "custom_line_definition_id": 1,
+                    "count": 10,
+                    "unit_price": 100
+                  },
+                  {
+                    "custom_line_definition_id": 2,
+                    "count": 10,
+                    "unit_price": 100
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/credit.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "$ref": "../components/examples/responses/credit.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "create_credit"
+  },
+  "parameters": [
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "customer_id",
+      "in": "path",
+      "required": true,
+      "description": "customer record ID"
+    }
+  ]
+}
