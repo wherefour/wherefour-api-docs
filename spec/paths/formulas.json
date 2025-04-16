@@ -1,0 +1,47 @@
+{
+  "summary": "Formulas",
+  "description": "Formulas",
+  "get": {
+    "tags": [
+      "Formulas"
+    ],
+    "description": "Lists formulas with optional name and type filters",
+    "summary": "List formulas",
+    "operationId": "list_formulas",
+    "parameters": [
+      {
+        "schema": { "type": "string" },
+        "in": "query",
+        "name": "name",
+        "required": false,
+        "description": "Name of the formula to search for"
+      },
+      {
+        "schema": { "type": "string" },
+        "in": "query",
+        "name": "type",
+        "required": false,
+        "description": "Type of formula to search for, one of: (bom, kit, assembly, disassembly)"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/formulas.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "$ref": "../components/examples/responses/formulas.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -100,7 +100,7 @@
             "examples": {
               "Example": {
                 "value": {
-                  "$ref": "../components/examples/responses/invoice.json"
+                  "$ref": "../components/examples/responses/responses/invoice.json"
                 }
               }
             }

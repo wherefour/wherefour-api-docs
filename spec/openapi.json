@@ -143,6 +143,9 @@
     },
     "/reports/activities": {
       "$ref": "paths/reports_activities.json"
+    },
+    "/formulas": {
+      "$ref": "paths/formulas.json"
     }
   },
   "components": {
@@ -187,6 +190,12 @@
     },
     {
       "name": "Settings"
+    },
+    {
+      "name": "Credits"
+    },
+    {
+      "name": "Formulas"
     }
   ],
   "security": [

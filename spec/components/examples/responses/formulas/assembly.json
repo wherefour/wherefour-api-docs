@@ -1,0 +1,77 @@
+{
+  "id": 2,
+  "name": "Prepare case boxes",
+  "organization_id": 1,
+  "location_id": null,
+  "yield_expected": "1.0",
+  "status": "active",
+  "instructions": "Grab a box, put a sticker on it, and put it in the warehouse for finished boxes.",
+  "production_lead_time": 0,
+  "is_min_batch": false,
+  "expiration_date_days": null,
+  "standard_cost": "0.65",
+  "created_at": "2025-04-15T18:26:44.915Z",
+  "updated_at": "2025-04-15T18:26:44.915Z",
+  "assembly_items": [
+    {
+      "id": 3,
+      "assembly_id": 2,
+      "count": "1.0",
+      "standard_unit_cost": null,
+      "created_at": "2025-04-15T18:26:44.920Z",
+      "updated_at": "2025-04-15T18:26:44.920Z",
+      "inventory": {
+        "id": 7,
+        "name": "Case box",
+        "category_name": "Packaging",
+        "on_hand": "400.0",
+        "unit_of_use": "each",
+        "unit_of_purchase": "each",
+        "property": "raw_material",
+        "sku": "CSECSECSECSE",
+        "created_at": "2025-04-15T18:26:45.094Z",
+        "updated_at": "2025-04-15T18:26:45.094Z"
+      }
+    }
+  ],
+  "product": {
+    "id": 4,
+    "display_formula_name": "Assembly: Prepare case boxes",
+    "product_name": null,
+    "sku": null,
+    "created_at": "2025-04-15T18:26:45.464Z",
+    "updated_at": "2025-04-15T18:26:45.464Z",
+    "inventory": {
+      "id": 9,
+      "name": "Empty case box",
+      "category_name": "Packaging",
+      "on_hand": "100.0",
+      "unit_of_use": "each",
+      "unit_of_purchase": "each",
+      "property": "finished_good",
+      "sku": "ECBECBECB",
+      "created_at": "2025-04-15T18:26:45.094Z",
+      "updated_at": "2025-04-15T18:26:45.094Z"
+    },
+    "custom_line_items": [
+      {
+        "id": 2,
+        "organization_id": 1,
+        "name": "Tiered CLI",
+        "count": "2.0",
+        "unit_price": "22.22",
+        "qualified": false,
+        "created_at": "2025-04-15T18:27:24.603Z",
+        "updated_at": "2025-04-15T18:27:24.603Z",
+        "custom_line_definition": {
+          "id": 4,
+          "organization_id": 1,
+          "name": "Tiered CLI",
+          "description": "Tiered CLI",
+          "created_at": "2025-04-15T18:26:45.003Z",
+          "updated_at": "2025-04-15T18:26:45.003Z"
+        }
+      }
+    ]
+  }
+}

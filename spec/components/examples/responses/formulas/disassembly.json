@@ -1,0 +1,122 @@
+{
+  "id": 1,
+  "name": "Disassemble Product E",
+  "organization_id": 1,
+  "status": "active",
+  "instructions": null,
+  "production_lead_time": 0,
+  "is_min_batch": false,
+  "standard_cost": "2.0",
+  "created_at": "2025-04-15T18:26:45.064Z",
+  "updated_at": "2025-04-15T18:26:45.064Z",
+  "disassembly_source_items": [
+    {
+      "id": 1,
+      "disassembly_id": 1,
+      "count": "1.0",
+      "standard_unit_cost": "1000.0",
+      "created_at": "2025-04-15T18:26:45.072Z",
+      "updated_at": "2025-04-15T18:26:45.072Z",
+      "inventory": {
+        "id": 35,
+        "name": "Finished good E",
+        "category_name": "Products",
+        "on_hand": "100.0",
+        "unit_of_use": "each",
+        "unit_of_purchase": "each",
+        "property": "finished_good",
+        "sku": "SK0004",
+        "created_at": "2025-04-15T18:26:45.094Z",
+        "updated_at": "2025-04-15T18:26:45.094Z"
+      }
+    }
+  ],
+  "disassembly_result_items": [
+    {
+      "id": 1,
+      "disassembly_id": 1,
+      "location_id": null,
+      "count": "1.0",
+      "percentage_cost": "50.0",
+      "prorated_cost": "500.0",
+      "expiration_date_days": null,
+      "created_at": "2025-04-15T18:26:45.068Z",
+      "updated_at": "2025-04-15T18:26:45.068Z",
+      "inventory": {
+        "id": 43,
+        "name": "Part A",
+        "category_name": "Parts",
+        "on_hand": "0.0",
+        "unit_of_use": "each",
+        "unit_of_purchase": "each",
+        "property": "raw_material",
+        "sku": null,
+        "created_at": "2025-04-15T18:26:45.094Z",
+        "updated_at": "2025-04-15T18:26:45.094Z"
+      },
+      "custom_line_items": [
+        {
+          "id": 2,
+          "organization_id": 1,
+          "name": "Tiered CLI",
+          "count": "2.0",
+          "unit_price": "22.22",
+          "qualified": false,
+          "created_at": "2025-04-15T18:27:24.603Z",
+          "updated_at": "2025-04-15T18:27:24.603Z",
+          "custom_line_definition": {
+            "id": 4,
+            "organization_id": 1,
+            "name": "Tiered CLI",
+            "description": "Tiered CLI",
+            "created_at": "2025-04-15T18:26:45.003Z",
+            "updated_at": "2025-04-15T18:26:45.003Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "disassembly_id": 1,
+      "location_id": null,
+      "count": "1.0",
+      "percentage_cost": "50.0",
+      "prorated_cost": "500.0",
+      "expiration_date_days": null,
+      "created_at": "2025-04-15T18:26:45.068Z",
+      "updated_at": "2025-04-15T18:26:45.068Z",
+      "inventory": {
+        "id": 44,
+        "name": "Part B",
+        "category_name": "Parts",
+        "on_hand": "0.0",
+        "unit_of_use": "pound",
+        "unit_of_purchase": "each",
+        "property": "raw_material",
+        "sku": null,
+        "created_at": "2025-04-15T18:26:45.094Z",
+        "updated_at": "2025-04-15T18:26:45.094Z"
+      },
+      "custom_line_items": [
+        {
+          "id": 2,
+          "organization_id": 1,
+          "name": "Tiered CLI",
+          "count": "2.0",
+          "unit_price": "22.22",
+          "qualified": false,
+          "created_at": "2025-04-15T18:27:24.603Z",
+          "updated_at": "2025-04-15T18:27:24.603Z",
+          "custom_line_definition": {
+            "id": 4,
+            "organization_id": 1,
+            "name": "Tiered CLI",
+            "description": "Tiered CLI",
+            "created_at": "2025-04-15T18:26:45.003Z",
+            "updated_at": "2025-04-15T18:26:45.003Z"
+          }
+        }
+      ]
+    }
+  ]
+}

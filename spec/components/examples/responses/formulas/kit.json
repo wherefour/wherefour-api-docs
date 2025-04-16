@@ -1,0 +1,73 @@
+{
+  "id": 1,
+  "name": "Kit product formula",
+  "organization_id": 1,
+  "yield_expected": "1.0",
+  "status": "active",
+  "instructions": null,
+  "is_min_batch": true,
+  "standard_cost": "2.89",
+  "created_at": "2025-04-15T18:26:45.146Z",
+  "updated_at": "2025-04-15T18:26:45.146Z",
+  "kit_items": [
+    {
+      "id": 1,
+      "kit_id": 1,
+      "count": "6.0",
+      "created_at": "2025-04-15T18:26:45.135Z",
+      "updated_at": "2025-04-15T18:26:45.135Z",
+      "inventory": {
+        "id": 4,
+        "name": "Finished good B",
+        "category_name": "Products",
+        "on_hand": "75.0",
+        "unit_of_use": "each",
+        "unit_of_purchase": "each",
+        "property": "finished_good",
+        "sku": "SK0001",
+        "created_at": "2025-04-15T18:26:45.094Z",
+        "updated_at": "2025-04-15T18:26:45.094Z"
+      }
+    }
+  ],
+  "product": {
+    "id": 12,
+    "display_formula_name": "KIT: Kit product formula",
+    "product_name": null,
+    "sku": null,
+    "created_at": "2025-04-15T18:26:45.464Z",
+    "updated_at": "2025-04-15T18:26:45.464Z",
+    "inventory": {
+      "id": 34,
+      "name": "Kitted product",
+      "category_name": "Products",
+      "on_hand": "3.0",
+      "unit_of_use": "box",
+      "unit_of_purchase": "box",
+      "property": "finished_good",
+      "sku": "BBOC123",
+      "created_at": "2025-04-15T18:26:45.094Z",
+      "updated_at": "2025-04-15T18:26:45.094Z"
+    },
+    "custom_line_items": [
+      {
+        "id": 2,
+        "organization_id": 1,
+        "name": "Tiered CLI",
+        "count": "2.0",
+        "unit_price": "22.22",
+        "qualified": false,
+        "created_at": "2025-04-15T18:27:24.603Z",
+        "updated_at": "2025-04-15T18:27:24.603Z",
+        "custom_line_definition": {
+          "id": 4,
+          "organization_id": 1,
+          "name": "Tiered CLI",
+          "description": "Tiered CLI",
+          "created_at": "2025-04-15T18:26:45.003Z",
+          "updated_at": "2025-04-15T18:26:45.003Z"
+        }
+      }
+    ]
+  }
+}

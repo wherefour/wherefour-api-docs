@@ -1,0 +1,101 @@
+{
+  "type": "object",
+  "title": "Bom",
+  "properties": {
+    "id": { "type": "integer" },
+    "organization_id": { "type": "integer" },
+    "location_id": { "type": "integer" },
+    "yield_expected": { "type": "number" },
+    "standard_cost": { "type": "number" },
+    "production_lead_time": { "type": "integer" },
+    "expiration_date_days": { "type": "integer" },
+    "is_min_batch": { "type": "boolean" },
+    "status": { "type": "string" },
+    "name": { "type": "string" },
+    "instructions": { "type": "string" },
+    "created_at": { "type": "string" },
+    "updated_at": { "type": "string" },
+    "bom_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "bom_id": { "type": "integer" },
+          "count": { "type": "number" },
+          "standard_unit_cost": { "type": "number" },
+          "created_at": { "type": "string" },
+          "updated_at": { "type": "string" },
+          "inventory": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "name": { "type": "string" },
+              "category_name": { "type": "string" },
+              "on_hand": { "type": "number" },
+              "unit_of_use": { "type": "string" },
+              "unit_of_purchase": { "type": "string" },
+              "property": { "type": "string" },
+              "sku": { "type": "string" },
+              "created_at": { "type": "string" },
+              "updated_at": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "display_formula_name": { "type": "string" },
+        "product_name": { "type": "string" },
+        "sku": { "type": "string" },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" },
+        "inventory": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer" },
+            "name": { "type": "string" },
+            "category_name": { "type": "string" },
+            "on_hand": { "type": "number" },
+            "unit_of_use": { "type": "string" },
+            "unit_of_purchase": { "type": "string" },
+            "property": { "type": "string" },
+            "sku": { "type": "string" },
+            "created_at": { "type": "string" },
+            "updated_at": { "type": "string" }
+          }
+        },
+        "custom_line_items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "organization_id": { "type": "integer" },
+              "name": { "type": "string" },
+              "count": { "type": "number" },
+              "unit_price": { "type": "number" },
+              "qualified": { "type": "boolean" },
+              "created_at": { "type": "string" },
+              "updated_at": { "type": "string" },
+              "custom_line_definition": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "integer" },
+                  "organization_id": { "type": "integer" },
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "created_at": { "type": "string" },
+                  "updated_at": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

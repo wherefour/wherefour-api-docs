@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "title": "Formulas",
+  "properties": {
+    "boms": {
+      "type": "array",
+      "items": { "$ref": "bom.json" }
+    },
+    "assemblies": {
+      "type": "array",
+      "items": { "$ref": "assembly.json" }
+    },
+    "disassemblies": {
+      "type": "array",
+      "items": { "$ref": "disassembly.json" }
+    },
+    "kits": {
+      "type": "array",
+      "items": { "$ref": "kit.json" }
+    }
+  }
+}
