@@ -4,31 +4,37 @@
     "id": {
       "type": "integer"
     },
-    "invoice_date": {
+    "organization_id": {
+      "type": "integer"
+    },
+    "user_id": {
+      "type": "integer"
+    },
+    "customer_id": {
+      "type": "integer"
+    },
+    "order_id": {
+      "type": "integer"
+    },
+    "salesperson_id": {
+      "type": "integer"
+    },
+    "credit_from_address_id": {
+      "type": "integer"
+    },
+    "credit_number": {
+      "type": "string"
+    },
+    "credit_date": {
       "type": "string"
     },
     "status": {
       "type": "string"
     },
-    "instructions": {
-      "type": "string"
-    },
-    "subtotal": {
-      "type": "string"
-    },
-    "discount": {
-      "type": "string"
-    },
-    "tax": {
-      "type": "string"
-    },
-    "shipping": {
+    "customer_message": {
       "type": "string"
     },
     "total": {
-      "type": "string"
-    },
-    "invoice_number": {
       "type": "string"
     },
     "created_at": {
@@ -37,7 +43,7 @@
     "updated_at": {
       "type": "string"
     },
-    "invoice_items": {
+    "credit_items": {
       "type": "array",
       "items": {
         "type": "object",
@@ -63,46 +69,14 @@
           "sku": {
             "type": "string"
           },
+          "upc": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
           "updated_at": {
             "type": "string"
-          },
-          "inventory": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "integer"
-              },
-              "name": {
-                "type": "string"
-              },
-              "category_name": {
-                "type": "string"
-              },
-              "on_hand": {
-                "type": "number"
-              },
-              "unit_of_use": {
-                "type": "string"
-              },
-              "unit_of_purchase": {
-                "type": "string"
-              },
-              "property": {
-                "type": "string"
-              },
-              "sku": {
-                "type": "string"
-              },
-              "created_at": {
-                "type": "string"
-              },
-              "updated_at": {
-                "type": "string"
-              }
-            }
           }
         }
       }
@@ -312,7 +286,7 @@
         }
       }
     },
-    "delivery_method": {
+    "salesperson": {
       "type": "object",
       "properties": {
         "id": {
@@ -320,21 +294,132 @@
         },
         "name": {
           "type": "string"
-        },
-        "kind": {
-          "type": "string"
-        },
-        "instructions": {
-          "type": "string"
         }
       }
     },
-    "salesperson": {
-      "type": "string"
-    },
-    "payment_term": {
-      "type": "string"
+    "credit_from_address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
+          "type": "string"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "line3": {
+          "type": "string"
+        },
+        "line4": {
+          "type": "string"
+        },
+        "line5": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country_subdivision_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      },
+      "order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "order_date": {
+            "type": "string"
+          },
+          "produce_date": {
+            "type": "string"
+          },
+          "deliver_date": {
+            "type": "string"
+          },
+          "ship_date": {
+            "type": "string"
+          },
+          "origin": {
+            "type": "string"
+          },
+          "po_number": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "invoiced": {
+            "type": "boolean"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "subtotal": {
+            "type": "number"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "tax": {
+            "type": "number"
+          },
+          "shipping": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          },
+          "order_number": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "invoiced_at": {
+            "type": "string"
+          }
+        }
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "organization_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
-  "title": "Invoice"
+  "title": "Credit"
 }
