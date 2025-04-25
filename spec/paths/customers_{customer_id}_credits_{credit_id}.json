@@ -62,12 +62,12 @@
                   {
                     "custom_line_definition_id": 1,
                     "count": 10,
-                    "unit_price": 100
+                    "force_subtotal": 100
                   },
                   {
                     "custom_line_definition_id": 2,
                     "count": 10,
-                    "unit_price": 100
+                    "force_subtotal": 100
                   }
                 ]
               }
