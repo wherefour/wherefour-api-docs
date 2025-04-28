@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string",
+      "required": true
+    },
+    "invoice_date": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "payment_term_id": {
+      "type": "integer"
+    },
+    "delivery_method_id": {
+      "type": "integer"
+    },
+    "sales_channel_id": {
+      "type": "integer"
+    },
+    "salesperson_id": {
+      "type": "integer"
+    },
+    "quote_id": {
+      "type": "integer"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "invoiced": {
+      "type": "boolean"
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "tax": {
+      "type": "number"
+    },
+    "shipping": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "price_tier_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "invoice_items_attributes": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "type": "object",
+        "description": "Either inventory ID or SKU is required when adding a new invoice item",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Required when editing existing invoice items"
+          },
+          "inventory_id": {
+            "type": "integer",
+            "description": "Either inventory ID or SKU is required when adding a new invoice item"
+          },
+          "sku": {
+            "type": "string",
+            "description": "Either inventory ID or SKU is required when adding a new invoice item"
+          },
+          "count": {
+            "type": "number",
+            "required": true
+          },
+          "override_unit_price": {
+            "type": "number"
+          },
+          "_destroy": {
+            "type": "boolean",
+            "description": "Setting this to true will remove the specified invoice item"
+          }
+        }
+      }
+    },
+    "custom_line_items_attributes": {
+      "$ref": "custom_line_items.json"
+    }
+  }
+}

@@ -51,31 +51,7 @@
       }
     },
     "custom_line_items_attributes": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Required when editing an existing custom line item"
-          },
-          "custom_line_definition_id": {
-            "type": "integer",
-            "description": "Required when creating a new custom line item"
-          },
-          "count": {
-            "type": "number",
-            "description": "Required when creating a new custom line item"
-          },
-          "force_subtotal": {
-            "type": "number"
-          },
-          "_destroy": {
-            "type": "boolean",
-            "description": "Setting this to true will delete the specified custom line item"
-          }
-        }
-      }
+      "$ref": "custom_line_items.json"
     }
   }
 }

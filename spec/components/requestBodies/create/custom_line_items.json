@@ -1,0 +1,19 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "custom_line_definition_id": {
+        "type": "integer",
+        "required": true
+      },
+      "count": {
+        "type": "number",
+        "required": true
+      },
+      "force_subtotal": {
+        "type": "number"
+      }
+    }
+  }
+}

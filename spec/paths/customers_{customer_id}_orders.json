@@ -76,8 +76,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "type": "object",
-            "properties": {}
+            "$ref": "../components/requestBodies/create/order.json"
           },
           "examples": {
             "Example": {
