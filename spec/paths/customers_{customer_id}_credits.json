@@ -38,8 +38,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "type": "object",
-            "properties": {}
+            "$ref": "../components/requestBodies/create/credit.json"
           },
           "examples": {
             "Example": {

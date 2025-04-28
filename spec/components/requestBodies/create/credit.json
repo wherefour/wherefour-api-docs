@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "description": "At least one credit item or custom line item is required.",
+  "properties": {
+    "credit_number": {
+      "type": "string",
+      "required": true
+    },
+    "credit_date": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "order_id": {
+      "type": "integer"
+    },
+    "invoice_id": {
+      "type": "integer"
+    },
+    "salesperson_id": {
+      "type": "integer"
+    },
+    "credit_from_address_id": {
+      "type": "integer"
+    },
+    "credit_items_attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "inventory_id": {
+            "type": "integer",
+            "required": true
+          },
+          "count": {
+            "type": "number",
+            "required": true
+          },
+          "override_unit_price": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "custom_line_items_attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "custom_line_definition_id": {
+            "type": "integer",
+            "required": true
+          },
+          "count": {
+            "type": "number",
+            "required": true
+          },
+          "force_subtotal": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
