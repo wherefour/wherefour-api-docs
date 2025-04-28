@@ -46,10 +46,12 @@
                 "internal_notes": null,
                 "credit_items_attributes": [
                   {
+                    "id": 2,
                     "inventory_id": 4,
                     "count": 10,
                     "unit_price": 100,
-                    "override_unit_price": 0
+                    "override_unit_price": 0,
+                    "_destroy": false
                   },
                   {
                     "inventory_id": 6,
@@ -60,9 +62,11 @@
                 ],
                 "custom_line_items_attributes": [
                   {
+                    "id": 2,
                     "custom_line_definition_id": 1,
                     "count": 10,
-                    "force_subtotal": 100
+                    "force_subtotal": 100,
+                    "_destroy": false
                   },
                   {
                     "custom_line_definition_id": 2,
