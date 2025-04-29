@@ -26,6 +26,15 @@
     "credit_from_address_id": {
       "type": "integer"
     },
+    "total": {
+      "type": "number"
+    },
+    "customer_message": {
+      "type": "string"
+    },
+    "internal_notes": {
+      "type": "string"
+    },
     "credit_items_attributes": {
       "type": "array",
       "items": {
