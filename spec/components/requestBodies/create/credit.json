@@ -27,7 +27,8 @@
       "type": "integer"
     },
     "total": {
-      "type": "number"
+      "type": "number",
+      "description": "If not provided, total will be calculated based on credit items and custom line items"
     },
     "customer_message": {
       "type": "string"
