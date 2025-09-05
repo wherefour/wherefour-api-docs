@@ -1,13 +1,13 @@
 {
-  "summary": "Formulas",
-  "description": "Formulas",
+  "summary": "Search Formulas",
+  "description": "Search Formulas and Formula Versions",
   "get": {
     "tags": [
       "Formulas"
     ],
-    "description": "Lists formulas with optional name, type and search_type filters",
-    "summary": "List formulas",
-    "operationId": "list_formulas",
+    "description": "Searches formulas or formula versions for matches on name type and search_type filters",
+    "summary": "Search formulas",
+    "operationId": "search_formulas",
     "parameters": [
       {
         "schema": { "type": "string" },

@@ -3,19 +3,22 @@
   "title": "Bom",
   "properties": {
     "id": { "type": "integer" },
-    "organization_id": { "type": "integer" },
-    "location_id": { "type": "integer" },
-    "yield_expected": { "type": "number" },
-    "standard_cost": { "type": "number" },
-    "production_lead_time": { "type": "integer" },
-    "expiration_date_days": { "type": "integer" },
-    "is_min_batch": { "type": "boolean" },
-    "status": { "type": "string" },
     "name": { "type": "string" },
+    "version_name": { "type": "string" },
+    "organization_id": { "type": "integer" },
+    "bom_id": { "type": "integer" },
+    "default_version": { "type": "string" },
+    "version_number": { "type": "integer" },
+    "location_id": { "type": "integer" },
+    "status": { "type": "string" },
     "instructions": { "type": "string" },
+    "production_lead_time": { "type": "integer" },
+    "quantity_based": { "type": "boolean" },
+    "expiration_date_days": { "type": "integer" },
+    "standard_cost": { "type": "number" },
     "created_at": { "type": "string" },
     "updated_at": { "type": "string" },
-    "bom_items": {
+    "bom_pull_items": {
       "type": "array",
       "items": {
         "type": "object",
@@ -44,7 +47,34 @@
         }
       }
     },
-    "product": {
+    "custom_line_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "organization_id": { "type": "integer" },
+          "name": { "type": "string" },
+          "count": { "type": "number" },
+          "unit_price": { "type": "number" },
+          "qualified": { "type": "boolean" },
+          "created_at": { "type": "string" },
+          "updated_at": { "type": "string" },
+          "custom_line_definition": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "organization_id": { "type": "integer" },
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "created_at": { "type": "string" },
+              "updated_at": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "bom_result_item": {
       "type": "object",
       "properties": {
         "id": { "type": "integer" },
@@ -66,33 +96,6 @@
             "sku": { "type": "string" },
             "created_at": { "type": "string" },
             "updated_at": { "type": "string" }
-          }
-        },
-        "custom_line_items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": { "type": "integer" },
-              "organization_id": { "type": "integer" },
-              "name": { "type": "string" },
-              "count": { "type": "number" },
-              "unit_price": { "type": "number" },
-              "qualified": { "type": "boolean" },
-              "created_at": { "type": "string" },
-              "updated_at": { "type": "string" },
-              "custom_line_definition": {
-                "type": "object",
-                "properties": {
-                  "id": { "type": "integer" },
-                  "organization_id": { "type": "integer" },
-                  "name": { "type": "string" },
-                  "description": { "type": "string" },
-                  "created_at": { "type": "string" },
-                  "updated_at": { "type": "string" }
-                }
-              }
-            }
           }
         }
       }

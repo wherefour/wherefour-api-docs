@@ -146,6 +146,9 @@
     },
     "/formulas": {
       "$ref": "paths/formulas.json"
+    },
+    "/formulas/search": {
+      "$ref": "paths/formulas_search.json"
     }
   },
   "components": {
