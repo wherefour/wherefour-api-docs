@@ -1,0 +1,92 @@
+{
+  "summary": "Search for a location by name",
+  "description": "Locates a location by name",
+  "get": {
+    "tags": [
+      "Locations"
+    ],
+    "description": "Locates a location by name",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      {
+        "in": "query",
+        "name": "name",
+        "description": "Case-insensitive partial name search",
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/location.json"
+            },
+            "examples": {
+              "Example": {
+                "value": [
+                  {
+                    "id": 5,
+                    "name": "London Warehouse",
+                    "location_code": "LONW"
+                  },
+                  {
+                    "id": 6,
+                    "name": "Sydney Warehouse",
+                    "location_code": "SYDW"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": "Search for locations",
+    "operationId": "search_locations"
+  },
+  "parameters": [
+    {
+      "name": "name",
+      "in": "query",
+      "schema": {
+        "type": "string",
+        "minLength": 1
+      },
+      "required": false,
+      "deprecated": false,
+      "allowEmptyValue": false,
+      "description": "Case-insensitive partial name search"
+    }
+  ]
+}

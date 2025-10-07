@@ -1,11 +1,11 @@
 {
-  "summary": "Search for a invoice",
-  "description": "Locates a invoice by the invoice_number",
+  "summary": "Search for an invoice",
+  "description": "Locates an invoice by the invoice_number",
   "get": {
     "tags": [
       "Invoices"
     ],
-    "description": "Locates a invoice by the invoice_number",
+    "description": "Locates an invoice by the invoice_number",
     "parameters": [
       {
         "in": "query",

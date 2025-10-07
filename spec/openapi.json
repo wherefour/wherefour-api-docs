@@ -42,6 +42,9 @@
     "/inventory/search": {
       "$ref": "paths/inventory_search.json"
     },
+    "/locations/search": {
+      "$ref": "paths/location_search.json"
+    },
     "/customers": {
       "$ref": "paths/customers.json"
     },
