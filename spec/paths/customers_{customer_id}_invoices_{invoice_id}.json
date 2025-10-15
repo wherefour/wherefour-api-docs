@@ -38,7 +38,6 @@
                 "payment_term_id": null,
                 "status": "open",
                 "salesperson_id": null,
-                "payment_terms": null,
                 "delivery_method_id": 1,
                 "instructions": null,
                 "subtotal": 100,

@@ -42,7 +42,6 @@
                 "status": "open",
                 "origin": "wherefour",
                 "salesperson_id": null,
-                "payment_terms": null,
                 "delivery_method_id": 1,
                 "instructions": null,
                 "subtotal": 100,
