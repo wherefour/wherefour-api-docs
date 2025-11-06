@@ -3,6 +3,7 @@
   "packageManager": "yarn@4.5.1",
   "private": true,
   "dependencies": {
-    "@redocly/cli": "^1.25.11"
+    "@redocly/cli": "^2.11.0",
+    "http-server": "^14.1.1"
   }
 }
