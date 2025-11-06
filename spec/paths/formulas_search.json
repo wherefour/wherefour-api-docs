@@ -13,15 +13,15 @@
         "schema": { "type": "string" },
         "in": "query",
         "name": "name",
-        "required": false,
+        "required": true,
         "description": "Name of the formula to search for"
       },
       {
         "schema": { "type": "string" },
         "in": "query",
         "name": "type",
-        "required": false,
-        "description": "Type of formula to search for, one of: (bom, kit, disassembly)"
+        "required": true,
+        "description": "Type of formula to search for, one of: (boms, kits, disassemblies)"
       },
       {
         "schema": { "type": "string" },
