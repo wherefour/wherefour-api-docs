@@ -45,6 +45,9 @@
     "/locations/search": {
       "$ref": "paths/location_search.json"
     },
+    "/locations/show": {
+      "$ref": "paths/locations_{location_id}.json"
+    },
     "/customers": {
       "$ref": "paths/customers.json"
     },
