@@ -30,6 +30,30 @@
         "schema": {
           "type": "string"
         }
+      },
+      {
+        "in": "query",
+        "name": "facility_id",
+        "description": "Filter locations to this facility",
+        "shema": {
+          "type": "integer"
+        }
+      },
+      {
+        "in": "query",
+        "name": "parent_location_id",
+        "description": "Filter locations to this parent location",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      {
+        "in": "query",
+        "name": "level_number",
+        "description": "Filter locations to this level number",
+        "schema": {
+          "type": "integer"
+        }
       }
     ],
     "responses": {
