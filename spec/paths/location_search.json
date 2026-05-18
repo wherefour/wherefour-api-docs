@@ -22,6 +22,14 @@
         "schema": {
           "type": "string"
         }
+      },
+      {
+        "in": "query",
+        "name": "locator_code",
+        "description": "Case-insensitive partial locator code search",
+        "schema": {
+          "type": "string"
+        }
       }
     ],
     "responses": {
@@ -57,13 +65,41 @@
                 "value": [
                   {
                     "id": 5,
+                    "facility_id": 1,
+                    "parent_location_id": null,
                     "name": "London Warehouse",
-                    "location_code": "LONW"
+                    "locator_code": "LONW",
+                    "global_identifier": "",
+                    "locator_name_path": "Main Facility:London Warehouse",
+                    "locator_code_path": "MAI:LONW",
+                    "level_number": 1,
+                    "level_name": "Zone",
+                    "allowed_for_additives": true,
+                    "allowed_for_pick_and_ship": true,
+                    "allowed_for_returns": true,
+                    "allowed_for_warehouse_receive": true,
+                    "allowed_for_work_order_pulls": true,
+                    "allowed_for_word_order_results": true,
+                    "child_location_count": 0
                   },
                   {
                     "id": 6,
+                    "facility_id": 1,
+                    "parent_location_id": null,
                     "name": "Sydney Warehouse",
-                    "location_code": "SYDW"
+                    "locator_code": "SYDW",
+                    "global_identifier": "",
+                    "locator_name_path": "Main Facility:Sydney Warehouse",
+                    "locator_code_path": "MAI:SYDW",
+                    "level_number": 1,
+                    "level_name": "Zone",
+                    "allowed_for_additives": true,
+                    "allowed_for_pick_and_ship": true,
+                    "allowed_for_returns": true,
+                    "allowed_for_warehouse_receive": true,
+                    "allowed_for_work_order_pulls": true,
+                    "allowed_for_word_order_results": true,
+                    "child_location_count": 0
                   }
                 ]
               }
