@@ -79,17 +79,146 @@
     },
     "tags": [
       "Inventory"
+    ],
+    "parameters": [
+      {
+        "schema": {
+          "type": "integer"
+        },
+        "name": "inventory_id",
+        "in": "path",
+        "required": true,
+        "description": "inventory item record ID"
+      }
     ]
   },
-  "parameters": [
-    {
-      "schema": {
-        "type": "integer"
+  "get": {
+    "summary": "List stock lots",
+    "operationId": "list_stock_lots",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/active_stock.json"
+            },
+            "examples": {
+              "Example": {
+                "value": [{
+                  "id": 1,
+                  "name": "Raw material A",
+                  "lot_code": "WM001",
+                  "status": "active",
+                  "barcode": "WM-000001-18",
+                  "details": "Raw material A",
+                  "note": "buy lot WM001",
+                  "count": "100.0",
+                  "cost": "200.0",
+                  "expiration_date": "2026-12-14",
+                  "weight": null,
+                  "height": null,
+                  "width": null,
+                  "length": null,
+                  "created_at": "2026-05-18T17:53:40.213Z",
+                  "updated_at": "2026-05-18T17:53:40.213Z",
+                  "custom_field_values": []
+                },
+                {
+                  "id": 2,
+                  "name": "Raw material A",
+                  "lot_code": "WM002",
+                  "status": "active",
+                  "barcode": "WM-000002-18",
+                  "details": "Raw material A",
+                  "note": "buy lot WM002",
+                  "count": "375.0",
+                  "cost": "300.0",
+                  "expiration_date": "2026-11-29",
+                  "weight": null,
+                  "height": null,
+                  "width": null,
+                  "length": null,
+                  "created_at": "2026-05-18T17:53:40.213Z",
+                  "updated_at": "2026-05-18T17:53:40.213Z",
+                  "custom_field_values": []
+                },
+                {
+                  "id": 3,
+                  "name": "Raw material A",
+                  "lot_code": "WM003",
+                  "status": "active",
+                  "barcode": "WM-000003-18",
+                  "details": "Raw material A",
+                  "note": "buy lot WM003",
+                  "count": "185.0",
+                  "cost": "500.0",
+                  "expiration_date": "2026-12-04",
+                  "weight": null,
+                  "height": null,
+                  "width": null,
+                  "length": null,
+                  "created_at": "2026-05-18T17:53:40.213Z",
+                  "updated_at": "2026-05-18T17:53:40.213Z",
+                  "custom_field_values": []
+                },
+                {
+                  "id": 4,
+                  "name": "Raw material A",
+                  "lot_code": "WM004",
+                  "status": "active",
+                  "barcode": "WM-000004-18",
+                  "details": "Raw material A",
+                  "note": "buy lot WM004",
+                  "count": "750.0",
+                  "cost": "1200.0",
+                  "expiration_date": "2026-12-06",
+                  "weight": null,
+                  "height": null,
+                  "width": null,
+                  "length": null,
+                  "created_at": "2026-05-18T17:53:40.213Z",
+                  "updated_at": "2026-05-18T17:53:40.213Z",
+                  "custom_field_values": []
+                }]
+              }
+            }
+          }
+        }
+      }
+    },
+    "description": "Lists active stocks of the provided inventory item.",
+    "tags": [
+      "Inventory"
+    ],
+    "parameters": [
+      {
+        "schema": {
+          "type": "integer"
+        },
+        "name": "inventory_id",
+        "in": "path",
+        "required": true,
+        "description": "inventory item record ID"
       },
-      "name": "inventory_id",
-      "in": "path",
-      "required": true,
-      "description": "inventory item record ID"
-    }
-  ]
+      {
+        "in": "query",
+        "required": false,
+        "name": "location_name",
+        "description": "The name of the location to filter stock lots by",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "required": false,
+        "name": "location_locator_code",
+        "description": "The locator code of the location to filter stock lots by",
+        "schema": {
+          "type": "string"
+        }
+      }
+    ]
+  }
 }
