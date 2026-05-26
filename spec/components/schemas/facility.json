@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "title": "Facility",
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "type": "string" },
+    "locator_code": { "type": "string" },
+    "primary": { "type": "boolean" },
+    "allowed_user_strategy": { "type": "string" },
+    "level_1_name": { "type": "string" },
+    "level_2_name": { "type": "string" },
+    "level_3_name": { "type": "string" },
+    "level_4_name": { "type": "string" },
+    "level_5_name": { "type": "string" },
+    "level_6_name": { "type": "string" }
+  }
+}

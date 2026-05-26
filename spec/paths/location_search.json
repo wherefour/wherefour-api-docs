@@ -134,19 +134,5 @@
     },
     "summary": "Search for locations",
     "operationId": "search_locations"
-  },
-  "parameters": [
-    {
-      "name": "name",
-      "in": "query",
-      "schema": {
-        "type": "string",
-        "minLength": 1
-      },
-      "required": false,
-      "deprecated": false,
-      "allowEmptyValue": false,
-      "description": "Case-insensitive partial name search"
-    }
-  ]
+  }
 }

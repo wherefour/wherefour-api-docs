@@ -30,6 +30,9 @@
     "/categories": {
       "$ref": "paths/categories.json"
     },
+    "/facilities/search": {
+      "$ref": "paths/facility_search.json"
+    },
     "/inventory": {
       "$ref": "paths/inventory.json"
     },
@@ -171,10 +174,16 @@
       "name": "Categories"
     },
     {
+      "name": "Facilities"
+    },
+    {
       "name": "Inventory"
     },
     {
       "name": "Invoices"
+    },
+    {
+      "name": "Locations"
     },
     {
       "name": "Orders"

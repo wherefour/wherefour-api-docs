@@ -122,7 +122,10 @@
                   "length": null,
                   "created_at": "2026-05-18T17:53:40.213Z",
                   "updated_at": "2026-05-18T17:53:40.213Z",
-                  "custom_field_values": []
+                  "custom_field_values": [],
+                  "location": {
+                    "$ref": "../components/schemas/location.json"
+                  }
                 },
                 {
                   "id": 2,
@@ -141,7 +144,10 @@
                   "length": null,
                   "created_at": "2026-05-18T17:53:40.213Z",
                   "updated_at": "2026-05-18T17:53:40.213Z",
-                  "custom_field_values": []
+                  "custom_field_values": [],
+                  "location": {
+                    "$ref": "../components/schemas/location.json"
+                  }
                 },
                 {
                   "id": 3,
@@ -160,7 +166,10 @@
                   "length": null,
                   "created_at": "2026-05-18T17:53:40.213Z",
                   "updated_at": "2026-05-18T17:53:40.213Z",
-                  "custom_field_values": []
+                  "custom_field_values": [],
+                  "location": {
+                    "$ref": "../components/schemas/location.json"
+                  }
                 },
                 {
                   "id": 4,
@@ -179,7 +188,10 @@
                   "length": null,
                   "created_at": "2026-05-18T17:53:40.213Z",
                   "updated_at": "2026-05-18T17:53:40.213Z",
-                  "custom_field_values": []
+                  "custom_field_values": [],
+                  "location": {
+                    "$ref": "../components/schemas/location.json"
+                  }
                 }]
               }
             }
@@ -215,6 +227,15 @@
         "required": false,
         "name": "location_locator_code",
         "description": "The locator code of the location to filter stock lots by",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "required": false,
+        "name": "page",
+        "description": "Results page to view",
         "schema": {
           "type": "string"
         }
