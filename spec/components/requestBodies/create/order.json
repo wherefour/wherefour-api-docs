@@ -14,8 +14,23 @@
       "type": "string",
       "required": true
     },
+    "ship_from_address_id": {
+      "type": "integer"
+    },
+    "po_number": {
+      "type": "string"
+    },
     "payment_term_id": {
       "type": "integer"
+    },
+    "deliver_date": {
+      "type": "string"
+    },
+    "produce_date": {
+      "type": "string"
+    },
+    "ship_date": {
+      "type": "string"
     },
     "delivery_method_id": {
       "type": "integer"
