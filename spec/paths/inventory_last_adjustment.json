@@ -19,7 +19,77 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "properties": {}
+              "properties": {
+                "id": { "type": "integer" },
+                "user_id": { "type": "integer" },
+                "user_first_name": { "type": "string"},
+                "user_last_name": { "type": "string"},
+                "reason": { "type": "string"},
+                "lot_code": { "type": "string"},
+                "old_lot_code": { "type": "string"},
+                "barcode": { "type": "string"},
+                "old_barcode": { "type": "string"},
+                "details": { "type": "string"},
+                "rate": { "type": "decimal"},
+                "cost": { "type": "decimal"},
+                "count": { "type": "decimal"},
+                "change": { "type": "decimal"},
+                "absolute_change": { "type": "decimal"},
+                "note": { "type": "string"},
+                "expiration_date": { "type": "string"},
+                "created_at": { "type": "string"},
+                "updated_at": { "type": "string"},
+                "stock": {
+                  "id": { "type": "integer" },
+                  "name": { "type": "string"},
+                  "lot_code": { "type": "string"},
+                  "status": { "type": "string"},
+                  "barcode": { "type": "string"},
+                  "details": { "type": "string"},
+                  "note": { "type": "string"},
+                  "count": { "type": "decimal"},
+                  "cost": { "type": "decimal"},
+                  "expiration_date": { "type": "string"},
+                  "created_at": { "type": "string"},
+                  "updated_at": { "type": "string"},
+                  "inventory": {
+                    "id": { "type": "integer" },
+                    "name": { "type": "string"},
+                    "category_name": { "type": "string"},
+                    "on_hand": { "type": "decimal"},
+                    "unit_of_use": { "type": "string"},
+                    "unit_of_purchase": { "type": "string"},
+                    "property": { "type": "string"},
+                    "sku": { "type": "string"},
+                    "created_at": { "type": "string"},
+                    "updated_at": { "type": "string"}
+                  },
+                  "location": {
+                    "id": { "type": "integer" },
+                    "name": { "type": "string"}
+                  },
+                  "vendor": {
+                    "id": { "type": "integer" },
+                    "first_name": { "type": "string"},
+                    "last_name": { "type": "string"},
+                    "display_name": { "type": "string"},
+                    "email": { "type": "string"},
+                    "phone": { "type": "string"},
+                    "mobile": { "type": "string"},
+                    "fax": { "type": "string"},
+                    "website": { "type": "string"},
+                    "note": { "type": "string"},
+                    "kind": { "type": "string"},
+                    "created_at": { "type": "string"},
+                    "updated_at": { "type": "string"},
+                    "custom_field_1": { "type": "string"},
+                    "custom_field_2": { "type": "string"},
+                    "custom_field_3": { "type": "string"},
+                    "custom_field_4": { "type": "string"},
+                    "business_license_number": { "type": "string"}
+                  }
+                }
+              }
             },
             "examples": {
               "Example": {
