@@ -4,6 +4,14 @@
     "tags": [
       "Inventory"
     ],
+    "parameters": [{
+      "in": "query",
+      "name": "inventory_id",
+      "description": "Optional inventory ID to get the most recent stock lot change for",
+      "schema": {
+        "type": "integer"
+      }
+    }],
     "responses": {
       "200": {
         "description": "OK",
