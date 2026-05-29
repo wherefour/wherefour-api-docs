@@ -29,6 +29,10 @@
     "quote_id": {
       "type": "integer"
     },
+    "ship_from_address_id": {
+      "type": "integer",
+      "description": "Facility Address ID, not Facility ID or Customer Address ID"
+    },
     "instructions": {
       "type": "string"
     },
