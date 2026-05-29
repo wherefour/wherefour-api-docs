@@ -24,7 +24,8 @@
       "type": "integer"
     },
     "credit_from_address_id": {
-      "type": "integer"
+      "type": "integer",
+      "description": "Facility Address ID, not Facility ID or Customer Address ID"
     },
     "total": {
       "type": "number",

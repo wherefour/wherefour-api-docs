@@ -15,7 +15,8 @@
       "required": true
     },
     "ship_from_address_id": {
-      "type": "integer"
+      "type": "integer",
+      "description": "Facility Address ID, not Facility ID or Customer Address ID"
     },
     "po_number": {
       "type": "string"
