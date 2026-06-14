@@ -1,0 +1,87 @@
+{
+  "summary": "Search for a facility by name",
+  "description": "Locates a facility by name",
+  "get": {
+    "tags": [
+      "Facilities"
+    ],
+    "description": "Locates a facility by name",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "page",
+        "description": "Results page to view",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      {
+        "in": "query",
+        "name": "name",
+        "description": "Case-insensitive partial name search",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "in": "query",
+        "name": "locator_code",
+        "description": "Case-insensitive partial locator code search",
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "Total": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Total count of results"
+          },
+          "Per-Page": {
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results per page"
+          },
+          "Link": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs for the next or previous pages of the results"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/facility.json"
+            },
+            "examples": {
+              "Example": {
+                "value": [{
+                  "id": 1,
+                  "name": "Main Facility",
+                  "locator_code": "MAI",
+                  "primary": true,
+                  "allowed_user_strategy": "all_users",
+                  "level_1_name": "Zone",
+                  "level_2_name": "Aisle",
+                  "level_3_name": "Rack",
+                  "level_4_name": "Rack",
+                  "level_5_name": "Shelf",
+                  "level_6_name": "Bin"
+                }]
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": "Search for facilities",
+    "operationId": "search_facilities"
+  }
+}

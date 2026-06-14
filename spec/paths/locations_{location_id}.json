@@ -1,0 +1,60 @@
+{
+  "summary": "Get a location",
+  "description": "Retrieves a location record by ID",
+  "get": {
+    "tags": [
+      "Locations"
+    ],
+    "summary": "Get Location",
+    "description": "Retrieves a location record by ID",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../components/schemas/location.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 5,
+                  "facility_id": 1,
+                  "parent_location_id": null,
+                  "name": "London Warehouse",
+                  "locator_code": "LONW",
+                  "global_identifier": "",
+                  "locator_name_path": "Main Facility:London Warehouse",
+                  "locator_code_path": "MAI:LONW",
+                  "level_number": 1,
+                  "level_name": "Zone",
+                  "allowed_for_additives": true,
+                  "allowed_for_pick_and_ship": true,
+                  "allowed_for_returns": true,
+                  "allowed_for_warehouse_receive": true,
+                  "allowed_for_work_order_pulls": true,
+                  "allowed_for_word_order_results": true,
+                  "child_location_count": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "get_locations"
+  },
+  "parameters": [
+    {
+      "name": "location_id",
+      "in": "path",
+      "example": 1,
+      "required": true,
+      "deprecated": false,
+      "description": "ID for the location record",
+      "schema": {
+        "type": "integer"
+      }
+    }
+  ]
+}

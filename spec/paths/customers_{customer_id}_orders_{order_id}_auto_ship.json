@@ -15,9 +15,9 @@
               "delivery_method": {
                 "type": "string"
               },
-              "location_name": {
-                "type": "string",
-                "description": "Name of the Wherefour location to pull stock from. If not provided, auto ship will pull available stock lots from any location. Name lookup will use the closest found match for the name provided or \"null\" for no match."
+              "location_id": {
+                "type": "integer",
+                "description": "ID of the Wherefour Location to pull stock from. If not provided, auto ship will pull available stock lots from any location."
               },
               "tracking_number": {
                 "type": "string",
@@ -36,7 +36,7 @@
               "value": {
                 "tracking_number": "123456",
                 "delivery_method": "UPS Ground",
-                "location_name": "North Warehouse"
+                "location_id": 1
               }
             }
           }

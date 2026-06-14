@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "title": "Facility",
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "type": "string" },
+    "locator_code": { "type": "string" },
+    "primary": { "type": "boolean" },
+    "allowed_user_strategy": { "type": "string" },
+    "level_1_name": { "type": "string" },
+    "level_2_name": { "type": "string" },
+    "level_3_name": { "type": "string" },
+    "level_4_name": { "type": "string" },
+    "level_5_name": { "type": "string" },
+    "level_6_name": { "type": "string" },
+    "facility_address": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "type": { "type": "string" },
+        "descriptive_name": { "type": "string" },
+        "line1": { "type": "string" },
+        "line2": { "type": "string" },
+        "line3": { "type": "string" },
+        "line4": { "type": "string" },
+        "line5": { "type": "string" },
+        "city": { "type": "string" },
+        "country_subdivision_code": { "type": "string" },
+        "postal_code": { "type": "string" },
+        "country": { "type": "string" },
+        "created_at": { "type": "string" },
+        "upated_at": { "type": "string" }
+      }
+    }
+  }
+}

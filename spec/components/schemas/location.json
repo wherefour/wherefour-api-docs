@@ -5,11 +5,50 @@
     "id": {
       "type": "integer"
     },
+    "facility_id": {
+      "type": "integer"
+    },
+    "parent_location_id": {
+      "type": "integer"
+    },
     "name": {
       "type": "string"
     },
-    "location_code": {
+    "locator_name_path": {
       "type": "string"
+    },
+    "locator_code": {
+      "type": "string"
+    },
+    "locator_code_path": {
+      "type": "string"
+    },
+    "level_number": {
+      "type": "number"
+    },
+    "level_name": {
+      "type": "string"
+    },
+    "allowed_for_additives": {
+      "type": "boolean"
+    },
+    "allowed_for_pick_and_ship": {
+      "type": "boolean"
+    },
+    "allowed_for_returns": {
+      "type": "boolean"
+    },
+    "allowed_for_warehouse_receive": {
+      "type": "boolean"
+    },
+    "allowed_for_work_order_pulls": {
+      "type": "boolean"
+    },
+    "allowed_for_work_order_results": {
+      "type": "boolean"
+    },
+    "child_location_count": {
+      "type": "integer"
     }
   }
 }
