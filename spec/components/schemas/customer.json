@@ -34,6 +34,12 @@
     "kind": {
       "type": "string"
     },
+    "sales_channel": {
+      "type": "string"
+    },
+    "sales_channel_id": {
+      "type": "number"
+    },
     "created_at": {
       "type": "string"
     },
@@ -60,6 +66,9 @@
     },
     "salesperson": {
       "type": "string"
+    },
+    "salesperson_id": {
+      "type": "number"
     },
     "delivery_method": {
       "type": "string"
