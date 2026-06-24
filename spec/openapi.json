@@ -150,6 +150,15 @@
     "/settings/delivery_methods": {
       "$ref": "paths/settings_delivery_methods.json"
     },
+    "/settings/sales_channels": {
+      "$ref": "paths/settings_sales_channels.json"
+    },
+    "/settings/salespeople": {
+      "$ref": "paths/settings_salespeople.json"
+    },
+    "/settings/payment_terms": {
+      "$ref": "paths/settings_payment_terms.json"
+    },
     "/reports/activities": {
       "$ref": "paths/reports_activities.json"
     },
