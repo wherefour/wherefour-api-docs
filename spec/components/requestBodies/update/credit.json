@@ -24,9 +24,6 @@
       "type": "integer",
       "description": "Facility Address ID, not Facility ID or Customer Address ID"
     },
-    "total": {
-      "type": "number"
-    },
     "customer_message": {
       "type": "string"
     },

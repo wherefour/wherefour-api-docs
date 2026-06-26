@@ -27,10 +27,6 @@
       "type": "integer",
       "description": "Facility Address ID, not Facility ID or Customer Address ID"
     },
-    "total": {
-      "type": "number",
-      "description": "If not provided, total will be calculated based on credit items and custom line items"
-    },
     "customer_message": {
       "type": "string"
     },
