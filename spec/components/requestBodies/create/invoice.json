@@ -32,9 +32,6 @@
     "instructions": {
       "type": "string"
     },
-    "subtotal": {
-      "type": "number"
-    },
     "tax": {
       "type": "number"
     },
