@@ -39,9 +39,6 @@
     "invoiced": {
       "type": "boolean"
     },
-    "subtotal": {
-      "type": "number"
-    },
     "tax": {
       "type": "number"
     },

@@ -92,11 +92,9 @@
                 "salesperson_id": null,
                 "delivery_method_id": 1,
                 "instructions": null,
-                "subtotal": 100,
                 "discount": 0,
                 "tax": 0,
                 "shipping": 0,
-                "total": 0,
                 "order_items_attributes": [
                   {
                     "inventory_id": 4,
