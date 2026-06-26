@@ -24,6 +24,46 @@
   "patch": {
     "summary": "Update Quote",
     "operationId": "update_quote",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../components/requestBodies/update/quote.json"
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "quote_number": "QO100",
+                "quote_date": "2020-09-04",
+                "expiration_date": "2020-09-04",
+                "payment_term_id": null,
+                "status": "open",
+                "salesperson_id": null,
+                "delivery_method_id": 1,
+                "instructions": null,
+                "discount": 0,
+                "tax": 0,
+                "shipping": 0,
+                "quote_items_attributes": [
+                  {
+                    "id": 2,
+                    "inventory_id": 4,
+                    "count": 10,
+                    "override_unit_price": 0,
+                    "_destroy": false
+                  },
+                  {
+                    "inventory_id": 6,
+                    "count": 5,
+                    "override_unit_price": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "responses": {
       "200": {
         "description": "OK",

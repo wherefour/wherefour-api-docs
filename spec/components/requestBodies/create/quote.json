@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "description": "At least one quote item is required.",
+  "properties": {
+    "quote_number": {
+      "type": "string"
+    },
+    "quote_date": {
+      "type": "string",
+      "required": true
+    },
+    "expiration_date": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "payment_term_id": {
+      "type": "integer"
+    },
+    "price_tier_name": {
+      "type": "string"
+    },
+    "price_tier_id": {
+      "type": "integer"
+    },
+    "sales_channel_id": {
+      "type": "integer"
+    },
+    "salesperson_id": {
+      "type": "integer"
+    },
+    "delivery_method_id": {
+      "type": "integer"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "tax": {
+      "type": "number"
+    },
+    "shipping": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "price_tier_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "quote_items_attributes": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "type": "object",
+        "description": "Either inventory ID or SKU is required",
+        "properties": {
+          "inventory_id": {
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number",
+            "required": true
+          },
+          "override_unit_price": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

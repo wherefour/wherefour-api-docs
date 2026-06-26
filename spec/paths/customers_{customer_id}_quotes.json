@@ -170,8 +170,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "type": "object",
-            "properties": {}
+            "$ref": "../components/requestBodies/create/quote.json"
           },
           "examples": {
             "Example": {
