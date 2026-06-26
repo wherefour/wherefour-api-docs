@@ -36,9 +36,13 @@
                   "fax": "",
                   "website": "https://wherefour.com",
                   "kind": "retailer",
+                  "sales_channel": "Direct",
+                  "sales_channel_id": 1,
                   "created_at": "2020-09-11T13:57:46.742Z",
                   "updated_at": "2020-09-11T13:57:46.742Z",
                   "payment_terms": "Net 30",
+                  "salesperson": "Greg Stevenson",
+                  "salesperson_id": 2,
                   "delivery_method": "Route: Embarcadero North",
                   "block_shipments": false,
                   "billing_address": {
@@ -82,6 +86,49 @@
           "application/json": {
             "schema": {
               "$ref": "../components/schemas/customer.json"
+            },
+            "examples": {
+              "Example": {
+                "value": {
+                  "id": 1,
+                  "first_name": "John",
+                  "last_name": "Smith",
+                  "display_name": "John A Smith",
+                  "email": "test@example.com",
+                  "phone": "555-1212",
+                  "mobile": "555-2222",
+                  "fax": "555-3333",
+                  "website": "https://website.com",
+                  "kind": "retailer",
+                  "sales_channel": "Direct",
+                  "sales_channel_id": 1,
+                  "created_at": "2020-09-11T13:57:46.742Z",
+                  "updated_at": "2020-09-11T13:57:46.742Z",
+                  "payment_terms": "Net 30",
+                  "salesperson": "Greg Stevenson",
+                  "salesperson_id": 2,
+                  "delivery_method": "Route: Embarcadero North",
+                  "block_shipments": false,
+                  "billing_address": {
+                    "id": 1,
+                    "line1": "123 Main",
+                    "city": "San Francisco",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94455",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  },
+                  "shipping_address": {
+                    "id": 2,
+                    "line1": "555 Main",
+                    "city": "Petaluma",
+                    "country_subdivision_code": "CA",
+                    "postal_code": "94954",
+                    "created_at": "2020-09-11T13:57:46.802Z",
+                    "updated_at": "2020-09-11T13:57:46.802Z"
+                  }
+                }
+              }
             }
           }
         }
@@ -115,6 +162,8 @@
                   "custom_field_4": null,
                   "business_license_number": "123",
                   "block_shipments": false,
+                  "sales_channel_id": 1,
+                  "salesperson_id": 2,
                   "billing_address_attributes": {
                     "line1": "123 Main",
                     "line2": null,
