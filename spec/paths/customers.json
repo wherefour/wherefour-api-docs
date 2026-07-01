@@ -169,7 +169,56 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../components/schemas/customer.json"
+            "type": "object",
+            "properties": {
+              "first_name": { "type": "string" },
+              "middle_name": { "type": "string" },
+              "last_name": { "type": "string" },
+              "display_name": { "type": "string" },
+              "email": { "type": "string" },
+              "phone": { "type": "string" },
+              "mobile": { "type": "string" },
+              "fax": { "type": "string" },
+              "website": { "type": "string" },
+              "note": { "type": "string" },
+              "kind": { "type": "string" },
+              "custom_field_1": { "type": "string" },
+              "custom_field_2": { "type": "string" },
+              "custom_field_3": { "type": "string" },
+              "custom_field_4": { "type": "string" },
+              "business_license_number": { "type": "string" },
+              "block_shipments": { "type": "boolean" },
+              "sales_channel_id": { "type": "number" },
+              "salesperson_id": { "type": "number" },
+              "billing_address_attributes": {
+                "type": "object",
+                "properties": {
+                  "line1": { "type": "string" },
+                  "line2": { "type": "string" },
+                  "line3": { "type": "string" },
+                  "line4": { "type": "string" },
+                  "line5": { "type": "string" },
+                  "city": { "type": "string" },
+                  "country_subdivision_code": { "type": "string" },
+                  "postal_code": { "type": "string" },
+                  "country": { "type": "string" }
+                }
+              },
+              "shipping_address_attributes": {
+                "type": "object",
+                "properties": {
+                  "line1": { "type": "string" },
+                  "line2": { "type": "string" },
+                  "line3": { "type": "string" },
+                  "line4": { "type": "string" },
+                  "line5": { "type": "string" },
+                  "city": { "type": "string" },
+                  "country_subdivision_code": { "type": "string" },
+                  "postal_code": { "type": "string" },
+                  "country": { "type": "string" }
+                }
+              }
+            }
           },
           "examples": {
             "example-1": {
