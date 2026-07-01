@@ -1,14 +1,16 @@
 {
   "type": "object",
-  "description": "At least one invoice item is required.",
+  "description": "At least one quote item is required.",
   "properties": {
-    "invoice_number": {
+    "quote_number": {
+      "type": "string"
+    },
+    "quote_date": {
       "type": "string",
       "required": true
     },
-    "invoice_date": {
-      "type": "string",
-      "required": true
+    "expiration_date": {
+      "type": "string"
     },
     "status": {
       "type": "string",
@@ -17,7 +19,10 @@
     "payment_term_id": {
       "type": "integer"
     },
-    "delivery_method_id": {
+    "price_tier_name": {
+      "type": "string"
+    },
+    "price_tier_id": {
       "type": "integer"
     },
     "sales_channel_id": {
@@ -26,7 +31,7 @@
     "salesperson_id": {
       "type": "integer"
     },
-    "quote_id": {
+    "delivery_method_id": {
       "type": "integer"
     },
     "instructions": {
@@ -47,7 +52,7 @@
         "type": "integer"
       }
     },
-    "invoice_items_attributes": {
+    "quote_items_attributes": {
       "type": "array",
       "required": true,
       "items": {
@@ -69,9 +74,6 @@
           }
         }
       }
-    },
-    "custom_line_items_attributes": {
-      "$ref": "custom_line_items.json"
     }
   }
 }

@@ -50,7 +50,6 @@
                 "credit_number": "CRED100",
                 "credit_date": "2020-09-04",
                 "status": "active",
-                "total": 0,
                 "customer_message": null,
                 "internal_notes": null,
                 "credit_items_attributes": [
