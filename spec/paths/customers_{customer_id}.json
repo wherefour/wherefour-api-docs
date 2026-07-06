@@ -134,7 +134,7 @@
         }
       }
     },
-    "description": "Updates the customer record for the specified ID.",
+    "description": "Updates the customer record for the specified ID. Omitted fields are left as is. To clear a value include the field with null.",
     "requestBody": {
       "content": {
         "application/json": {

@@ -170,6 +170,7 @@
         "application/json": {
           "schema": {
             "type": "object",
+            "required": ["display_name"],
             "properties": {
               "first_name": { "type": "string" },
               "middle_name": { "type": "string" },
