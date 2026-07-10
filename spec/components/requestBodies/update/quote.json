@@ -1,14 +1,16 @@
 {
   "type": "object",
-  "description": "At least one invoice item is required.",
+  "description": "At least one quote item is required.",
   "properties": {
-    "invoice_number": {
+    "quote_number": {
+      "type": "string"
+    },
+    "quote_date": {
       "type": "string",
       "required": true
     },
-    "invoice_date": {
-      "type": "string",
-      "required": true
+    "expiration_date": {
+      "type": "string"
     },
     "status": {
       "type": "string",
@@ -17,7 +19,10 @@
     "payment_term_id": {
       "type": "integer"
     },
-    "delivery_method_id": {
+    "price_tier_name": {
+      "type": "string"
+    },
+    "price_tier_id": {
       "type": "integer"
     },
     "sales_channel_id": {
@@ -26,7 +31,7 @@
     "salesperson_id": {
       "type": "integer"
     },
-    "quote_id": {
+    "delivery_method_id": {
       "type": "integer"
     },
     "instructions": {
@@ -47,18 +52,24 @@
         "type": "integer"
       }
     },
-    "invoice_items_attributes": {
+    "quote_items_attributes": {
       "type": "array",
       "required": true,
       "items": {
         "type": "object",
-        "description": "Either inventory ID or SKU is required",
+        "description": "Either inventory ID or SKU is required when adding a new quote item",
         "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Required when editing existing quote items"
+          },
           "inventory_id": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Either inventory ID or SKU is required when adding a new quote item"
           },
           "sku": {
-            "type": "string"
+            "type": "string",
+            "description": "Either inventory ID or SKU is required when adding a new quote item"
           },
           "count": {
             "type": "number",
@@ -66,12 +77,13 @@
           },
           "override_unit_price": {
             "type": "number"
+          },
+          "_destroy": {
+            "type": "boolean",
+            "description": "Setting this to true will remove the specified quote item"
           }
         }
       }
-    },
-    "custom_line_items_attributes": {
-      "$ref": "custom_line_items.json"
     }
   }
 }
