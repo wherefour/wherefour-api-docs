@@ -72,6 +72,7 @@
                   "salesperson_id": null,
                   "delivery_method_id": 1,
                   "instructions": "",
+                  "internal_notes": "",
                   "subtotal": "300.0",
                   "discount": "10.0",
                   "tax": "0.00",

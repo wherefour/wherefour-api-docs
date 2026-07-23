@@ -90,6 +90,7 @@
                   "salesperson_name": "",
                   "delivery_method_id": 1,
                   "instructions": "",
+                  "internal_notes": "",
                   "subtotal": "100.0",
                   "discount": "0.0",
                   "tax": "0.0",

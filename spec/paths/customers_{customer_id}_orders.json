@@ -92,6 +92,7 @@
                 "salesperson_id": null,
                 "delivery_method_id": 1,
                 "instructions": null,
+                "internal_notes": null,
                 "discount": 0,
                 "tax": 0,
                 "shipping": 0,

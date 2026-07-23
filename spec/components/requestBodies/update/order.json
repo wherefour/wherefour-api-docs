@@ -36,6 +36,9 @@
     "instructions": {
       "type": "string"
     },
+    "internal_notes": {
+      "type": "string"
+    },
     "invoiced": {
       "type": "boolean"
     },
