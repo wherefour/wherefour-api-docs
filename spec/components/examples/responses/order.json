@@ -5,6 +5,7 @@
   "deliver_date": "2020-09-04",
   "po_number": "12345",
   "status": "open",
+  "internal_notes": "Rush order",
   "subtotal": "100.0",
   "discount": "0.0",
   "tax": "0.0",

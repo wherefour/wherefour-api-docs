@@ -22,6 +22,9 @@
     "instructions": {
       "type": "string"
     },
+    "internal_notes": {
+      "type": "string"
+    },
     "subtotal": {
       "type": "string"
     },
