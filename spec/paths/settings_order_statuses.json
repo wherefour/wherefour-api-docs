@@ -47,23 +47,7 @@
               "Example": {
                 "value": {
                   "id": 1,
-                  "name": "Pending",
-                  "organization_id": 1,
-                  "position": 0,
-                  "allow_holds": true,
-                  "allow_partial_shipments": true,
-                  "allow_shipments": true,
-                  "new_order_status": true,
-                  "open_order_status": false,
-                  "order_archived_status": false,
-                  "order_canceled_status": false,
-                  "order_complete_status": false,
-                  "order_has_holds_status": false,
-                  "order_has_released_all_holds_status": false,
-                  "order_has_shipments_status": false,
-                  "shipments_reversed_status": false,
-                  "created_at": "2026-08-27T23:29:29.184Z",
-                  "updated_at": "2026-08-27T23:29:29.184Z"
+                  "name": "Pending"
                 }
               }
             }

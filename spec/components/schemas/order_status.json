@@ -7,54 +7,6 @@
     },
     "name": {
       "type": "string"
-    },
-    "organization_id": {
-      "type": "number"
-    },
-    "position": {
-      "type": "number"
-    },
-    "allow_holds": {
-      "type": "boolean"
-    },
-    "allow_partial_shipments": {
-      "type": "boolean"
-    },
-    "allow_shipments": {
-      "type": "boolean"
-    },
-    "new_order_status": {
-      "type": "boolean"
-    },
-    "open_order_status": {
-      "type": "boolean"
-    },
-    "order_archived_status": {
-      "type": "boolean"
-    },
-    "order_canceled_status": {
-      "type": "boolean"
-    },
-    "order_complete_status": {
-      "type": "boolean"
-    },
-    "order_has_holds_status": {
-      "type": "boolean"
-    },
-    "order_has_released_all_holds_status": {
-      "type": "boolean"
-    },
-    "order_has_shipments_status": {
-      "type": "boolean"
-    },
-    "shipments_reversed_status": {
-      "type": "boolean"
-    },
-    "created_at": {
-      "type": "string"
-    },
-    "updated_at": {
-      "type": "string"
     }
   }
 }
