@@ -159,6 +159,9 @@
     "/settings/payment_terms": {
       "$ref": "paths/settings_payment_terms.json"
     },
+    "/settings/order_statuses": {
+      "$ref": "paths/settings_order_statuses.json"
+    },
     "/reports/activities": {
       "$ref": "paths/reports_activities.json"
     },
