@@ -96,6 +96,7 @@
                     "deliver_date": "2020-09-04",
                     "po_number": "12345",
                     "status": "open",
+                    "order_status_id": 1,
                     "salesperson_id": null,
                     "salesperson_name": null,
                     "delivery_method_id": 1,

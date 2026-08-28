@@ -24,6 +24,7 @@
                   "deliver_date": "3/1/20",
                   "po_number": "123456-11",
                   "status": "complete",
+                  "order_status_id": 5,
                   "salesperson_id": null,
                   "salesperson_name": null,
                   "delivery_method_id": 1,

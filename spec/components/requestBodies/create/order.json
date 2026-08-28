@@ -10,9 +10,9 @@
       "type": "string",
       "required": true
     },
-    "status": {
-      "type": "string",
-      "required": true
+    "order_status_id": {
+      "type": "integer",
+      "required": false
     },
     "ship_from_address_id": {
       "type": "integer",

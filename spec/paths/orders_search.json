@@ -69,6 +69,7 @@
                   "produce_date": "2020-07-16",
                   "deliver_date": "2020-07-16",
                   "status": "invoiced",
+                  "order_status_id": 4,
                   "salesperson_id": null,
                   "delivery_method_id": 1,
                   "instructions": "",
