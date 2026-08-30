@@ -19,6 +19,9 @@
     "status": {
       "type": "string"
     },
+    "order_status_id": {
+      "type": "integer"
+    },
     "instructions": {
       "type": "string"
     },

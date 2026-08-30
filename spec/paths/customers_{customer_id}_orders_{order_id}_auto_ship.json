@@ -62,7 +62,7 @@
       },
       "description": ""
     },
-    "description": "Performs a \"pick and ship\" for the specified order. Wherefour will auto-select available lot coded inventory, based on each inventory item's pull strategy, to fulfill the order. If the location is specified, only inventory at that location will be considered. If not enough inventory is available, a partial shipment will be created. Results of the shipment, with the selected stock lots, will be returned.\n\nThe optional ship_date param can be used to specify the timestamp of the shipment. Date/time should be in the format \"2021-02-02 12:00 AM\" and in the same time zone as the user's Wherefour settings.",
+    "description": "Performs a \"pick and ship\" for the specified order. Wherefour will auto-select available lot coded inventory, based on each inventory item's pull strategy, to fulfill the order. If the location is specified, only inventory at that location will be considered. If not enough inventory is available, a partial shipment will be created. Results of the shipment, with the selected stock lots, will be returned.\n\nThe optional ship_date param can be used to specify the timestamp of the shipment. Date/time should be in the format \"2021-02-02 12:00 AM\" and in the same time zone as the user's Wherefour settings.\n\nThe request will be rejected with a 422 response if the order has already been fulfilled, if shipments are blocked for the customer, or if the order's order status does not allow shipments.",
     "responses": {
       "200": {
         "description": "OK",
@@ -96,6 +96,7 @@
                     "deliver_date": "2020-09-04",
                     "po_number": "12345",
                     "status": "open",
+                    "order_status_id": 1,
                     "salesperson_id": null,
                     "salesperson_name": null,
                     "delivery_method_id": 1,

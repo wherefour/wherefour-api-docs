@@ -88,6 +88,7 @@
                 "po_number": "12345",
                 "payment_term_id": null,
                 "status": "open",
+                "order_status_id": 1,
                 "origin": "wherefour",
                 "salesperson_id": null,
                 "delivery_method_id": 1,

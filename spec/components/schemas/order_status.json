@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "title": "Order Status",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

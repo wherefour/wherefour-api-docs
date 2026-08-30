@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.24",
+    "version": "1.0.25",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -158,6 +158,9 @@
     },
     "/settings/payment_terms": {
       "$ref": "paths/settings_payment_terms.json"
+    },
+    "/settings/order_statuses": {
+      "$ref": "paths/settings_order_statuses.json"
     },
     "/reports/activities": {
       "$ref": "paths/reports_activities.json"
