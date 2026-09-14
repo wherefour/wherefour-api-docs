@@ -1,0 +1,34 @@
+env:
+  CONTAINER_REPO: 010526249675.dkr.ecr.us-west-2.amazonaws.com/wherefour-api-docs
+
+steps:
+  - label: ':docker:'
+    key: docker
+    command:
+    - |
+      set -euo pipefail
+
+      # The 7-char sha is the tag the infra deploy pins to
+      # (bin/run -w production -d k8s/system apply -var api_docs_tag=<sha>).
+      sha=$${BUILDKITE_COMMIT:0:7}
+
+      # Branch names contain characters a Docker tag can't (e.g. the `/` in
+      # DEV-1234/some-change), so squash anything outside [A-Za-z0-9_.-] to `-`.
+      # `cache-` matches the prefix rule in this repo's ECR lifecycle policy
+      # (environments/vpn in the infrastructure repo), so cache tags expire at 14d.
+      branch=$$(printf '%s' "$${BUILDKITE_BRANCH}" | tr -c 'A-Za-z0-9_.-' '-' | cut -c1-100)
+      cache=$${CONTAINER_REPO}:cache-$${branch}
+
+      # `latest` is what a plain k8s/system apply pulls, so only main moves it.
+      tags="-t $${CONTAINER_REPO}:$${sha} -t $${cache}"
+      if [ "$${BUILDKITE_BRANCH}" = "main" ]; then
+        tags="$${tags} -t $${CONTAINER_REPO}:latest"
+      fi
+
+      # Inline cache + --cache-from a previously pushed tag: works on buildx's default
+      # docker driver (`--cache-to type=registry` does not).
+      docker buildx build --push \
+        --build-arg BUILDKIT_INLINE_CACHE=1 \
+        --cache-from $${cache} \
+        $${tags} \
+        .
