@@ -19,9 +19,11 @@ steps:
       branch=$$(printf '%s' "$${BUILDKITE_BRANCH}" | tr -c 'A-Za-z0-9_.-' '-' | cut -c1-100)
       cache=$${CONTAINER_REPO}:cache-$${branch}
 
-      # `latest` is what a plain k8s/system apply pulls, so only main moves it.
+      # `latest` is what a plain k8s/system apply pulls, so only the default branch
+      # moves it. Use Buildkite's own default-branch var rather than hardcoding a
+      # name — this repo's default is `master`, not `main`.
       tags="-t $${CONTAINER_REPO}:$${sha} -t $${cache}"
-      if [ "$${BUILDKITE_BRANCH}" = "main" ]; then
+      if [ "$${BUILDKITE_BRANCH}" = "$${BUILDKITE_PIPELINE_DEFAULT_BRANCH}" ]; then
         tags="$${tags} -t $${CONTAINER_REPO}:latest"
       fi
 
