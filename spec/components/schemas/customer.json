@@ -4,6 +4,9 @@
     "id": {
       "type": "number"
     },
+    "accounting_id": {
+      "type": "string"
+    },
     "first_name": {
       "type": "string"
     },
