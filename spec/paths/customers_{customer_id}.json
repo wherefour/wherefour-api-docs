@@ -27,6 +27,7 @@
               "Example": {
                 "value": {
                   "id": 1,
+                  "accounting_id": "123456abc",
                   "first_name": "",
                   "last_name": "",
                   "display_name": "Embarcadero Market & Deli",
@@ -91,6 +92,7 @@
               "Example": {
                 "value": {
                   "id": 1,
+                  "accounting_id": "123456abc",
                   "first_name": "John",
                   "last_name": "Smith",
                   "display_name": "John A Smith",
