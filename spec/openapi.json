@@ -3,7 +3,7 @@
   "info": {
     "title": "Wherefour API",
     "version": "1.0.25",
-    "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).",
+    "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).\n\n## Rate limiting\n\nAPI requests are limited to **1 request per second**.\n\nRequests over the limit receive an HTTP `429 Too Many Requests` response with a plain-text body of `Retry later`. No `Retry-After` header is sent.\n\nTo stay within the limit:\n\n- Send requests sequentially rather than in parallel.\n- On a `429`, wait at least one second before retrying, and back off further if `429`s continue.",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
       "email": "noreply@wherefour.com"
