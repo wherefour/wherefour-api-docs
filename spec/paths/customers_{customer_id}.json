@@ -162,6 +162,7 @@
               "block_shipments": { "type": "boolean" },
               "sales_channel_id": { "type": "number" },
               "salesperson_id": { "type": "number" },
+              "payment_term_id": { "type": "number" },
               "billing_address_attributes": {
                 "type": "object",
                 "properties": {
@@ -214,6 +215,7 @@
                   "block_shipments": false,
                   "sales_channel_id": 1,
                   "salesperson_id": 2,
+                  "payment_term_id": 3,
                   "billing_address_attributes": {
                     "line1": "123 Main",
                     "line2": null,
