@@ -121,6 +121,13 @@
                 "type": "string"
               }
             }
+          },
+          "order_item_details": {
+            "type": "array",
+            "description": "Custom line items and notes under the order item",
+            "items": {
+              "$ref": "line_item_detail.json"
+            }
           }
         }
       }

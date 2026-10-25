@@ -1,0 +1,46 @@
+{
+  "type": "array",
+  "description": "Custom line items and notes under the line, kept in the order sent. Wherefour always works out custom line item prices; a new custom line item that doesn't qualify is left off the line. Find custom line definition IDs with `GET /settings/custom_line_definitions`.",
+  "items": {
+    "type": "object",
+    "properties": {
+      "kind": {
+        "type": "string",
+        "enum": [
+          "custom_line_item",
+          "note"
+        ]
+      },
+      "note": {
+        "type": "string",
+        "description": "Required for `note` details"
+      },
+      "internal_note": {
+        "type": "boolean",
+        "description": "Set to true for a note meant for your team only"
+      },
+      "custom_line_item_attributes": {
+        "type": "object",
+        "description": "Required for `custom_line_item` details",
+        "properties": {
+          "custom_line_definition_id": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "number"
+          },
+          "force_subtotal": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "custom_line_definition_id",
+          "count"
+        ]
+      }
+    },
+    "required": [
+      "kind"
+    ]
+  }
+}

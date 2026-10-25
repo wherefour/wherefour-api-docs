@@ -53,6 +53,9 @@
           "_destroy": {
             "type": "boolean",
             "description": "Setting this to true will delete the specified credit item"
+          },
+          "credit_item_details_attributes": {
+            "$ref": "line_item_details.json"
           }
         }
       }

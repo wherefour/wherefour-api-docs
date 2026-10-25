@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "description": "At least one purchase item is required. Each line's unit price comes from the vendor's price list for its quantity, unless `override_unit_price` is sent. The subtotal and total are always worked out by Wherefour.",
+  "properties": {
+    "purchase_number": {
+      "type": "string",
+      "description": "Defaults to the next purchase order number"
+    },
+    "purchase_date": {
+      "type": "string",
+      "description": "Defaults to today"
+    },
+    "deliver_by_date": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "open",
+        "complete",
+        "canceled",
+        "archived"
+      ],
+      "description": "Defaults to `draft`"
+    },
+    "payment_term_id": {
+      "type": "integer",
+      "description": "Defaults to the vendor's payment term"
+    },
+    "delivery_method_id": {
+      "type": "integer",
+      "description": "Defaults to the vendor's delivery method"
+    },
+    "bill_to_address_id": {
+      "type": "integer",
+      "description": "A facility address. Defaults to the organization's main address"
+    },
+    "deliver_to_address_id": {
+      "type": "integer",
+      "description": "A facility address. Defaults to the organization's main address"
+    },
+    "vendor_reference": {
+      "type": "string"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "tax": {
+      "type": "number"
+    },
+    "shipping": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "purchase_items_attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "Either inventory ID or SKU is required",
+        "properties": {
+          "inventory_id": {
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "override_unit_price": {
+            "type": "number",
+            "description": "Replaces the vendor price list's unit price for this line"
+          },
+          "vendor_item_number": {
+            "type": "string"
+          },
+          "purchase_item_details_attributes": {
+            "$ref": "line_item_details.json"
+          }
+        },
+        "required": [
+          "count"
+        ]
+      }
+    },
+    "custom_line_items_attributes": {
+      "$ref": "custom_line_items.json"
+    }
+  },
+  "required": [
+    "purchase_items_attributes"
+  ]
+}

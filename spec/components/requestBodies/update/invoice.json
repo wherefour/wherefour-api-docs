@@ -2,16 +2,20 @@
   "type": "object",
   "properties": {
     "invoice_number": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "invoice_date": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "status": {
       "type": "string",
-      "required": true
+      "enum": [
+        "draft",
+        "open",
+        "paid",
+        "canceled",
+        "archived"
+      ]
     },
     "payment_term_id": {
       "type": "integer"
@@ -51,7 +55,6 @@
     },
     "invoice_items_attributes": {
       "type": "array",
-      "required": true,
       "items": {
         "type": "object",
         "description": "Either inventory ID or SKU is required when adding a new invoice item",
@@ -70,7 +73,7 @@
           },
           "count": {
             "type": "number",
-            "required": true
+            "description": "Required when adding a new invoice item"
           },
           "override_unit_price": {
             "type": "number"
@@ -78,6 +81,9 @@
           "_destroy": {
             "type": "boolean",
             "description": "Setting this to true will remove the specified invoice item"
+          },
+          "invoice_item_details_attributes": {
+            "$ref": "line_item_details.json"
           }
         }
       }

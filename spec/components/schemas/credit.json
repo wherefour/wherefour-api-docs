@@ -77,6 +77,13 @@
           },
           "updated_at": {
             "type": "string"
+          },
+          "credit_item_details": {
+            "type": "array",
+            "description": "Custom line items and notes under the credit item",
+            "items": {
+              "$ref": "line_item_detail.json"
+            }
           }
         }
       }

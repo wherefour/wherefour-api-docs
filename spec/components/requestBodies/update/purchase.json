@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "description": "A purchase order can't be changed once stock has been received against it. Each line's unit price comes from the vendor's price list for its quantity, unless `override_unit_price` is sent. The subtotal and total are always worked out by Wherefour.",
+  "properties": {
+    "purchase_number": {
+      "type": "string"
+    },
+    "purchase_date": {
+      "type": "string"
+    },
+    "deliver_by_date": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "open",
+        "complete",
+        "canceled",
+        "archived"
+      ]
+    },
+    "payment_term_id": {
+      "type": "integer"
+    },
+    "delivery_method_id": {
+      "type": "integer"
+    },
+    "bill_to_address_id": {
+      "type": "integer",
+      "description": "A facility address"
+    },
+    "deliver_to_address_id": {
+      "type": "integer",
+      "description": "A facility address"
+    },
+    "vendor_reference": {
+      "type": "string"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "tax": {
+      "type": "number"
+    },
+    "shipping": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "purchase_items_attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "Either inventory ID or SKU is required when adding a new purchase item",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Required when editing existing purchase items"
+          },
+          "inventory_id": {
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "override_unit_price": {
+            "type": "number",
+            "description": "Replaces the vendor price list's unit price for this line"
+          },
+          "vendor_item_number": {
+            "type": "string"
+          },
+          "purchase_item_details_attributes": {
+            "$ref": "line_item_details.json"
+          },
+          "count": {
+            "type": "number",
+            "description": "Required when adding a new purchase item"
+          },
+          "_destroy": {
+            "type": "boolean",
+            "description": "Setting this to true will remove the specified purchase item"
+          }
+        }
+      }
+    },
+    "custom_line_items_attributes": {
+      "$ref": "custom_line_items.json"
+    }
+  }
+}

@@ -71,6 +71,9 @@
           },
           "override_unit_price": {
             "type": "number"
+          },
+          "quote_item_details_attributes": {
+            "$ref": "line_item_details.json"
           }
         }
       }

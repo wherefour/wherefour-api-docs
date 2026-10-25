@@ -1,0 +1,54 @@
+{
+  "type": "array",
+  "description": "Custom line items and notes under the line, kept in the order sent. Wherefour always works out custom line item prices; a new custom line item that doesn't qualify is left off the line. Find custom line definition IDs with `GET /settings/custom_line_definitions`. Existing details that aren't sent are kept.",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "Required when editing or removing an existing detail"
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "custom_line_item",
+          "note"
+        ],
+        "description": "Required when adding a new detail"
+      },
+      "note": {
+        "type": "string",
+        "description": "Required for new `note` details"
+      },
+      "internal_note": {
+        "type": "boolean",
+        "description": "Set to true for a note meant for your team only"
+      },
+      "custom_line_item_attributes": {
+        "type": "object",
+        "description": "Required for new `custom_line_item` details",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Required when editing an existing custom line item"
+          },
+          "custom_line_definition_id": {
+            "type": "integer",
+            "description": "Required for a new custom line item"
+          },
+          "count": {
+            "type": "number",
+            "description": "Required for a new custom line item"
+          },
+          "force_subtotal": {
+            "type": "number"
+          }
+        }
+      },
+      "_destroy": {
+        "type": "boolean",
+        "description": "Setting this to true will remove the specified detail"
+      }
+    }
+  }
+}

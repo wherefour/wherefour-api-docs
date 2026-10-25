@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "title": "Line item detail",
+  "description": "A custom line item or note under a document line.",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "invoice_item_id": {
+      "type": "integer",
+      "description": "The line's ID, on invoice lines"
+    },
+    "order_item_id": {
+      "type": "integer",
+      "description": "The line's ID, on order lines"
+    },
+    "quote_item_id": {
+      "type": "integer",
+      "description": "The line's ID, on quote lines"
+    },
+    "credit_item_id": {
+      "type": "integer",
+      "description": "The line's ID, on credit lines"
+    },
+    "purchase_item_id": {
+      "type": "integer",
+      "description": "The line's ID, on purchase lines"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "custom_line_item",
+        "note",
+        "tax"
+      ],
+      "description": "`custom_line_item` and `note` details can be sent. `tax` details are reserved for sales tax and don't include a rate or amount yet."
+    },
+    "position": {
+      "type": "integer",
+      "description": "The detail's order under its line, starting at 0."
+    },
+    "note": {
+      "type": "string",
+      "description": "The note's text, for `note` details.",
+      "nullable": true
+    },
+    "internal_note": {
+      "type": "boolean",
+      "description": "True for a note meant for your team only. Internal notes aren't shown to customers."
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "custom_line_item": {
+      "type": "object",
+      "description": "The custom line item, for `custom_line_item` details. Wherefour works out its price from the custom line definition and the line.",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "organization_id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "count": {
+          "type": "string",
+          "description": "A decimal, sent as a string"
+        },
+        "unit_price": {
+          "type": "string",
+          "description": "A decimal, sent as a string"
+        },
+        "force_subtotal": {
+          "type": "string",
+          "nullable": true,
+          "description": "A decimal, sent as a string; set when the subtotal was entered by hand"
+        },
+        "subtotal": {
+          "type": "string",
+          "description": "A decimal, sent as a string"
+        },
+        "qualified": {
+          "type": "boolean",
+          "description": "Whether the custom line item currently qualifies and counts toward the document's subtotal."
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "custom_line_definition": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "organization_id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "nullable": true
+    }
+  }
+}

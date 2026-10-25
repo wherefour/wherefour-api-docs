@@ -120,6 +120,14 @@
           }
         }
       }
+    },
+    "order": {
+      "description": "The order shipped, with its lines and their custom line items and notes",
+      "allOf": [
+        {
+          "$ref": "order.json"
+        }
+      ]
     }
   },
   "example": {

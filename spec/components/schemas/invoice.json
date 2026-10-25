@@ -8,7 +8,14 @@
       "type": "string"
     },
     "status": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "draft",
+        "open",
+        "paid",
+        "canceled",
+        "archived"
+      ]
     },
     "instructions": {
       "type": "string"
@@ -102,6 +109,13 @@
               "updated_at": {
                 "type": "string"
               }
+            }
+          },
+          "invoice_item_details": {
+            "type": "array",
+            "description": "Custom line items and notes under the invoice item",
+            "items": {
+              "$ref": "line_item_detail.json"
             }
           }
         }

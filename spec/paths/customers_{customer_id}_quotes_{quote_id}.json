@@ -50,7 +50,24 @@
                     "inventory_id": 4,
                     "count": 10,
                     "override_unit_price": 0,
-                    "_destroy": false
+                    "_destroy": false,
+                    "quote_item_details_attributes": [
+                      {
+                        "id": 52,
+                        "note": "Stack no more than 3 high."
+                      },
+                      {
+                        "id": 53,
+                        "_destroy": true
+                      },
+                      {
+                        "kind": "custom_line_item",
+                        "custom_line_item_attributes": {
+                          "custom_line_definition_id": 6,
+                          "count": 2
+                        }
+                      }
+                    ]
                   },
                   {
                     "inventory_id": 6,
@@ -151,7 +168,50 @@
                         "sku": "SK0001",
                         "created_at": "2020-09-11T13:57:46.825Z",
                         "updated_at": "2020-09-11T13:57:46.825Z"
-                      }
+                      },
+                      "quote_item_details": [
+                        {
+                          "id": 51,
+                          "quote_item_id": 10,
+                          "kind": "custom_line_item",
+                          "position": 0,
+                          "note": null,
+                          "internal_note": false,
+                          "created_at": "2026-10-25T18:02:44.322Z",
+                          "updated_at": "2026-10-25T18:02:44.322Z",
+                          "custom_line_item": {
+                            "id": 88,
+                            "organization_id": 1,
+                            "name": "Pallet fee",
+                            "count": "1.0",
+                            "unit_price": "15.0",
+                            "force_subtotal": null,
+                            "subtotal": "15.0",
+                            "qualified": true,
+                            "created_at": "2026-10-25T18:02:44.322Z",
+                            "updated_at": "2026-10-25T18:02:44.322Z",
+                            "custom_line_definition": {
+                              "id": 6,
+                              "organization_id": 1,
+                              "name": "Pallet fee",
+                              "description": "Charge per pallet",
+                              "created_at": "2026-09-02T15:11:40.101Z",
+                              "updated_at": "2026-09-02T15:11:40.101Z"
+                            }
+                          }
+                        },
+                        {
+                          "id": 52,
+                          "quote_item_id": 10,
+                          "kind": "note",
+                          "position": 1,
+                          "note": "Stack no more than 4 high.",
+                          "internal_note": false,
+                          "created_at": "2026-10-25T18:02:44.322Z",
+                          "updated_at": "2026-10-25T18:02:44.322Z",
+                          "custom_line_item": null
+                        }
+                      ]
                     },
                     {
                       "id": 11,
@@ -174,7 +234,8 @@
                         "sku": "SK0002",
                         "created_at": "2020-09-11T13:57:46.825Z",
                         "updated_at": "2020-09-11T13:57:46.825Z"
-                      }
+                      },
+                      "quote_item_details": []
                     }
                   ]
                 }

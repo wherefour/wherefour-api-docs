@@ -4,15 +4,20 @@
   "properties": {
     "invoice_number": {
       "type": "string",
-      "required": true
+      "description": "Not generated automatically, so send the number you want on the invoice"
     },
     "invoice_date": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "status": {
       "type": "string",
-      "required": true
+      "enum": [
+        "draft",
+        "open",
+        "paid",
+        "canceled",
+        "archived"
+      ]
     },
     "payment_term_id": {
       "type": "integer"
@@ -49,7 +54,6 @@
     },
     "invoice_items_attributes": {
       "type": "array",
-      "required": true,
       "items": {
         "type": "object",
         "description": "Either inventory ID or SKU is required",
@@ -61,17 +65,28 @@
             "type": "string"
           },
           "count": {
-            "type": "number",
-            "required": true
+            "type": "number"
           },
           "override_unit_price": {
             "type": "number"
+          },
+          "invoice_item_details_attributes": {
+            "$ref": "line_item_details.json"
           }
-        }
+        },
+        "required": [
+          "count"
+        ]
       }
     },
     "custom_line_items_attributes": {
       "$ref": "custom_line_items.json"
     }
-  }
+  },
+  "required": [
+    "invoice_number",
+    "invoice_date",
+    "status",
+    "invoice_items_attributes"
+  ]
 }

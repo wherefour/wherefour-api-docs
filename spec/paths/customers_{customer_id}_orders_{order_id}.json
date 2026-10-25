@@ -56,7 +56,24 @@
                     "count": 10,
                     "unit_price": 100,
                     "override_unit_price": 0,
-                    "_destroy": false
+                    "_destroy": false,
+                    "order_item_details_attributes": [
+                      {
+                        "id": 52,
+                        "note": "Stack no more than 3 high."
+                      },
+                      {
+                        "id": 53,
+                        "_destroy": true
+                      },
+                      {
+                        "kind": "custom_line_item",
+                        "custom_line_item_attributes": {
+                          "custom_line_definition_id": 6,
+                          "count": 2
+                        }
+                      }
+                    ]
                   },
                   {
                     "inventory_id": 6,

@@ -1,0 +1,221 @@
+{
+  "parameters": [
+    {
+      "schema": {
+        "type": "integer"
+      },
+      "name": "vendor_id",
+      "in": "path",
+      "required": true,
+      "description": "vendor record ID"
+    }
+  ],
+  "post": {
+    "summary": "Create purchase order",
+    "description": "Creates a purchase order for the vendor. New purchase orders are drafts unless `status` is sent. Each line's unit price comes from the vendor's price list for its quantity, unless `override_unit_price` is sent. The subtotal and total are always worked out by Wherefour.",
+    "tags": [
+      "Purchases"
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../components/requestBodies/create/purchase.json"
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "deliver_by_date": "2026-11-05",
+                "vendor_reference": "Q-5521",
+                "instructions": "Deliver to dock 4.",
+                "shipping": 25,
+                "purchase_items_attributes": [
+                  {
+                    "sku": "BOX-12",
+                    "count": 10,
+                    "purchase_item_details_attributes": [
+                      {
+                        "kind": "custom_line_item",
+                        "custom_line_item_attributes": {
+                          "custom_line_definition_id": 6,
+                          "count": 1
+                        }
+                      },
+                      {
+                        "kind": "note",
+                        "note": "Stack no more than 4 high."
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK. The purchase order, in an array.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../components/schemas/purchase.json"
+              }
+            },
+            "examples": {
+              "Example": {
+                "value": [
+                  {
+                    "id": 120,
+                    "purchase_date": "2026-10-25",
+                    "purchase_number": "PO1042",
+                    "status": "draft",
+                    "deliver_by_date": "2026-11-05",
+                    "vendor_reference": "Q-5521",
+                    "instructions": "Deliver to dock 4.",
+                    "subtotal": "1005.0",
+                    "discount": null,
+                    "tax": null,
+                    "shipping": "25.0",
+                    "total": "1030.0",
+                    "created_at": "2026-10-25T18:02:44.318Z",
+                    "updated_at": "2026-10-25T18:02:44.318Z",
+                    "purchase_items": [
+                      {
+                        "id": 311,
+                        "name": "Cardboard case box",
+                        "category_name": "Packaging",
+                        "count": "10.0",
+                        "cost": "99.0",
+                        "sku": "BOX-12",
+                        "upc": null,
+                        "created_at": "2026-10-25T18:02:44.320Z",
+                        "updated_at": "2026-10-25T18:02:44.320Z",
+                        "purchase_item_details": [
+                          {
+                            "id": 51,
+                            "purchase_item_id": 311,
+                            "kind": "custom_line_item",
+                            "position": 0,
+                            "note": null,
+                            "internal_note": false,
+                            "created_at": "2026-10-25T18:02:44.322Z",
+                            "updated_at": "2026-10-25T18:02:44.322Z",
+                            "custom_line_item": {
+                              "id": 88,
+                              "organization_id": 1,
+                              "name": "Pallet fee",
+                              "count": "1.0",
+                              "unit_price": "15.0",
+                              "force_subtotal": null,
+                              "subtotal": "15.0",
+                              "qualified": true,
+                              "created_at": "2026-10-25T18:02:44.322Z",
+                              "updated_at": "2026-10-25T18:02:44.322Z",
+                              "custom_line_definition": {
+                                "id": 6,
+                                "organization_id": 1,
+                                "name": "Pallet fee",
+                                "description": "Per pallet charge",
+                                "created_at": "2026-09-02T15:11:40.101Z",
+                                "updated_at": "2026-09-02T15:11:40.101Z"
+                              }
+                            }
+                          },
+                          {
+                            "id": 52,
+                            "purchase_item_id": 311,
+                            "kind": "note",
+                            "position": 1,
+                            "note": "Stack no more than 4 high.",
+                            "internal_note": false,
+                            "created_at": "2026-10-25T18:02:44.323Z",
+                            "updated_at": "2026-10-25T18:02:44.323Z",
+                            "custom_line_item": null
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "Purchase orders aren't available on the account's plan",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "The vendor or purchase order wasn't found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "422": {
+        "description": "The purchase order couldn't be saved, with the reasons",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operationId": "create_purchase"
+  }
+}

@@ -102,7 +102,20 @@
                     "inventory_id": 4,
                     "count": 10,
                     "unit_price": 100,
-                    "override_unit_price": 0
+                    "override_unit_price": 0,
+                    "order_item_details_attributes": [
+                      {
+                        "kind": "custom_line_item",
+                        "custom_line_item_attributes": {
+                          "custom_line_definition_id": 6,
+                          "count": 1
+                        }
+                      },
+                      {
+                        "kind": "note",
+                        "note": "Stack no more than 4 high."
+                      }
+                    ]
                   },
                   {
                     "inventory_id": 6,

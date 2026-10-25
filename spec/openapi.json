@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Wherefour API",
-    "version": "1.0.26",
+    "version": "1.0.27",
     "description": "API documentation for the Wherefour ERP/traceability platform. More information at: [wherefour.com](https://wherefour.com).\n\n## Rate limiting\n\nAPI requests are limited to **1 request per second**.\n\nRequests over the limit receive an HTTP `429 Too Many Requests` response with a plain-text body of `Retry later`. No `Retry-After` header is sent.\n\nTo stay within the limit:\n\n- Send requests sequentially rather than in parallel.\n- On a `429`, wait at least one second before retrying, and back off further if `429`s continue.",
     "termsOfService": "https://my.wherefour.com/terms_of_service",
     "contact": {
@@ -147,6 +147,12 @@
     "/vendors/search": {
       "$ref": "paths/vendors_search.json"
     },
+    "/vendors/{vendor_id}/purchases": {
+      "$ref": "paths/vendors_{vendor_id}_purchases.json"
+    },
+    "/vendors/{vendor_id}/purchases/{purchase_id}": {
+      "$ref": "paths/vendors_{vendor_id}_purchases_{purchase_id}.json"
+    },
     "/settings/delivery_methods": {
       "$ref": "paths/settings_delivery_methods.json"
     },
@@ -161,6 +167,9 @@
     },
     "/settings/order_statuses": {
       "$ref": "paths/settings_order_statuses.json"
+    },
+    "/settings/custom_line_definitions": {
+      "$ref": "paths/settings_custom_line_definitions.json"
     },
     "/reports/activities": {
       "$ref": "paths/reports_activities.json"

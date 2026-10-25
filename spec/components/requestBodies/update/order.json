@@ -86,6 +86,9 @@
           "_destroy": {
             "type": "boolean",
             "description": "Setting this to true will remove the specified order item"
+          },
+          "order_item_details_attributes": {
+            "$ref": "line_item_details.json"
           }
         }
       }

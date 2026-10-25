@@ -139,7 +139,50 @@
                       "cost": "0.25",
                       "sku": "CSECSECSECSE",
                       "created_at": "2024-02-21T18:36:22.513Z",
-                      "updated_at": "2024-02-21T18:36:22.513Z"
+                      "updated_at": "2024-02-21T18:36:22.513Z",
+                      "purchase_item_details": [
+                        {
+                          "id": 51,
+                          "purchase_item_id": 1,
+                          "kind": "custom_line_item",
+                          "position": 0,
+                          "note": null,
+                          "internal_note": false,
+                          "created_at": "2026-10-25T18:02:44.322Z",
+                          "updated_at": "2026-10-25T18:02:44.322Z",
+                          "custom_line_item": {
+                            "id": 88,
+                            "organization_id": 1,
+                            "name": "Pallet fee",
+                            "count": "1.0",
+                            "unit_price": "15.0",
+                            "force_subtotal": null,
+                            "subtotal": "15.0",
+                            "qualified": true,
+                            "created_at": "2026-10-25T18:02:44.322Z",
+                            "updated_at": "2026-10-25T18:02:44.322Z",
+                            "custom_line_definition": {
+                              "id": 6,
+                              "organization_id": 1,
+                              "name": "Pallet fee",
+                              "description": "Charge per pallet",
+                              "created_at": "2026-09-02T15:11:40.101Z",
+                              "updated_at": "2026-09-02T15:11:40.101Z"
+                            }
+                          }
+                        },
+                        {
+                          "id": 52,
+                          "purchase_item_id": 1,
+                          "kind": "note",
+                          "position": 1,
+                          "note": "Stack no more than 4 high.",
+                          "internal_note": false,
+                          "created_at": "2026-10-25T18:02:44.322Z",
+                          "updated_at": "2026-10-25T18:02:44.322Z",
+                          "custom_line_item": null
+                        }
+                      ]
                     },
                     {
                       "id": 2,
@@ -149,7 +192,8 @@
                       "cost": "2.97",
                       "sku": "AAAAAAAAAAA",
                       "created_at": "2024-02-21T18:36:22.513Z",
-                      "updated_at": "2024-02-21T18:36:22.513Z"
+                      "updated_at": "2024-02-21T18:36:22.513Z",
+                      "purchase_item_details": []
                     }
                   ]
                 }

@@ -1,0 +1,128 @@
+{
+  "type": "object",
+  "title": "Custom Line Definition",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Send this as `custom_line_definition_id` on custom line items"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "line_item_calculation_type": {
+      "type": "string",
+      "enum": [
+        "additive",
+        "subtractive"
+      ],
+      "description": "Whether the custom line item adds to or takes away from the document's subtotal"
+    },
+    "unit_of_measurement": {
+      "type": "string"
+    },
+    "credits_allowed": {
+      "type": "boolean",
+      "description": "Whether the definition can be used on credits"
+    },
+    "credits_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "Whether it's added to credits automatically or by hand"
+    },
+    "invoices_allowed": {
+      "type": "boolean",
+      "description": "Whether the definition can be used on invoices"
+    },
+    "invoices_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "Whether it's added to invoices automatically or by hand"
+    },
+    "orders_allowed": {
+      "type": "boolean",
+      "description": "Whether the definition can be used on orders"
+    },
+    "orders_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "Whether it's added to orders automatically or by hand"
+    },
+    "purchases_allowed": {
+      "type": "boolean",
+      "description": "Whether the definition can be used on purchases"
+    },
+    "purchases_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "Whether it's added to purchases automatically or by hand"
+    },
+    "quotes_allowed": {
+      "type": "boolean",
+      "description": "Whether the definition can be used on quotes"
+    },
+    "quotes_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "Whether it's added to quotes automatically or by hand"
+    },
+    "shipments_allowed": {
+      "type": "boolean",
+      "description": "Whether the definition can be used on shipments"
+    },
+    "shipments_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "Whether it's added to shipments automatically or by hand"
+    },
+    "standing_orders_allowed": {
+      "type": "boolean",
+      "description": "Whether the definition can be used on standing orders"
+    },
+    "standing_orders_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual"
+      ],
+      "description": "Whether it's added to standing orders automatically or by hand"
+    },
+    "customers_allowed": {
+      "type": "boolean",
+      "description": "True when the definition is limited to specific customers"
+    },
+    "vendors_allowed": {
+      "type": "boolean",
+      "description": "True when the definition is limited to specific vendors"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
