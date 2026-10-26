@@ -71,7 +71,7 @@
                     "id": 1,
                     "quote_date": "2020-09-04",
                     "expiration_date": "2020-09-04",
-                    "status": "invoiced",
+                    "status": "accepted",
                     "salesperson_id": null,
                     "delivery_method_id": 1,
                     "instructions": "",

@@ -37,7 +37,7 @@
                 "quote_date": "2020-09-04",
                 "expiration_date": "2020-09-04",
                 "payment_term_id": null,
-                "status": "open",
+                "status": "draft",
                 "salesperson_id": null,
                 "delivery_method_id": 1,
                 "instructions": null,

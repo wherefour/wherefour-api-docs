@@ -12,7 +12,14 @@
       "type": "string"
     },
     "status": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "draft",
+        "sent",
+        "accepted",
+        "rejected",
+        "archived"
+      ]
     },
     "payment_term_id": {
       "type": "integer",

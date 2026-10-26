@@ -63,7 +63,7 @@
                     "id": 6,
                     "quote_date": "2020-09-04",
                     "expiration_date": "2020-09-04",
-                    "status": "open",
+                    "status": "sent",
                     "salesperson_id": null,
                     "salesperson_name": "",
                     "delivery_method_id": 1,

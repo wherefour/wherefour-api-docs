@@ -160,7 +160,14 @@
       "nullable": true
     },
     "status": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "draft",
+        "sent",
+        "accepted",
+        "rejected",
+        "archived"
+      ]
     },
     "instructions": {
       "type": "string",

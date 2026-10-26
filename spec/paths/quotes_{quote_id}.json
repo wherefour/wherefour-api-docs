@@ -25,7 +25,7 @@
                     "id": 1,
                     "quote_date": "2020-09-04",
                     "expiration_date": "2020-09-04",
-                    "status": "complete",
+                    "status": "accepted",
                     "salesperson_id": null,
                     "salesperson_name": null,
                     "delivery_method_id": 1,
