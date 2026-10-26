@@ -58,23 +58,28 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../components/schemas/facility.json"
+              "type": "array",
+              "items": {
+                "$ref": "../components/schemas/facility.json"
+              }
             },
             "examples": {
               "Example": {
-                "value": [{
-                  "id": 1,
-                  "name": "Main Facility",
-                  "locator_code": "MAI",
-                  "primary": true,
-                  "allowed_user_strategy": "all_users",
-                  "level_1_name": "Zone",
-                  "level_2_name": "Aisle",
-                  "level_3_name": "Rack",
-                  "level_4_name": "Rack",
-                  "level_5_name": "Shelf",
-                  "level_6_name": "Bin"
-                }]
+                "value": [
+                  {
+                    "id": 1,
+                    "name": "Main Facility",
+                    "locator_code": "MAI",
+                    "primary": true,
+                    "allowed_user_strategy": "all_users",
+                    "level_1_name": "Zone",
+                    "level_2_name": "Aisle",
+                    "level_3_name": "Rack",
+                    "level_4_name": "Rack",
+                    "level_5_name": "Shelf",
+                    "level_6_name": "Bin"
+                  }
+                ]
               }
             }
           }

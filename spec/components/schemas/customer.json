@@ -5,43 +5,55 @@
       "type": "number"
     },
     "accounting_id": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "first_name": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "last_name": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "display_name": {
       "type": "string"
     },
     "email": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "phone": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "mobile": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "fax": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "website": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "note": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "kind": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "sales_channel": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "sales_channel_id": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "created_at": {
       "type": "string"
@@ -50,31 +62,40 @@
       "type": "string"
     },
     "custom_field_1": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "custom_field_2": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "custom_field_3": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "custom_field_4": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "business_license_number": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "payment_terms": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "salesperson": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "salesperson_id": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "delivery_method": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "billing_address": {
       "type": "object",
@@ -83,36 +104,51 @@
           "type": "number"
         },
         "line1": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line2": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line3": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line4": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line5": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "country_subdivision_code": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "created_at": {
           "type": "string"
         },
         "updated_at": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
           "type": "string"
         }
       }
@@ -124,45 +160,161 @@
           "type": "number"
         },
         "line1": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line2": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line3": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line4": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line5": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "country_subdivision_code": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "created_at": {
           "type": "string"
         },
         "updated_at": {
           "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
+          "type": "string"
         }
       }
     },
     "delivery_driver": {
-      "type": "string"
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "license_number": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "email": {
+          "description": "Sent as null in the captured responses"
+        }
+      },
+      "nullable": true
     },
     "delivery_vehicle": {
-      "type": "string"
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "license_plate_number": {
+          "type": "string"
+        }
+      },
+      "nullable": true
+    },
+    "delivery_method_id": {
+      "type": "integer",
+      "nullable": true
+    },
+    "block_shipments": {
+      "type": "boolean"
+    },
+    "default_special_instructions": {
+      "type": "string",
+      "nullable": true
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          },
+          "descriptive_name": {
+            "type": "string"
+          },
+          "line1": {
+            "type": "string",
+            "nullable": true
+          },
+          "line2": {
+            "type": "string",
+            "nullable": true
+          },
+          "line3": {
+            "type": "string",
+            "nullable": true
+          },
+          "line4": {
+            "description": "Sent as null in the captured responses"
+          },
+          "line5": {
+            "description": "Sent as null in the captured responses"
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "country_subdivision_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "postal_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
   "example": {

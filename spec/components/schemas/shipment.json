@@ -20,10 +20,12 @@
       "type": "number"
     },
     "tracking_number": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "note": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "created_at": {
       "type": "string"
@@ -47,10 +49,12 @@
           "type": "string"
         },
         "line4": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line5": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "city": {
           "type": "string"
@@ -68,6 +72,12 @@
           "type": "string"
         },
         "updated_at": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
           "type": "string"
         }
       }
@@ -117,6 +127,15 @@
                 }
               }
             }
+          },
+          "inventory_upc": {
+            "type": "string"
+          },
+          "part_of_kit": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer"
           }
         }
       }
@@ -128,6 +147,62 @@
           "$ref": "order.json"
         }
       ]
+    },
+    "bill_of_lading_number": {
+      "description": "Sent as null in the captured responses"
+    },
+    "vehicle_number": {
+      "description": "Sent as null in the captured responses"
+    },
+    "delivery_method": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "carrier_code": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "delivery_driver_id": {
+          "description": "Sent as null in the captured responses"
+        },
+        "delivery_vehicle_id": {
+          "description": "Sent as null in the captured responses"
+        },
+        "driver_email": {
+          "description": "Sent as null in the captured responses"
+        },
+        "driver_name": {
+          "description": "Sent as null in the captured responses"
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "organization_id": {
+          "type": "integer"
+        },
+        "role_id": {
+          "description": "Sent as null in the captured responses"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "delivery_driver": {
+      "description": "Sent as null in the captured responses"
+    },
+    "delivery_vehicle": {
+      "description": "Sent as null in the captured responses"
     }
   },
   "example": {

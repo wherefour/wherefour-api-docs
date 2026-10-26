@@ -10,12 +10,24 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {}
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
             },
             "examples": {
               "Example": {
-                "value": {}
+                "value": [
+                  {}
+                ]
               }
             }
           }

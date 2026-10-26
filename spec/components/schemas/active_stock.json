@@ -15,7 +15,8 @@
       "type": "string"
     },
     "count": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "lot_code": {
       "type": "string",
@@ -45,7 +46,8 @@
       "type": "string"
     },
     "cost": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "cost_entered_is_total_code": {
       "type": "boolean",
@@ -59,14 +61,102 @@
     },
     "status": {
       "type": "string",
-      "enum": ["active", "inactive", "on_hold", "quarantined"]
+      "enum": [
+        "active",
+        "inactive",
+        "on_hold",
+        "quarantined"
+      ]
+    },
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "weight": {
+      "description": "Sent as null in the captured responses"
+    },
+    "height": {
+      "description": "Sent as null in the captured responses"
+    },
+    "width": {
+      "description": "Sent as null in the captured responses"
+    },
+    "length": {
+      "description": "Sent as null in the captured responses"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "facility_id": {
+          "type": "integer"
+        },
+        "parent_location_id": {
+          "description": "Sent as null in the captured responses"
+        },
+        "name": {
+          "type": "string"
+        },
+        "global_identifier": {
+          "type": "string"
+        },
+        "locator_name_path": {
+          "type": "string"
+        },
+        "locator_code": {
+          "type": "string"
+        },
+        "locator_code_path": {
+          "type": "string"
+        },
+        "level_number": {
+          "type": "integer"
+        },
+        "level_name": {
+          "type": "string"
+        },
+        "allowed_for_additives": {
+          "type": "boolean"
+        },
+        "allowed_for_pick_and_ship": {
+          "type": "boolean"
+        },
+        "allowed_for_returns": {
+          "type": "boolean"
+        },
+        "allowed_for_warehouse_receive": {
+          "type": "boolean"
+        },
+        "allowed_for_work_order_pulls": {
+          "type": "boolean"
+        },
+        "allowed_for_work_order_results": {
+          "type": "boolean"
+        },
+        "child_location_count": {
+          "type": "integer"
+        }
+      }
+    },
+    "custom_field_values": {
+      "type": "array",
+      "items": {}
     }
-  },
-  "required": [
-    "delivery_method_id",
-    "count",
-    "received_date",
-    "lot_code",
-    "cost"
-  ]
+  }
 }

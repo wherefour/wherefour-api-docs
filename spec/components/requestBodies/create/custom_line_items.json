@@ -4,16 +4,18 @@
     "type": "object",
     "properties": {
       "custom_line_definition_id": {
-        "type": "integer",
-        "required": true
+        "type": "integer"
       },
       "count": {
-        "type": "number",
-        "required": true
+        "type": "number"
       },
       "force_subtotal": {
         "type": "number"
       }
-    }
+    },
+    "required": [
+      "custom_line_definition_id",
+      "count"
+    ]
   }
 }

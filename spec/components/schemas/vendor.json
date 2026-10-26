@@ -5,34 +5,43 @@
       "type": "number"
     },
     "first_name": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "last_name": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "display_name": {
       "type": "string"
     },
     "email": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "phone": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "mobile": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "fax": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "website": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "note": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "kind": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "created_at": {
       "type": "string"
@@ -41,19 +50,24 @@
       "type": "string"
     },
     "custom_field_1": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "custom_field_2": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "custom_field_3": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "custom_field_4": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "business_license_number": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "billing_address": {
       "type": "object",
@@ -65,16 +79,20 @@
           "type": "string"
         },
         "line2": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line3": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line4": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line5": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "city": {
           "type": "string"
@@ -86,12 +104,19 @@
           "type": "string"
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "created_at": {
           "type": "string"
         },
         "updated_at": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
           "type": "string"
         }
       }
@@ -103,36 +128,51 @@
           "type": "number"
         },
         "line1": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line2": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line3": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line4": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line5": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "country_subdivision_code": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "created_at": {
           "type": "string"
         },
         "updated_at": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
           "type": "string"
         }
       }
@@ -149,7 +189,8 @@
         "net": {
           "type": "number"
         }
-      }
+      },
+      "nullable": true
     },
     "delivery_method": {
       "type": "object",
@@ -166,7 +207,8 @@
         "instructions": {
           "type": "string"
         }
-      }
+      },
+      "nullable": true
     }
   },
   "example": {

@@ -86,50 +86,55 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../components/schemas/customer.json"
+              "type": "array",
+              "items": {
+                "$ref": "../components/schemas/customer.json"
+              }
             },
             "examples": {
               "Example": {
-                "value": {
-                  "id": 1,
-                  "accounting_id": "123456abc",
-                  "first_name": "John",
-                  "last_name": "Smith",
-                  "display_name": "John A Smith",
-                  "email": "test@example.com",
-                  "phone": "555-1212",
-                  "mobile": "555-2222",
-                  "fax": "555-3333",
-                  "website": "https://website.com",
-                  "kind": "retailer",
-                  "sales_channel": "Direct",
-                  "sales_channel_id": 1,
-                  "created_at": "2020-09-11T13:57:46.742Z",
-                  "updated_at": "2020-09-11T13:57:46.742Z",
-                  "payment_terms": "Net 30",
-                  "salesperson": "Greg Stevenson",
-                  "salesperson_id": 2,
-                  "delivery_method": "Route: Embarcadero North",
-                  "block_shipments": false,
-                  "billing_address": {
+                "value": [
+                  {
                     "id": 1,
-                    "line1": "123 Main",
-                    "city": "San Francisco",
-                    "country_subdivision_code": "CA",
-                    "postal_code": "94455",
-                    "created_at": "2020-09-11T13:57:46.802Z",
-                    "updated_at": "2020-09-11T13:57:46.802Z"
-                  },
-                  "shipping_address": {
-                    "id": 2,
-                    "line1": "555 Main",
-                    "city": "Petaluma",
-                    "country_subdivision_code": "CA",
-                    "postal_code": "94954",
-                    "created_at": "2020-09-11T13:57:46.802Z",
-                    "updated_at": "2020-09-11T13:57:46.802Z"
+                    "accounting_id": "123456abc",
+                    "first_name": "John",
+                    "last_name": "Smith",
+                    "display_name": "John A Smith",
+                    "email": "test@example.com",
+                    "phone": "555-1212",
+                    "mobile": "555-2222",
+                    "fax": "555-3333",
+                    "website": "https://website.com",
+                    "kind": "retailer",
+                    "sales_channel": "Direct",
+                    "sales_channel_id": 1,
+                    "created_at": "2020-09-11T13:57:46.742Z",
+                    "updated_at": "2020-09-11T13:57:46.742Z",
+                    "payment_terms": "Net 30",
+                    "salesperson": "Greg Stevenson",
+                    "salesperson_id": 2,
+                    "delivery_method": "Route: Embarcadero North",
+                    "block_shipments": false,
+                    "billing_address": {
+                      "id": 1,
+                      "line1": "123 Main",
+                      "city": "San Francisco",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94455",
+                      "created_at": "2020-09-11T13:57:46.802Z",
+                      "updated_at": "2020-09-11T13:57:46.802Z"
+                    },
+                    "shipping_address": {
+                      "id": 2,
+                      "line1": "555 Main",
+                      "city": "Petaluma",
+                      "country_subdivision_code": "CA",
+                      "postal_code": "94954",
+                      "created_at": "2020-09-11T13:57:46.802Z",
+                      "updated_at": "2020-09-11T13:57:46.802Z"
+                    }
                   }
-                }
+                ]
               }
             }
           }
@@ -143,51 +148,146 @@
           "schema": {
             "type": "object",
             "properties": {
-              "first_name": { "type": "string" },
-              "middle_name": { "type": "string" },
-              "last_name": { "type": "string" },
-              "display_name": { "type": "string" },
-              "email": { "type": "string" },
-              "phone": { "type": "string" },
-              "mobile": { "type": "string" },
-              "fax": { "type": "string" },
-              "website": { "type": "string" },
-              "note": { "type": "string" },
-              "kind": { "type": "string" },
-              "custom_field_1": { "type": "string" },
-              "custom_field_2": { "type": "string" },
-              "custom_field_3": { "type": "string" },
-              "custom_field_4": { "type": "string" },
-              "business_license_number": { "type": "string" },
-              "block_shipments": { "type": "boolean" },
-              "sales_channel_id": { "type": "number" },
-              "salesperson_id": { "type": "number" },
+              "first_name": {
+                "type": "string"
+              },
+              "middle_name": {
+                "type": "string",
+                "nullable": true
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "display_name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "mobile": {
+                "type": "string"
+              },
+              "fax": {
+                "type": "string"
+              },
+              "website": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "custom_field_1": {
+                "type": "string",
+                "nullable": true
+              },
+              "custom_field_2": {
+                "type": "string",
+                "nullable": true
+              },
+              "custom_field_3": {
+                "type": "string",
+                "nullable": true
+              },
+              "custom_field_4": {
+                "type": "string",
+                "nullable": true
+              },
+              "business_license_number": {
+                "type": "string"
+              },
+              "block_shipments": {
+                "type": "boolean"
+              },
+              "sales_channel_id": {
+                "type": "number"
+              },
+              "salesperson_id": {
+                "type": "number"
+              },
               "billing_address_attributes": {
                 "type": "object",
                 "properties": {
-                  "line1": { "type": "string" },
-                  "line2": { "type": "string" },
-                  "line3": { "type": "string" },
-                  "line4": { "type": "string" },
-                  "line5": { "type": "string" },
-                  "city": { "type": "string" },
-                  "country_subdivision_code": { "type": "string" },
-                  "postal_code": { "type": "string" },
-                  "country": { "type": "string" }
+                  "line1": {
+                    "type": "string"
+                  },
+                  "line2": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "line3": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "line4": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "line5": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "city": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "country_subdivision_code": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "country": {
+                    "type": "string",
+                    "nullable": true
+                  }
                 }
               },
               "shipping_address_attributes": {
                 "type": "object",
                 "properties": {
-                  "line1": { "type": "string" },
-                  "line2": { "type": "string" },
-                  "line3": { "type": "string" },
-                  "line4": { "type": "string" },
-                  "line5": { "type": "string" },
-                  "city": { "type": "string" },
-                  "country_subdivision_code": { "type": "string" },
-                  "postal_code": { "type": "string" },
-                  "country": { "type": "string" }
+                  "line1": {
+                    "type": "string"
+                  },
+                  "line2": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "line3": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "line4": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "line5": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "city": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "country_subdivision_code": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "country": {
+                    "type": "string",
+                    "nullable": true
+                  }
                 }
               }
             }
@@ -195,47 +295,45 @@
           "examples": {
             "Example": {
               "value": {
-                "customer": {
-                  "first_name": "John",
-                  "middle_name": null,
-                  "last_name": "Smith",
-                  "display_name": "John A Smith",
-                  "email": "test@example.com",
-                  "phone": "555-1212",
-                  "mobile": "555-2222",
-                  "fax": "555-3333",
-                  "website": "https://website.com",
-                  "note": "This is a customer note.",
-                  "custom_field_1": null,
-                  "custom_field_2": null,
-                  "custom_field_3": null,
-                  "custom_field_4": null,
-                  "business_license_number": "123",
-                  "block_shipments": false,
-                  "sales_channel_id": 1,
-                  "salesperson_id": 2,
-                  "billing_address_attributes": {
-                    "line1": "123 Main",
-                    "line2": null,
-                    "line3": null,
-                    "line4": null,
-                    "line5": null,
-                    "city": null,
-                    "country_subdivision_code": null,
-                    "postal_code": null,
-                    "country": null
-                  },
-                  "shipping_address_attributes": {
-                    "line1": "555 Main",
-                    "line2": null,
-                    "line3": null,
-                    "line4": null,
-                    "line5": null,
-                    "city": null,
-                    "country_subdivision_code": null,
-                    "postal_code": null,
-                    "country": null
-                  }
+                "first_name": "John",
+                "middle_name": null,
+                "last_name": "Smith",
+                "display_name": "John A Smith",
+                "email": "test@example.com",
+                "phone": "555-1212",
+                "mobile": "555-2222",
+                "fax": "555-3333",
+                "website": "https://website.com",
+                "note": "This is a customer note.",
+                "custom_field_1": null,
+                "custom_field_2": null,
+                "custom_field_3": null,
+                "custom_field_4": null,
+                "business_license_number": "123",
+                "block_shipments": false,
+                "sales_channel_id": 1,
+                "salesperson_id": 2,
+                "billing_address_attributes": {
+                  "line1": "123 Main",
+                  "line2": null,
+                  "line3": null,
+                  "line4": null,
+                  "line5": null,
+                  "city": null,
+                  "country_subdivision_code": null,
+                  "postal_code": null,
+                  "country": null
+                },
+                "shipping_address_attributes": {
+                  "line1": "555 Main",
+                  "line2": null,
+                  "line3": null,
+                  "line4": null,
+                  "line5": null,
+                  "city": null,
+                  "country_subdivision_code": null,
+                  "postal_code": null,
+                  "country": null
                 }
               }
             }

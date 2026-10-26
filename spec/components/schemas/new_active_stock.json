@@ -20,25 +20,31 @@
       "type": "string"
     },
     "barcode": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "details": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "note": {
       "type": "string"
     },
     "count": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "cost": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "vendor_id": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "expiration_date": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "created_at": {
       "type": "string"
@@ -47,13 +53,16 @@
       "type": "string"
     },
     "base_count": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "rate": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "purchase_id": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "global_identifier": {
       "type": "string"
@@ -62,22 +71,28 @@
       "type": "number"
     },
     "expiration_notified_at": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "weight": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "height": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "width": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "length": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "serial_number": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "generate_barcode": {
       "type": "boolean"
@@ -159,6 +174,10 @@
           "value_type"
         ]
       }
+    },
+    "total_cost": {
+      "type": "string",
+      "description": "A decimal, sent as a string"
     }
   }
 }

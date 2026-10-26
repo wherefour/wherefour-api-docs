@@ -12,13 +12,16 @@
       "type": "string"
     },
     "driver_name": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "driver_email": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "instructions": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "created_at": {
       "type": "string"

@@ -3,19 +3,32 @@
   "description": "At least one order item is required.",
   "properties": {
     "order_number": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "order_date": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "order_status_id": {
-      "type": "integer",
-      "required": false
+      "type": "integer"
+    },
+    "po_number": {
+      "type": "string"
+    },
+    "produce_date": {
+      "type": "string"
+    },
+    "deliver_date": {
+      "type": "string"
+    },
+    "ship_date": {
+      "type": "string"
+    },
+    "price_tier_id": {
+      "type": "integer"
     },
     "payment_term_id": {
-      "type": "integer"
+      "type": "integer",
+      "nullable": true
     },
     "delivery_method_id": {
       "type": "integer"
@@ -24,7 +37,8 @@
       "type": "integer"
     },
     "salesperson_id": {
-      "type": "integer"
+      "type": "integer",
+      "nullable": true
     },
     "quote_id": {
       "type": "integer"
@@ -34,10 +48,12 @@
       "description": "Facility Address ID, not Facility ID or Customer Address ID"
     },
     "instructions": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "internal_notes": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "invoiced": {
       "type": "boolean"
@@ -59,7 +75,6 @@
     },
     "order_items_attributes": {
       "type": "array",
-      "required": true,
       "items": {
         "type": "object",
         "description": "Either inventory ID or SKU is required when adding a new order item",
@@ -78,7 +93,7 @@
           },
           "count": {
             "type": "number",
-            "required": true
+            "description": "Required when adding a new order item"
           },
           "override_unit_price": {
             "type": "number"

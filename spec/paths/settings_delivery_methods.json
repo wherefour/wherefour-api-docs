@@ -41,20 +41,25 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../components/schemas/delivery_method.json"
+              "type": "array",
+              "items": {
+                "$ref": "../components/schemas/delivery_method.json"
+              }
             },
             "examples": {
               "Example": {
-                "value": {
-                  "id": 1,
-                  "name": "UPS Ground",
-                  "kind": "shipping",
-                  "driver_name": null,
-                  "driver_email": null,
-                  "instructions": null,
-                  "created_at": "2020-09-11T13:57:46.884Z",
-                  "updated_at": "2020-09-11T13:57:46.884Z"
-                }
+                "value": [
+                  {
+                    "id": 1,
+                    "name": "UPS Ground",
+                    "kind": "shipping",
+                    "driver_name": null,
+                    "driver_email": null,
+                    "instructions": null,
+                    "created_at": "2020-09-11T13:57:46.884Z",
+                    "updated_at": "2020-09-11T13:57:46.884Z"
+                  }
+                ]
               }
             }
           }

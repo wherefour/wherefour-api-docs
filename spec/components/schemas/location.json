@@ -9,7 +9,8 @@
       "type": "integer"
     },
     "parent_location_id": {
-      "type": "integer"
+      "type": "integer",
+      "nullable": true
     },
     "name": {
       "type": "string"
@@ -49,6 +50,9 @@
     },
     "child_location_count": {
       "type": "integer"
+    },
+    "global_identifier": {
+      "type": "string"
     }
   }
 }

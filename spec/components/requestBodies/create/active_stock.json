@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "description": "Receives new stock of the inventory item.",
+  "required": [
+    "delivery_method_id",
+    "count",
+    "cost",
+    "lot_code",
+    "status"
+  ],
+  "properties": {
+    "delivery_method_id": {
+      "type": "integer"
+    },
+    "location_id": {
+      "type": "integer"
+    },
+    "vendor_id": {
+      "type": "integer"
+    },
+    "vendor_reference": {
+      "type": "string"
+    },
+    "vendor_item_number": {
+      "type": "string"
+    },
+    "count": {
+      "type": "number"
+    },
+    "cost": {
+      "type": "number"
+    },
+    "cost_entered_is_total_cost": {
+      "type": "boolean",
+      "description": "True when `cost` is the total for the lot rather than the cost per unit"
+    },
+    "lot_code": {
+      "type": "string",
+      "description": "Required unless `generate_lot_code` is true"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "generate_lot_code": {
+      "type": "boolean",
+      "description": "Generates the lot code, when automatic sequencing is on for the account"
+    },
+    "generate_barcode": {
+      "type": "boolean",
+      "description": "Generates the barcode, when automatic sequencing is on for the account"
+    },
+    "generate_serial_number": {
+      "type": "boolean",
+      "description": "Generates the serial number, when automatic sequencing is on for the account"
+    },
+    "expiration_date": {
+      "type": "string"
+    },
+    "received_date": {
+      "type": "string",
+      "description": "Date and time received, in the API user's date and time style"
+    },
+    "stock_description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "on_hold",
+        "quarantined"
+      ],
+      "description": "The new stock's status"
+    }
+  }
+}

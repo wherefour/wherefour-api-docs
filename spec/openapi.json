@@ -48,7 +48,7 @@
     "/locations/search": {
       "$ref": "paths/location_search.json"
     },
-    "/locations/show": {
+    "/locations/{location_id}": {
       "$ref": "paths/locations_{location_id}.json"
     },
     "/customers": {
@@ -89,9 +89,6 @@
     },
     "/customers/{customer_id}/quotes": {
       "$ref": "paths/customers_{customer_id}_quotes.json"
-    },
-    "/customers/{customer_id}/orders/auto_ship": {
-      "$ref": "paths/customers_{customer_id}_orders_auto_ship.json"
     },
     "/customers/{customer_id}/quotes/{quote_id}": {
       "$ref": "paths/customers_{customer_id}_quotes_{quote_id}.json"
@@ -192,49 +189,64 @@
   },
   "tags": [
     {
-      "name": "Categories"
+      "name": "Categories",
+      "description": "Inventory categories."
     },
     {
-      "name": "Facilities"
+      "name": "Facilities",
+      "description": "Facilities and their addresses."
     },
     {
-      "name": "Inventory"
+      "name": "Inventory",
+      "description": "Inventory items and their stock lots."
     },
     {
-      "name": "Invoices"
+      "name": "Invoices",
+      "description": "Customer invoices."
     },
     {
-      "name": "Locations"
+      "name": "Locations",
+      "description": "Storage locations within facilities."
     },
     {
-      "name": "Orders"
+      "name": "Orders",
+      "description": "Customer orders, and shipping them."
     },
     {
-      "name": "Quotes"
+      "name": "Quotes",
+      "description": "Customer quotes."
     },
     {
-      "name": "Shipments"
+      "name": "Shipments",
+      "description": "Shipments made against customer orders."
     },
     {
-      "name": "Purchases"
+      "name": "Purchases",
+      "description": "Purchase orders to vendors."
     },
     {
-      "name": "Customers"
+      "name": "Customers",
+      "description": "Customers and their addresses."
     },
     {
-      "name": "Vendors"
+      "name": "Vendors",
+      "description": "Vendors."
     },
     {
-      "name": "Reports"
+      "name": "Reports",
+      "description": "Reports."
     },
     {
-      "name": "Settings"
+      "name": "Settings",
+      "description": "Account settings used when creating records, such as payment terms and custom line definitions."
     },
     {
-      "name": "Credits"
+      "name": "Credits",
+      "description": "Customer credits."
     },
     {
-      "name": "Formulas"
+      "name": "Formulas",
+      "description": "BOMs, disassemblies and kits."
     }
   ],
   "security": [

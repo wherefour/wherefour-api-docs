@@ -3,16 +3,16 @@
   "description": "At least one order item is required.",
   "properties": {
     "order_number": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "order_date": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "order_status_id": {
-      "type": "integer",
-      "required": false
+      "type": "integer"
+    },
+    "price_tier_id": {
+      "type": "integer"
     },
     "ship_from_address_id": {
       "type": "integer",
@@ -22,7 +22,8 @@
       "type": "string"
     },
     "payment_term_id": {
-      "type": "integer"
+      "type": "integer",
+      "nullable": true
     },
     "deliver_date": {
       "type": "string"
@@ -40,16 +41,19 @@
       "type": "integer"
     },
     "salesperson_id": {
-      "type": "integer"
+      "type": "integer",
+      "nullable": true
     },
     "quote_id": {
       "type": "integer"
     },
     "instructions": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "internal_notes": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "invoiced": {
       "type": "boolean"
@@ -71,7 +75,6 @@
     },
     "order_items_attributes": {
       "type": "array",
-      "required": true,
       "items": {
         "type": "object",
         "description": "Either inventory ID or SKU is required",
@@ -83,8 +86,7 @@
             "type": "string"
           },
           "count": {
-            "type": "number",
-            "required": true
+            "type": "number"
           },
           "override_unit_price": {
             "type": "number"
@@ -92,11 +94,19 @@
           "order_item_details_attributes": {
             "$ref": "line_item_details.json"
           }
-        }
+        },
+        "required": [
+          "count"
+        ]
       }
     },
     "custom_line_items_attributes": {
       "$ref": "custom_line_items.json"
     }
-  }
+  },
+  "required": [
+    "order_number",
+    "order_date",
+    "order_items_attributes"
+  ]
 }

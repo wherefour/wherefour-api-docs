@@ -35,7 +35,7 @@
         "in": "query",
         "name": "facility_id",
         "description": "Filter locations to this facility",
-        "shema": {
+        "schema": {
           "type": "integer"
         }
       },
@@ -82,7 +82,10 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../components/schemas/location.json"
+              "type": "array",
+              "items": {
+                "$ref": "../components/schemas/location.json"
+              }
             },
             "examples": {
               "Example": {
@@ -103,7 +106,6 @@
                     "allowed_for_returns": true,
                     "allowed_for_warehouse_receive": true,
                     "allowed_for_work_order_pulls": true,
-                    "allowed_for_word_order_results": true,
                     "child_location_count": 0
                   },
                   {
@@ -122,7 +124,6 @@
                     "allowed_for_returns": true,
                     "allowed_for_warehouse_receive": true,
                     "allowed_for_work_order_pulls": true,
-                    "allowed_for_word_order_results": true,
                     "child_location_count": 0
                   }
                 ]

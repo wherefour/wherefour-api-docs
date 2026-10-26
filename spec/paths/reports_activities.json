@@ -147,60 +147,295 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {}
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "organization_id": {
+                    "type": "integer"
+                  },
+                  "organization_name": {
+                    "type": "string"
+                  },
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "effective_at": {
+                    "type": "string"
+                  },
+                  "category_name": {
+                    "type": "string"
+                  },
+                  "inventory": {
+                    "type": "string"
+                  },
+                  "inventory_id": {
+                    "type": "integer"
+                  },
+                  "property": {
+                    "type": "string"
+                  },
+                  "sku": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "unit_of_use": {
+                    "type": "string"
+                  },
+                  "unit_of_purchase": {
+                    "type": "string"
+                  },
+                  "purchase_conversion": {
+                    "type": "string",
+                    "description": "A decimal, sent as a string"
+                  },
+                  "lot_code": {
+                    "type": "string"
+                  },
+                  "barcode": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "serial_number": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "active_stock_id": {
+                    "type": "integer"
+                  },
+                  "order_id": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "order_number": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "customer_id": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "customer_display_name": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "wo_number": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "work_order_id": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "vendor": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "purchase_number": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "purchase_id": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "change": {
+                    "type": "string",
+                    "description": "A decimal, sent as a string"
+                  },
+                  "purchase_change": {
+                    "type": "string",
+                    "description": "A decimal, sent as a string"
+                  },
+                  "cost_per_unit": {
+                    "type": "string",
+                    "description": "A decimal, sent as a string"
+                  },
+                  "cost_applied": {
+                    "type": "string",
+                    "description": "A decimal, sent as a string"
+                  },
+                  "old_location": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "location": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "transfer_request_number": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "system_note": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "backdated": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "superseded": {
+                    "description": "Sent as null in the captured responses"
+                  },
+                  "user": {
+                    "type": "string"
+                  },
+                  "global_identifier": {
+                    "type": "string"
+                  },
+                  "custom_fields": {
+                    "type": "array",
+                    "items": {}
+                  }
+                }
+              }
             },
             "examples": {
               "Example": {
-                "value": {
-                  "id": 31,
-                  "organization_id": 1,
-                  "organization_name": "ABC Product Co.",
-                  "created_at": "2024-02-24T22:25:04.623Z",
-                  "effective_at": "2024-02-24T22:25:05.840Z",
-                  "category_name": "Ingredients",
-                  "inventory": "Raw material A",
-                  "inventory_id": 1,
-                  "property": "raw_material",
-                  "sku": "AAAAAAAAAAA",
-                  "unit_of_use": "gallon",
-                  "unit_of_purchase": "gallon",
-                  "purchase_conversion": "1.0",
-                  "lot_code": "BCCD001",
-                  "barcode": "BCCD-000001",
-                  "serial_number": null,
-                  "active_stock_id": 30,
-                  "order_id": null,
-                  "order_number": null,
-                  "customer_id": null,
-                  "customer_display_name": null,
-                  "wo_number": null,
-                  "work_order_id": null,
-                  "vendor": "Pacific Supply Co.",
-                  "purchase_number": null,
-                  "purchase_id": null,
-                  "reason": "purchase",
-                  "change": "100.0",
-                  "purchase_change": "100.0",
-                  "cost_per_unit": "2.0",
-                  "cost_applied": "200.0",
-                  "old_location": "North Warehouse",
-                  "location": "North Warehouse",
-                  "transfer_request_number": null,
-                  "note": "buy lot 1",
-                  "system_note": null,
-                  "backdated": null,
-                  "superseded": null,
-                  "user": "Tony Fiorello",
-                  "global_identifier": "e3d1e35d-7f89-4468-80de-e90469185003",
-                  "custom_fields": []
-                }
+                "value": [
+                  {
+                    "id": 31,
+                    "organization_id": 1,
+                    "organization_name": "ABC Product Co.",
+                    "created_at": "2024-02-24T22:25:04.623Z",
+                    "effective_at": "2024-02-24T22:25:05.840Z",
+                    "category_name": "Ingredients",
+                    "inventory": "Raw material A",
+                    "inventory_id": 1,
+                    "property": "raw_material",
+                    "sku": "AAAAAAAAAAA",
+                    "unit_of_use": "gallon",
+                    "unit_of_purchase": "gallon",
+                    "purchase_conversion": "1.0",
+                    "lot_code": "BCCD001",
+                    "barcode": "BCCD-000001",
+                    "serial_number": null,
+                    "active_stock_id": 30,
+                    "order_id": null,
+                    "order_number": null,
+                    "customer_id": null,
+                    "customer_display_name": null,
+                    "wo_number": null,
+                    "work_order_id": null,
+                    "vendor": "Pacific Supply Co.",
+                    "purchase_number": null,
+                    "purchase_id": null,
+                    "reason": "purchase",
+                    "change": "100.0",
+                    "purchase_change": "100.0",
+                    "cost_per_unit": "2.0",
+                    "cost_applied": "200.0",
+                    "old_location": "North Warehouse",
+                    "location": "North Warehouse",
+                    "transfer_request_number": null,
+                    "note": "buy lot 1",
+                    "system_note": null,
+                    "backdated": null,
+                    "superseded": null,
+                    "user": "Tony Fiorello",
+                    "global_identifier": "e3d1e35d-7f89-4468-80de-e90469185003",
+                    "custom_fields": []
+                  }
+                ]
               }
             }
           }
         }
       }
     },
-    "operationId": "activity_report"
+    "operationId": "activity_report",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "required": [
+              "start_date_time",
+              "end_date_time"
+            ],
+            "properties": {
+              "start_date_time": {
+                "type": "string",
+                "description": "Start of the report, as a date and time"
+              },
+              "end_date_time": {
+                "type": "string",
+                "description": "End of the report, as a date and time"
+              },
+              "activity_types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Adjustment reasons to include, such as `purchase`, `shipment`, `manual_count` or `transfer_in`. `reduction` includes every kind of reduction."
+              },
+              "category_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "customer_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "inventory_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "location_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "statuses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Stock statuses"
+              },
+              "user_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "lot_code": {
+                "type": "string"
+              },
+              "barcode": {
+                "type": "string"
+              },
+              "serial_number": {
+                "type": "string"
+              },
+              "page": {
+                "type": "integer"
+              }
+            }
+          },
+          "examples": {
+            "Example": {
+              "value": {
+                "start_date_time": "2026-10-01T00:00:00-07:00",
+                "end_date_time": "2026-10-31T23:59:59-07:00",
+                "activity_types": [
+                  "purchase",
+                  "shipment"
+                ],
+                "inventory_ids": [
+                  42
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

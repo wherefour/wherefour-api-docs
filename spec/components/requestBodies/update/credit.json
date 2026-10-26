@@ -25,10 +25,12 @@
       "description": "Facility Address ID, not Facility ID or Customer Address ID"
     },
     "customer_message": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "internal_notes": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "credit_items_attributes": {
       "type": "array",
@@ -45,7 +47,7 @@
           },
           "count": {
             "type": "number",
-            "description": "Required when creating a new credit item"
+            "description": "Required when adding a new credit item"
           },
           "override_unit_price": {
             "type": "number"

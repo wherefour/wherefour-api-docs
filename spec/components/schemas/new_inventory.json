@@ -23,27 +23,41 @@
       "type": "string"
     },
     "unit_of_weight": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "unit_of_dimension": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "purchase_conversion": {
       "type": "number"
     },
     "property": {
       "type": "string",
-      "enum": ["raw_material", "overhead", "work_in_progress", "finished_good"]
+      "enum": [
+        "raw_material",
+        "overhead",
+        "work_in_progress",
+        "finished_good"
+      ]
     },
     "sku": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "upc": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "pull_strategy": {
       "type": "string",
-      "enum": ["FIFO", "Hand Pick", "FEFO", "LIFO"]
+      "enum": [
+        "FIFO",
+        "Hand Pick",
+        "FEFO",
+        "LIFO"
+      ]
     },
     "reorder_point": {
       "type": "number"
@@ -67,16 +81,20 @@
       "type": "number"
     },
     "weight": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "height": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "width": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "length": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     }
   }
 }

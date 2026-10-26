@@ -18,7 +18,8 @@
       ]
     },
     "payment_term_id": {
-      "type": "integer"
+      "type": "integer",
+      "nullable": true
     },
     "delivery_method_id": {
       "type": "integer"
@@ -27,13 +28,15 @@
       "type": "integer"
     },
     "salesperson_id": {
-      "type": "integer"
+      "type": "integer",
+      "nullable": true
     },
     "quote_id": {
       "type": "integer"
     },
     "instructions": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "invoiced": {
       "type": "boolean"

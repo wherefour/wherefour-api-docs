@@ -3,16 +3,13 @@
   "description": "At least one credit item or custom line item is required.",
   "properties": {
     "credit_number": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "credit_date": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "status": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "order_id": {
       "type": "integer"
@@ -28,10 +25,12 @@
       "description": "Facility Address ID, not Facility ID or Customer Address ID"
     },
     "customer_message": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "internal_notes": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "credit_items_attributes": {
       "type": "array",
@@ -39,12 +38,10 @@
         "type": "object",
         "properties": {
           "inventory_id": {
-            "type": "integer",
-            "required": true
+            "type": "integer"
           },
           "count": {
-            "type": "number",
-            "required": true
+            "type": "number"
           },
           "override_unit_price": {
             "type": "number"
@@ -52,11 +49,20 @@
           "credit_item_details_attributes": {
             "$ref": "line_item_details.json"
           }
-        }
+        },
+        "required": [
+          "inventory_id",
+          "count"
+        ]
       }
     },
     "custom_line_items_attributes": {
       "$ref": "custom_line_items.json"
     }
-  }
+  },
+  "required": [
+    "credit_number",
+    "credit_date",
+    "status"
+  ]
 }

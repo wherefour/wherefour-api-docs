@@ -2,46 +2,263 @@
   "type": "object",
   "title": "Bom",
   "properties": {
-    "id": { "type": "integer" },
-    "name": { "type": "string" },
-    "version_name": { "type": "string" },
-    "organization_id": { "type": "integer" },
-    "bom_id": { "type": "integer" },
-    "default_version": { "type": "string" },
-    "version_number": { "type": "integer" },
-    "location_id": { "type": "integer" },
-    "status": { "type": "string" },
-    "instructions": { "type": "string" },
-    "production_lead_time": { "type": "integer" },
-    "quantity_based": { "type": "boolean" },
-    "expiration_date_days": { "type": "integer" },
-    "standard_cost": { "type": "number" },
-    "created_at": { "type": "string" },
-    "updated_at": { "type": "string" },
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version_name": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "integer"
+    },
+    "bom_id": {
+      "type": "integer"
+    },
+    "default_version": {
+      "type": "boolean",
+      "description": "Whether this is the formula's default version. Sent on formula versions."
+    },
+    "version_number": {
+      "type": "integer"
+    },
+    "location_id": {
+      "type": "integer",
+      "nullable": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "production_lead_time": {
+      "type": "integer"
+    },
+    "quantity_based": {
+      "type": "boolean"
+    },
+    "expiration_date_days": {
+      "type": "integer",
+      "nullable": true
+    },
+    "standard_cost": {
+      "type": "string",
+      "description": "A decimal, sent as a string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
     "bom_pull_items": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "id": { "type": "integer" },
-          "bom_id": { "type": "integer" },
-          "count": { "type": "number" },
-          "standard_unit_cost": { "type": "number" },
-          "created_at": { "type": "string" },
-          "updated_at": { "type": "string" },
+          "id": {
+            "type": "integer"
+          },
+          "bom_id": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "string",
+            "description": "A decimal, sent as a string"
+          },
+          "standard_unit_cost": {
+            "type": "string",
+            "description": "A decimal, sent as a string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
           "inventory": {
             "type": "object",
             "properties": {
-              "id": { "type": "integer" },
-              "name": { "type": "string" },
-              "category_name": { "type": "string" },
-              "on_hand": { "type": "number" },
-              "unit_of_use": { "type": "string" },
-              "unit_of_purchase": { "type": "string" },
-              "property": { "type": "string" },
-              "sku": { "type": "string" },
-              "created_at": { "type": "string" },
-              "updated_at": { "type": "string" }
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "category_name": {
+                "type": "string"
+              },
+              "on_hand": {
+                "type": "string",
+                "nullable": true,
+                "description": "A decimal, sent as a string"
+              },
+              "unit_of_use": {
+                "type": "string"
+              },
+              "unit_of_purchase": {
+                "type": "string"
+              },
+              "property": {
+                "type": "string"
+              },
+              "sku": {
+                "type": "string",
+                "nullable": true
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "unit_of_order": {
+                "type": "string"
+              },
+              "unit_of_invoice": {
+                "type": "string"
+              },
+              "unit_of_pick_and_ship": {
+                "type": "string"
+              },
+              "unit_of_weight": {
+                "type": "string",
+                "nullable": true
+              },
+              "unit_of_dimension": {
+                "type": "string",
+                "nullable": true
+              },
+              "purchase_conversion": {
+                "type": "string",
+                "description": "A decimal, sent as a string"
+              },
+              "upc": {
+                "type": "string",
+                "nullable": true
+              },
+              "pull_strategy": {
+                "type": "string"
+              },
+              "reorder_point": {
+                "type": "string",
+                "description": "A decimal, sent as a string"
+              },
+              "lead_time": {
+                "type": "integer"
+              },
+              "retired": {
+                "type": "boolean"
+              },
+              "waste_percentage": {
+                "type": "string",
+                "description": "A decimal, sent as a string"
+              },
+              "quantity_not_tracked": {
+                "type": "boolean"
+              },
+              "conversions": {
+                "type": "array",
+                "items": {}
+              },
+              "weight": {
+                "description": "Sent as null in the captured responses"
+              },
+              "height": {
+                "description": "Sent as null in the captured responses"
+              },
+              "width": {
+                "description": "Sent as null in the captured responses"
+              },
+              "length": {
+                "description": "Sent as null in the captured responses"
+              },
+              "internal_photo_is_public": {
+                "type": "boolean"
+              },
+              "internal_description": {
+                "type": "string",
+                "nullable": true
+              },
+              "internal_description_is_public": {
+                "type": "boolean"
+              },
+              "public_name": {
+                "type": "string"
+              },
+              "public_description": {
+                "type": "string",
+                "nullable": true
+              },
+              "show_hold_amounts": {
+                "type": "boolean"
+              },
+              "internal_name_is_public": {
+                "type": "boolean"
+              },
+              "receive_default_delivery_method_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "receive_default_location_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "receive_default_accept_rows": {
+                "type": "integer"
+              },
+              "receive_default_to_total_cost": {
+                "type": "boolean"
+              },
+              "receive_default_stock_status": {
+                "type": "string"
+              },
+              "receive_require_barcode": {
+                "type": "boolean"
+              },
+              "receive_require_serial_number": {
+                "type": "boolean"
+              },
+              "receive_require_location": {
+                "type": "boolean"
+              },
+              "receive_require_expiration_date": {
+                "type": "boolean"
+              },
+              "receive_prefill_expiration_date": {
+                "type": "boolean"
+              },
+              "receive_expiration_date_days": {
+                "type": "integer"
+              },
+              "receive_allow_unit_of_receiving_change": {
+                "type": "boolean"
+              },
+              "receive_keep_quantity": {
+                "type": "boolean"
+              },
+              "receive_keep_unit_of_receiving": {
+                "type": "boolean"
+              },
+              "receive_keep_cost": {
+                "type": "boolean"
+              },
+              "receive_keep_vendor_item_number": {
+                "type": "boolean"
+              },
+              "receive_keep_location": {
+                "type": "boolean"
+              },
+              "receive_keep_expiration_date": {
+                "type": "boolean"
+              },
+              "receive_keep_stock_description": {
+                "type": "boolean"
+              },
+              "receive_allow_custom_field_entry": {
+                "type": "boolean"
+              }
             }
           }
         }
@@ -52,23 +269,51 @@
       "items": {
         "type": "object",
         "properties": {
-          "id": { "type": "integer" },
-          "organization_id": { "type": "integer" },
-          "name": { "type": "string" },
-          "count": { "type": "number" },
-          "unit_price": { "type": "number" },
-          "qualified": { "type": "boolean" },
-          "created_at": { "type": "string" },
-          "updated_at": { "type": "string" },
+          "id": {
+            "type": "integer"
+          },
+          "organization_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "unit_price": {
+            "type": "number"
+          },
+          "qualified": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
           "custom_line_definition": {
             "type": "object",
             "properties": {
-              "id": { "type": "integer" },
-              "organization_id": { "type": "integer" },
-              "name": { "type": "string" },
-              "description": { "type": "string" },
-              "created_at": { "type": "string" },
-              "updated_at": { "type": "string" }
+              "id": {
+                "type": "integer"
+              },
+              "organization_id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
             }
           }
         }
@@ -77,26 +322,216 @@
     "bom_result_item": {
       "type": "object",
       "properties": {
-        "id": { "type": "integer" },
-        "display_formula_name": { "type": "string" },
-        "product_name": { "type": "string" },
-        "sku": { "type": "string" },
-        "created_at": { "type": "string" },
-        "updated_at": { "type": "string" },
+        "id": {
+          "type": "integer"
+        },
+        "display_formula_name": {
+          "type": "string"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
         "inventory": {
           "type": "object",
           "properties": {
-            "id": { "type": "integer" },
-            "name": { "type": "string" },
-            "category_name": { "type": "string" },
-            "on_hand": { "type": "number" },
-            "unit_of_use": { "type": "string" },
-            "unit_of_purchase": { "type": "string" },
-            "property": { "type": "string" },
-            "sku": { "type": "string" },
-            "created_at": { "type": "string" },
-            "updated_at": { "type": "string" }
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "category_name": {
+              "type": "string"
+            },
+            "on_hand": {
+              "type": "string",
+              "description": "A decimal, sent as a string"
+            },
+            "unit_of_use": {
+              "type": "string"
+            },
+            "unit_of_purchase": {
+              "type": "string"
+            },
+            "property": {
+              "type": "string"
+            },
+            "sku": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "unit_of_order": {
+              "type": "string"
+            },
+            "unit_of_invoice": {
+              "type": "string"
+            },
+            "unit_of_pick_and_ship": {
+              "type": "string"
+            },
+            "unit_of_weight": {
+              "type": "string",
+              "nullable": true
+            },
+            "unit_of_dimension": {
+              "type": "string",
+              "nullable": true
+            },
+            "purchase_conversion": {
+              "type": "string",
+              "description": "A decimal, sent as a string"
+            },
+            "upc": {
+              "type": "string",
+              "nullable": true
+            },
+            "pull_strategy": {
+              "type": "string"
+            },
+            "reorder_point": {
+              "type": "string",
+              "description": "A decimal, sent as a string"
+            },
+            "lead_time": {
+              "type": "integer"
+            },
+            "retired": {
+              "type": "boolean"
+            },
+            "waste_percentage": {
+              "type": "string",
+              "description": "A decimal, sent as a string"
+            },
+            "quantity_not_tracked": {
+              "type": "boolean"
+            },
+            "conversions": {
+              "type": "array",
+              "items": {}
+            },
+            "weight": {
+              "description": "Sent as null in the captured responses"
+            },
+            "height": {
+              "type": "string",
+              "description": "A decimal, sent as a string",
+              "nullable": true
+            },
+            "width": {
+              "type": "string",
+              "description": "A decimal, sent as a string",
+              "nullable": true
+            },
+            "length": {
+              "type": "string",
+              "description": "A decimal, sent as a string",
+              "nullable": true
+            },
+            "internal_photo_is_public": {
+              "type": "boolean"
+            },
+            "internal_description": {
+              "type": "string",
+              "nullable": true
+            },
+            "internal_description_is_public": {
+              "type": "boolean"
+            },
+            "public_name": {
+              "type": "string"
+            },
+            "public_description": {
+              "type": "string",
+              "nullable": true
+            },
+            "show_hold_amounts": {
+              "type": "boolean"
+            },
+            "internal_name_is_public": {
+              "type": "boolean"
+            },
+            "receive_default_delivery_method_id": {
+              "description": "Sent as null in the captured responses"
+            },
+            "receive_default_location_id": {
+              "description": "Sent as null in the captured responses"
+            },
+            "receive_default_accept_rows": {
+              "type": "integer"
+            },
+            "receive_default_to_total_cost": {
+              "type": "boolean"
+            },
+            "receive_default_stock_status": {
+              "type": "string"
+            },
+            "receive_require_barcode": {
+              "type": "boolean"
+            },
+            "receive_require_serial_number": {
+              "type": "boolean"
+            },
+            "receive_require_location": {
+              "type": "boolean"
+            },
+            "receive_require_expiration_date": {
+              "type": "boolean"
+            },
+            "receive_prefill_expiration_date": {
+              "type": "boolean"
+            },
+            "receive_expiration_date_days": {
+              "type": "integer"
+            },
+            "receive_allow_unit_of_receiving_change": {
+              "type": "boolean"
+            },
+            "receive_keep_quantity": {
+              "type": "boolean"
+            },
+            "receive_keep_unit_of_receiving": {
+              "type": "boolean"
+            },
+            "receive_keep_cost": {
+              "type": "boolean"
+            },
+            "receive_keep_vendor_item_number": {
+              "type": "boolean"
+            },
+            "receive_keep_location": {
+              "type": "boolean"
+            },
+            "receive_keep_expiration_date": {
+              "type": "boolean"
+            },
+            "receive_keep_stock_description": {
+              "type": "boolean"
+            },
+            "receive_allow_custom_field_entry": {
+              "type": "boolean"
+            }
           }
+        },
+        "bom_id": {
+          "type": "integer"
+        },
+        "yield_expected": {
+          "type": "string",
+          "description": "A decimal, sent as a string"
         }
       }
     }

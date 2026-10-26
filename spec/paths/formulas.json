@@ -10,21 +10,27 @@
     "operationId": "list_formulas",
     "parameters": [
       {
-        "schema": { "type": "string" },
+        "schema": {
+          "type": "string"
+        },
         "in": "query",
         "name": "name",
         "required": false,
         "description": "Name of the formula to search for"
       },
       {
-        "schema": { "type": "string" },
+        "schema": {
+          "type": "string"
+        },
         "in": "query",
         "name": "type",
         "required": true,
         "description": "Type of formula to search for, one of: (boms, kits, disassemblies)"
       },
       {
-        "schema": { "type": "string" },
+        "schema": {
+          "type": "string"
+        },
         "in": "query",
         "name": "search_type",
         "required": true,
@@ -42,7 +48,341 @@
             "examples": {
               "Example": {
                 "value": {
-                  "$ref": "../components/examples/responses/formulas.json"
+                  "boms": [
+                    {
+                      "id": 1,
+                      "name": "Make work in progress A",
+                      "version_name": "Make work in progress A",
+                      "organization_id": 1,
+                      "bom_id": 1,
+                      "default_version": true,
+                      "version_number": 0,
+                      "status": "active",
+                      "instructions": "Mix ingredients and make sure to monitor temperature while tempering",
+                      "production_lead_time": 0,
+                      "quantity_based": true,
+                      "standard_cost": "629.0",
+                      "created_at": "2025-09-03T12:41:17.364Z",
+                      "updated_at": "2025-09-04T14:36:16.319Z",
+                      "bom_pull_items": [
+                        {
+                          "id": 76,
+                          "bom_id": 1,
+                          "count": "183.0",
+                          "standard_unit_cost": "1.8",
+                          "created_at": "2025-09-04T15:02:26.518Z",
+                          "updated_at": "2025-09-04T15:02:26.518Z",
+                          "inventory": {
+                            "id": 5,
+                            "name": "Raw material B",
+                            "category_name": "Ingredients",
+                            "on_hand": "1012.0",
+                            "unit_of_use": "gram",
+                            "unit_of_purchase": "gram",
+                            "property": "raw_material",
+                            "sku": "BBBBBBBBBBB",
+                            "created_at": "2025-09-03T12:41:18.410Z",
+                            "updated_at": "2025-09-04T18:36:12.384Z"
+                          }
+                        }
+                      ],
+                      "custom_line_items": [
+                        {
+                          "id": 17,
+                          "organization_id": 1,
+                          "name": "Extra production material",
+                          "count": 2.0,
+                          "unit_price": 10.0,
+                          "qualified": true,
+                          "created_at": "2025-09-05T22:28:16.369Z",
+                          "updated_at": "2025-09-05T22:28:16.369Z",
+                          "custom_line_definition": {
+                            "id": 3,
+                            "organization_id": 1,
+                            "name": "Extra production material",
+                            "description": "Additional material used in production",
+                            "created_at": "2025-09-03T12:41:17.944Z",
+                            "updated_at": "2025-09-03T12:41:17.944Z"
+                          }
+                        }
+                      ],
+                      "bom_result_item": {
+                        "id": 1,
+                        "created_at": "2025-09-03T12:41:17.343Z",
+                        "updated_at": "2025-09-03T12:41:17.343Z",
+                        "inventory": {
+                          "id": 3,
+                          "name": "Work in progress A",
+                          "category_name": "Ingredients",
+                          "on_hand": "0.0",
+                          "unit_of_use": "pound",
+                          "unit_of_purchase": "pound",
+                          "property": "work_in_progress",
+                          "sku": "WIPAWIPAWIPA",
+                          "created_at": "2025-09-03T12:41:18.410Z",
+                          "updated_at": "2025-09-03T12:41:18.410Z"
+                        }
+                      }
+                    }
+                  ],
+                  "disassemblies": [
+                    {
+                      "id": 1,
+                      "name": "Disassemble Product E",
+                      "version_name": "Disassemble Product E",
+                      "organization_id": 1,
+                      "status": "active",
+                      "instructions": "",
+                      "production_lead_time": 0,
+                      "quantity_based": true,
+                      "standard_cost": 129.7,
+                      "created_at": "2025-09-03T12:41:18.275Z",
+                      "updated_at": "2025-09-05T22:30:17.330Z",
+                      "disassembly_source_items": [
+                        {
+                          "id": 2,
+                          "disassembly_id": 1,
+                          "count": 12.0,
+                          "standard_unit_cost": 0.0,
+                          "created_at": "2025-09-04T15:22:28.979Z",
+                          "updated_at": "2025-09-04T15:36:00.193Z",
+                          "inventory": {
+                            "id": 6,
+                            "name": "Case of finished good B",
+                            "category_name": "Products",
+                            "on_hand": 40.0,
+                            "unit_of_use": "case",
+                            "unit_of_purchase": "case",
+                            "property": "finished_good",
+                            "sku": "SK0002",
+                            "created_at": "2025-09-03T12:41:18.410Z",
+                            "updated_at": "2025-09-03T12:41:18.410Z"
+                          }
+                        },
+                        {
+                          "id": 3,
+                          "disassembly_id": 1,
+                          "count": 13.0,
+                          "standard_unit_cost": 1.9,
+                          "created_at": "2025-09-04T15:36:00.199Z",
+                          "updated_at": "2025-09-05T22:30:17.334Z",
+                          "inventory": {
+                            "id": 1,
+                            "name": "Raw material A",
+                            "category_name": "Ingredients",
+                            "on_hand": 1309.55,
+                            "unit_of_use": "gallon",
+                            "unit_of_purchase": "gallon",
+                            "property": "raw_material",
+                            "sku": "AAAAAAAAAAA",
+                            "created_at": "2025-09-03T12:41:18.410Z",
+                            "updated_at": "2025-09-03T12:41:18.410Z"
+                          }
+                        }
+                      ],
+                      "disassembly_result_items": [
+                        {
+                          "id": 1,
+                          "disassembly_id": 1,
+                          "count": 1.0,
+                          "percentage_cost": 50.0,
+                          "prorated_cost": 500.0,
+                          "expiration_date_days": null,
+                          "created_at": "2025-09-03T12:41:18.216Z",
+                          "updated_at": "2025-09-03T12:41:18.216Z",
+                          "inventory": {
+                            "id": 43,
+                            "name": "Part A",
+                            "category_name": "Parts",
+                            "on_hand": 0.0,
+                            "unit_of_use": "each",
+                            "unit_of_purchase": "each",
+                            "property": "raw_material",
+                            "sku": null,
+                            "created_at": "2025-09-03T12:41:18.410Z",
+                            "updated_at": "2025-09-03T12:41:18.410Z"
+                          },
+                          "custom_line_items": [
+                            {
+                              "id": 20,
+                              "organization_id": 1,
+                              "name": "Extra production material",
+                              "count": 2.0,
+                              "unit_price": 10.0,
+                              "qualified": true,
+                              "created_at": "2025-09-05T22:30:17.317Z",
+                              "updated_at": "2025-09-05T22:30:17.317Z"
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "disassembly_id": 1,
+                          "count": 1.0,
+                          "percentage_cost": 50.0,
+                          "prorated_cost": 500.0,
+                          "expiration_date_days": null,
+                          "created_at": "2025-09-03T12:41:18.216Z",
+                          "updated_at": "2025-09-03T12:41:18.216Z",
+                          "inventory": {
+                            "id": 44,
+                            "name": "Part B",
+                            "category_name": "Parts",
+                            "on_hand": 0.0,
+                            "unit_of_use": "pound",
+                            "unit_of_purchase": "each",
+                            "property": "raw_material",
+                            "sku": null,
+                            "created_at": "2025-09-03T12:41:18.410Z",
+                            "updated_at": "2025-09-03T12:41:18.410Z"
+                          },
+                          "custom_line_items": [
+                            {
+                              "id": 21,
+                              "organization_id": 1,
+                              "name": "Production Labor",
+                              "count": 3.0,
+                              "unit_price": 10.0,
+                              "qualified": true,
+                              "created_at": "2025-09-05T22:30:17.323Z",
+                              "updated_at": "2025-09-05T22:30:17.323Z"
+                            }
+                          ]
+                        }
+                      ],
+                      "custom_line_items": [
+                        {
+                          "id": 19,
+                          "organization_id": 1,
+                          "name": "Extra production material",
+                          "count": 1.0,
+                          "unit_price": 10.0,
+                          "qualified": true,
+                          "created_at": "2025-09-05T22:30:17.309Z",
+                          "updated_at": "2025-09-05T22:30:17.309Z",
+                          "custom_line_definition": {
+                            "id": 3,
+                            "organization_id": 1,
+                            "name": "Extra production material",
+                            "description": "Additional material used in production",
+                            "created_at": "2025-09-03T12:41:17.944Z",
+                            "updated_at": "2025-09-03T12:41:17.944Z"
+                          }
+                        },
+                        {
+                          "id": 20,
+                          "organization_id": 1,
+                          "name": "Extra production material",
+                          "count": 2.0,
+                          "unit_price": 10.0,
+                          "qualified": true,
+                          "created_at": "2025-09-05T22:30:17.317Z",
+                          "updated_at": "2025-09-05T22:30:17.317Z",
+                          "custom_line_definition": {
+                            "id": 3,
+                            "organization_id": 1,
+                            "name": "Extra production material",
+                            "description": "Additional material used in production",
+                            "created_at": "2025-09-03T12:41:17.944Z",
+                            "updated_at": "2025-09-03T12:41:17.944Z"
+                          }
+                        },
+                        {
+                          "id": 21,
+                          "organization_id": 1,
+                          "name": "Production Labor",
+                          "count": 3.0,
+                          "unit_price": 10.0,
+                          "qualified": true,
+                          "created_at": "2025-09-05T22:30:17.323Z",
+                          "updated_at": "2025-09-05T22:30:17.323Z",
+                          "custom_line_definition": {
+                            "id": 2,
+                            "organization_id": 1,
+                            "name": "Production Labor",
+                            "description": "Labor used in production process",
+                            "created_at": "2025-09-03T12:41:17.944Z",
+                            "updated_at": "2025-09-03T12:41:17.944Z"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "kits": [
+                    {
+                      "id": 1,
+                      "name": "Kit product formula",
+                      "organization_id": 1,
+                      "yield_expected": 1.0,
+                      "status": "active",
+                      "instructions": null,
+                      "is_min_batch": true,
+                      "standard_cost": 2.89,
+                      "created_at": "2025-04-15T18:26:45.146Z",
+                      "updated_at": "2025-04-15T18:26:45.146Z",
+                      "kit_items": [
+                        {
+                          "id": 1,
+                          "kit_id": 1,
+                          "count": 6.0,
+                          "created_at": "2025-04-15T18:26:45.135Z",
+                          "updated_at": "2025-04-15T18:26:45.135Z",
+                          "inventory": {
+                            "id": 4,
+                            "name": "Finished good B",
+                            "category_name": "Products",
+                            "on_hand": 75.0,
+                            "unit_of_use": "each",
+                            "unit_of_purchase": "each",
+                            "property": "finished_good",
+                            "sku": "SK0001",
+                            "created_at": "2025-04-15T18:26:45.094Z",
+                            "updated_at": "2025-04-15T18:26:45.094Z"
+                          }
+                        }
+                      ],
+                      "product": {
+                        "id": 12,
+                        "display_formula_name": "KIT: Kit product formula",
+                        "product_name": null,
+                        "sku": null,
+                        "created_at": "2025-04-15T18:26:45.464Z",
+                        "updated_at": "2025-04-15T18:26:45.464Z",
+                        "inventory": {
+                          "id": 34,
+                          "name": "Kitted product",
+                          "category_name": "Products",
+                          "on_hand": 3.0,
+                          "unit_of_use": "box",
+                          "unit_of_purchase": "box",
+                          "property": "finished_good",
+                          "sku": "BBOC123",
+                          "created_at": "2025-04-15T18:26:45.094Z",
+                          "updated_at": "2025-04-15T18:26:45.094Z"
+                        },
+                        "custom_line_items": [
+                          {
+                            "id": 2,
+                            "organization_id": 1,
+                            "name": "Tiered CLI",
+                            "count": 2.0,
+                            "unit_price": 22.22,
+                            "qualified": false,
+                            "created_at": "2025-04-15T18:27:24.603Z",
+                            "updated_at": "2025-04-15T18:27:24.603Z",
+                            "custom_line_definition": {
+                              "id": 4,
+                              "organization_id": 1,
+                              "name": "Tiered CLI",
+                              "description": "Tiered CLI",
+                              "created_at": "2025-04-15T18:26:45.003Z",
+                              "updated_at": "2025-04-15T18:26:45.003Z"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
               }
             }

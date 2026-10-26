@@ -14,22 +14,27 @@
       "type": "string"
     },
     "deliver_by_date": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "instructions": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "subtotal": {
       "type": "string"
     },
     "discount": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "tax": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "shipping": {
-      "type": "string"
+      "type": "string",
+      "nullable": true
     },
     "total": {
       "type": "string"
@@ -62,16 +67,19 @@
           "type": "string"
         },
         "mobile": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "fax": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "website": {
           "type": "string"
         },
         "note": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "kind": {
           "type": "string"
@@ -83,19 +91,24 @@
           "type": "string"
         },
         "custom_field_1": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "custom_field_2": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "custom_field_3": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "custom_field_4": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "business_license_number": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "billing_address": {
           "type": "object",
@@ -107,16 +120,20 @@
               "type": "string"
             },
             "line2": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "line3": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "line4": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "line5": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "city": {
               "type": "string"
@@ -134,6 +151,12 @@
               "type": "string"
             },
             "updated_at": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "descriptive_name": {
               "type": "string"
             }
           }
@@ -145,36 +168,51 @@
               "type": "number"
             },
             "line1": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "line2": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "line3": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "line4": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "line5": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "city": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "country_subdivision_code": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "postal_code": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "country": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "created_at": {
               "type": "string"
             },
             "updated_at": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "descriptive_name": {
               "type": "string"
             }
           }
@@ -191,16 +229,20 @@
           "type": "string"
         },
         "line2": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line3": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line4": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "line5": {
-          "type": "string"
+          "type": "string",
+          "nullable": true
         },
         "city": {
           "type": "string"
@@ -218,6 +260,12 @@
           "type": "string"
         },
         "updated_at": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
           "type": "string"
         }
       }
@@ -355,6 +403,223 @@
               },
               "updated_at": {
                 "type": "string"
+              },
+              "unit_of_order": {
+                "type": "string"
+              },
+              "unit_of_invoice": {
+                "type": "string"
+              },
+              "unit_of_pick_and_ship": {
+                "type": "string"
+              },
+              "unit_of_weight": {
+                "description": "Sent as null in the captured responses"
+              },
+              "unit_of_dimension": {
+                "description": "Sent as null in the captured responses"
+              },
+              "purchase_conversion": {
+                "type": "string",
+                "description": "A decimal, sent as a string"
+              },
+              "upc": {
+                "type": "string"
+              },
+              "pull_strategy": {
+                "type": "string"
+              },
+              "reorder_point": {
+                "type": "string",
+                "description": "A decimal, sent as a string"
+              },
+              "lead_time": {
+                "type": "integer"
+              },
+              "retired": {
+                "type": "boolean"
+              },
+              "waste_percentage": {
+                "type": "string",
+                "description": "A decimal, sent as a string"
+              },
+              "quantity_not_tracked": {
+                "type": "boolean"
+              },
+              "conversions": {
+                "type": "array",
+                "items": {}
+              },
+              "weight": {
+                "description": "Sent as null in the captured responses"
+              },
+              "height": {
+                "description": "Sent as null in the captured responses"
+              },
+              "width": {
+                "description": "Sent as null in the captured responses"
+              },
+              "length": {
+                "description": "Sent as null in the captured responses"
+              },
+              "internal_photo_is_public": {
+                "type": "boolean"
+              },
+              "internal_description": {
+                "type": "string",
+                "nullable": true
+              },
+              "internal_description_is_public": {
+                "type": "boolean"
+              },
+              "public_name": {
+                "type": "string"
+              },
+              "public_description": {
+                "type": "string",
+                "nullable": true
+              },
+              "show_hold_amounts": {
+                "type": "boolean"
+              },
+              "internal_name_is_public": {
+                "type": "boolean"
+              },
+              "receive_default_delivery_method_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "receive_default_location_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "receive_default_accept_rows": {
+                "type": "integer"
+              },
+              "receive_default_to_total_cost": {
+                "type": "boolean"
+              },
+              "receive_default_stock_status": {
+                "type": "string"
+              },
+              "receive_require_barcode": {
+                "type": "boolean"
+              },
+              "receive_require_serial_number": {
+                "type": "boolean"
+              },
+              "receive_require_location": {
+                "type": "boolean"
+              },
+              "receive_require_expiration_date": {
+                "type": "boolean"
+              },
+              "receive_prefill_expiration_date": {
+                "type": "boolean"
+              },
+              "receive_expiration_date_days": {
+                "type": "integer"
+              },
+              "receive_allow_unit_of_receiving_change": {
+                "type": "boolean"
+              },
+              "receive_keep_quantity": {
+                "type": "boolean"
+              },
+              "receive_keep_unit_of_receiving": {
+                "type": "boolean"
+              },
+              "receive_keep_cost": {
+                "type": "boolean"
+              },
+              "receive_keep_vendor_item_number": {
+                "type": "boolean"
+              },
+              "receive_keep_location": {
+                "type": "boolean"
+              },
+              "receive_keep_expiration_date": {
+                "type": "boolean"
+              },
+              "receive_keep_stock_description": {
+                "type": "boolean"
+              },
+              "receive_allow_custom_field_entry": {
+                "type": "boolean"
+              },
+              "barcode_sequence_setting_id": {
+                "type": "integer",
+                "nullable": true
+              },
+              "base_prices": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "price": {
+                      "type": "string",
+                      "description": "A decimal, sent as a string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "bom_version_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "category_id": {
+                "type": "integer"
+              },
+              "disassembly_version_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "gs1": {
+                "type": "boolean"
+              },
+              "inventory_group_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "kit_id": {
+                "description": "Sent as null in the captured responses"
+              },
+              "kitted": {
+                "type": "boolean"
+              },
+              "lot_code_sequence_setting_id": {
+                "type": "integer",
+                "nullable": true
+              },
+              "name_tsvector": {
+                "type": "string"
+              },
+              "organization_id": {
+                "type": "integer"
+              },
+              "qbd_item_id": {
+                "type": "integer"
+              },
+              "qbd_item_name": {
+                "type": "string"
+              },
+              "qbd_synced_at": {
+                "description": "Sent as null in the captured responses"
+              },
+              "reorder_notified_at": {
+                "description": "Sent as null in the captured responses"
+              },
+              "serial_number_sequence_setting_id": {
+                "type": "integer",
+                "nullable": true
+              },
+              "sku_tsvector": {
+                "type": "string"
+              },
+              "standard_cost": {
+                "type": "string",
+                "description": "A decimal, sent as a string"
+              },
+              "upc_tsvector": {
+                "type": "string"
               }
             }
           },
@@ -364,7 +629,61 @@
             "items": {
               "$ref": "line_item_detail.json"
             }
+          },
+          "upc": {
+            "type": "string",
+            "nullable": true
           }
+        }
+      }
+    },
+    "vendor_reference": {
+      "description": "Sent as null in the captured responses"
+    },
+    "bill_to_address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "descriptive_name": {
+          "type": "string"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "line3": {
+          "description": "Sent as null in the captured responses"
+        },
+        "line4": {
+          "description": "Sent as null in the captured responses"
+        },
+        "line5": {
+          "description": "Sent as null in the captured responses"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country_subdivision_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
         }
       }
     }
@@ -383,7 +702,6 @@
     "total": "455.71",
     "created_at": "2024-02-21T18:36:22.516Z",
     "updated_at": "2024-02-21T18:36:22.516Z",
-    "facility_address": "",
     "bill_to_address": {
       "id": 4,
       "type": "OrganizationAddress",

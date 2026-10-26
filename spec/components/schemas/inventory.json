@@ -64,7 +64,9 @@
       "minLength": 1
     },
     "on_hand": {
-      "type": "number"
+      "type": "string",
+      "nullable": true,
+      "description": "A decimal, sent as a string"
     },
     "unit_of_use": {
       "type": "string",
@@ -88,14 +90,15 @@
     },
     "unit_of_weight": {
       "type": "string",
-      "minLength": 1
+      "nullable": true
     },
     "unit_of_dimension": {
       "type": "string",
-      "minLength": 1
+      "nullable": true
     },
     "purchase_conversion": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "property": {
       "type": "string",
@@ -103,18 +106,19 @@
     },
     "sku": {
       "type": "string",
-      "minLength": 1
+      "nullable": true
     },
     "upc": {
       "type": "string",
-      "minLength": 1
+      "nullable": true
     },
     "pull_strategy": {
       "type": "string",
       "minLength": 1
     },
     "reorder_point": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "lead_time": {
       "type": "number"
@@ -123,7 +127,8 @@
       "type": "boolean"
     },
     "waste_percentage": {
-      "type": "number"
+      "type": "string",
+      "description": "A decimal, sent as a string"
     },
     "quantity_not_tracked": {
       "type": "boolean"
@@ -136,38 +141,52 @@
         "type": "object",
         "properties": {
           "to_count": {
-            "type": "number"
+            "type": "string",
+            "description": "A decimal, sent as a string"
           },
           "from_count": {
-            "type": "number"
+            "type": "string",
+            "description": "A decimal, sent as a string"
           },
           "catch_weight": {
             "type": "boolean"
           },
           "maximum_weight": {
-            "type": "number"
+            "type": "string",
+            "description": "A decimal, sent as a string"
           },
           "minimum_weight": {
-            "type": "number"
+            "type": "string",
+            "description": "A decimal, sent as a string"
           },
           "unit_of_measurement": {
             "type": "string",
             "minLength": 1
+          },
+          "_destroy": {
+            "description": "Sent as null in the captured responses"
           }
         }
       }
     },
     "weight": {
-      "type": "number"
+      "type": "number",
+      "nullable": true
     },
     "height": {
-      "type": "number"
+      "type": "string",
+      "nullable": true,
+      "description": "A decimal, sent as a string"
     },
     "width": {
-      "type": "number"
+      "type": "string",
+      "nullable": true,
+      "description": "A decimal, sent as a string"
     },
     "length": {
-      "type": "number"
+      "type": "string",
+      "nullable": true,
+      "description": "A decimal, sent as a string"
     },
     "created_at": {
       "type": "string",
@@ -254,6 +273,90 @@
           "updated_at"
         ]
       }
+    },
+    "internal_photo_is_public": {
+      "type": "boolean"
+    },
+    "internal_description": {
+      "type": "string",
+      "nullable": true
+    },
+    "internal_description_is_public": {
+      "type": "boolean"
+    },
+    "public_name": {
+      "type": "string"
+    },
+    "public_description": {
+      "type": "string",
+      "nullable": true
+    },
+    "show_hold_amounts": {
+      "type": "boolean"
+    },
+    "internal_name_is_public": {
+      "type": "boolean"
+    },
+    "receive_default_delivery_method_id": {
+      "description": "Sent as null in the captured responses"
+    },
+    "receive_default_location_id": {
+      "description": "Sent as null in the captured responses"
+    },
+    "receive_default_accept_rows": {
+      "type": "integer"
+    },
+    "receive_default_to_total_cost": {
+      "type": "boolean"
+    },
+    "receive_default_stock_status": {
+      "type": "string",
+      "nullable": true
+    },
+    "receive_require_barcode": {
+      "type": "boolean"
+    },
+    "receive_require_serial_number": {
+      "type": "boolean"
+    },
+    "receive_require_location": {
+      "type": "boolean"
+    },
+    "receive_require_expiration_date": {
+      "type": "boolean"
+    },
+    "receive_prefill_expiration_date": {
+      "type": "boolean"
+    },
+    "receive_expiration_date_days": {
+      "type": "integer"
+    },
+    "receive_allow_unit_of_receiving_change": {
+      "type": "boolean"
+    },
+    "receive_keep_quantity": {
+      "type": "boolean"
+    },
+    "receive_keep_unit_of_receiving": {
+      "type": "boolean"
+    },
+    "receive_keep_cost": {
+      "type": "boolean"
+    },
+    "receive_keep_vendor_item_number": {
+      "type": "boolean"
+    },
+    "receive_keep_location": {
+      "type": "boolean"
+    },
+    "receive_keep_expiration_date": {
+      "type": "boolean"
+    },
+    "receive_keep_stock_description": {
+      "type": "boolean"
+    },
+    "receive_allow_custom_field_entry": {
+      "type": "boolean"
     }
   }
 }

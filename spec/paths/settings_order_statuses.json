@@ -41,14 +41,19 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../components/schemas/order_status.json"
+              "type": "array",
+              "items": {
+                "$ref": "../components/schemas/order_status.json"
+              }
             },
             "examples": {
               "Example": {
-                "value": {
-                  "id": 1,
-                  "name": "Pending"
-                }
+                "value": [
+                  {
+                    "id": 1,
+                    "name": "Pending"
+                  }
+                ]
               }
             }
           }

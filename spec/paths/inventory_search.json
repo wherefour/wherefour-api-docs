@@ -40,29 +40,34 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../components/schemas/inventory.json"
+              "type": "array",
+              "items": {
+                "$ref": "../components/schemas/inventory.json"
+              }
             },
             "examples": {
               "Example": {
-                "value": {
-                  "id": 3,
-                  "name": "Bulk chocolate",
-                  "category_name": "Ingredients",
-                  "on_hand": 0,
-                  "unit_of_use": "pound",
-                  "unit_of_purchase": "pound",
-                  "purchase_conversion": 1,
-                  "property": "work_in_progress",
-                  "sku": "123456",
-                  "upc": "AAABBB",
-                  "pull_strategy": "Hand Pick",
-                  "reorder_point": 10,
-                  "lead_time": 0,
-                  "retired": false,
-                  "waste_percentage": 0,
-                  "created_at": "2020-09-11T13:57:46.825Z",
-                  "updated_at": "2020-09-11T13:57:46.825Z"
-                }
+                "value": [
+                  {
+                    "id": 3,
+                    "name": "Bulk chocolate",
+                    "category_name": "Ingredients",
+                    "on_hand": "0.0",
+                    "unit_of_use": "pound",
+                    "unit_of_purchase": "pound",
+                    "purchase_conversion": "1.0",
+                    "property": "work_in_progress",
+                    "sku": "123456",
+                    "upc": "AAABBB",
+                    "pull_strategy": "Hand Pick",
+                    "reorder_point": "10.0",
+                    "lead_time": 0,
+                    "retired": false,
+                    "waste_percentage": "0.0",
+                    "created_at": "2020-09-11T13:57:46.825Z",
+                    "updated_at": "2020-09-11T13:57:46.825Z"
+                  }
+                ]
               }
             }
           }
@@ -76,7 +81,30 @@
         "application/json": {
           "schema": {
             "type": "object",
-            "properties": {}
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Part of the inventory item's name"
+              },
+              "sku_list": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ],
+                "description": "One SKU, or an array of SKUs"
+              },
+              "location_id": {
+                "type": "integer"
+              }
+            },
+            "description": "Searches by name, or by one SKU or a list of SKUs. `location_id` narrows the results to stock at that location."
           },
           "examples": {
             "Name": {
