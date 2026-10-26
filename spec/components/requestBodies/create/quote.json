@@ -79,6 +79,9 @@
           "count"
         ]
       }
+    },
+    "custom_line_items_attributes": {
+      "$ref": "custom_line_items.json"
     }
   },
   "required": [

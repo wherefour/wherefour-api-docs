@@ -6,7 +6,8 @@
       "type": "string"
     },
     "credit_date": {
-      "type": "string"
+      "type": "string",
+      "description": "A date such as 2026-10-22 is saved as midnight in the API user's time zone. A date and time with an offset, such as 2026-10-22T09:00:00-07:00, is saved as given."
     },
     "status": {
       "type": "string"
