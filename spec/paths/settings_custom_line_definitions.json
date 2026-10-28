@@ -62,6 +62,14 @@
       },
       {
         "in": "query",
+        "name": "inventory_id",
+        "description": "Only definitions open to all inventory items or limited to this item. These definitions can be added under a line for this item",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      {
+        "in": "query",
         "name": "updated_at",
         "description": "Only definitions updated on or after this time",
         "schema": {
@@ -129,6 +137,7 @@
                     "standing_orders_mode": "manual",
                     "customers_allowed": false,
                     "vendors_allowed": false,
+                    "inventories_allowed": false,
                     "created_at": "2026-10-01T16:20:11.512Z",
                     "updated_at": "2026-10-01T16:20:11.512Z"
                   }

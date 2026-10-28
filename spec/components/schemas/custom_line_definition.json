@@ -118,6 +118,10 @@
       "type": "boolean",
       "description": "True when the definition is limited to specific vendors"
     },
+    "inventories_allowed": {
+      "type": "boolean",
+      "description": "True when the definition can only be added under lines for specific inventory items"
+    },
     "created_at": {
       "type": "string"
     },
