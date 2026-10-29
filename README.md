@@ -21,7 +21,8 @@ default branch (`master`).
    regenerates it from `spec/`, so manual edits there never reach production.)
 2. Merge to `master`. This repo's pipeline builds and pushes the image — **it does not
    deploy.**
-3. Deploy it: start a build on the **`infrastructure`** Buildkite pipeline with
+3. Deploy it: start a build on the **`deployment`** Buildkite pipeline (the `infrastructure`
+   repo's) with
 
    | Variable | |
    |---|---|
