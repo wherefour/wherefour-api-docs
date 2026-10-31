@@ -46,6 +46,16 @@
     "updated_at": {
       "type": "string"
     },
+    "currency": {
+      "type": "string",
+      "nullable": true,
+      "description": "The document's currency code, such as `CAD`, when it's in the customer's or vendor's currency. Null for a document in your base currency. Amounts are always in your base currency."
+    },
+    "exchange_rate": {
+      "type": "string",
+      "nullable": true,
+      "description": "A decimal, sent as a string. Units of the document's currency per one unit of your base currency, used to show its amounts in that currency. Null for a document in your base currency."
+    },
     "credit_items": {
       "type": "array",
       "items": {
@@ -514,6 +524,11 @@
         },
         "accounting_id": {
           "description": "Sent as null in the captured responses"
+        },
+        "currency": {
+          "type": "string",
+          "nullable": true,
+          "description": "The currency code new documents for this customer or vendor are in, such as `CAD`. Null for your base currency."
         }
       }
     },
@@ -633,6 +648,16 @@
           "description": "A decimal, sent as a string",
           "nullable": true
         },
+        "shipping_tax": {
+          "type": "string",
+          "nullable": true,
+          "description": "A decimal, sent as a string. The sales tax on shipping, in your base currency. It's part of the total, along with the subtotal, discount, tax and shipping."
+        },
+        "shipping_tax_rate": {
+          "type": "string",
+          "nullable": true,
+          "description": "A decimal, sent as a string. The shipping's sales tax rate as a percentage, such as `8.25`."
+        },
         "total": {
           "type": "string",
           "description": "A decimal, sent as a string",
@@ -649,6 +674,16 @@
         },
         "invoiced_at": {
           "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "nullable": true,
+          "description": "The document's currency code, such as `CAD`, when it's in the customer's or vendor's currency. Null for a document in your base currency. Amounts are always in your base currency."
+        },
+        "exchange_rate": {
+          "type": "string",
+          "nullable": true,
+          "description": "A decimal, sent as a string. Units of the document's currency per one unit of your base currency, used to show its amounts in that currency. Null for a document in your base currency."
         }
       },
       "nullable": true

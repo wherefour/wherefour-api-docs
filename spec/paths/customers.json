@@ -239,6 +239,11 @@
               "business_license_number": {
                 "type": "string"
               },
+              "currency": {
+                "type": "string",
+                "nullable": true,
+                "description": "The currency code new documents for this customer are in, such as `CAD`. It must be one of your currency conversions. Leave blank for your base currency."
+              },
               "block_shipments": {
                 "type": "boolean"
               },

@@ -41,13 +41,18 @@
       "nullable": true
     },
     "tax": {
-      "type": "number"
+      "type": "number",
+      "description": "Ignored once sales tax is turned on and you're registered to collect it somewhere: Wherefour then calculates tax for each line from the shipping address."
     },
     "shipping": {
       "type": "number"
     },
     "discount": {
       "type": "number"
+    },
+    "exchange_rate": {
+      "type": "number",
+      "description": "Optional. The exchange rate for a document in the customer's currency, as units of that currency per one unit of your base currency. When left out, the document uses your current rate for the currency. It only applies to a document in the customer's currency, can't change once the document has transactions, and needs permission to edit the exchange rate. Sending the rate the document already has is always accepted. Amounts you send are always in your base currency."
     },
     "price_tier_ids": {
       "type": "array",

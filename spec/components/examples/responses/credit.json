@@ -13,6 +13,8 @@
   "customer_message": null,
   "created_at": "2025-04-15T16:15:44.399Z",
   "updated_at": "2025-04-15T16:15:44.399Z",
+  "currency": null,
+  "exchange_rate": null,
   "user": {
     "id": 1,
     "organization_name": "ABC Product Co.",
@@ -43,7 +45,8 @@
     "delivery_method": "Route: Embarcadero North",
     "delivery_method_id": 6,
     "block_shipments": false,
-    "default_special_instructions": "Deliver to back dock 12"
+    "default_special_instructions": "Deliver to back dock 12",
+    "currency": null
   },
   "order": {
     "id": 1,
@@ -60,11 +63,15 @@
     "discount": "10.0",
     "tax": "",
     "shipping": "25.0",
+    "shipping_tax": null,
+    "shipping_tax_rate": null,
     "total": "380.5",
     "order_number": "SO1",
     "created_at": "2025-04-15T16:15:06.114Z",
     "updated_at": "2025-04-15T16:15:06.114Z",
-    "invoiced_at": "2025-04-15T00:00:00.000Z"
+    "invoiced_at": "2025-04-15T00:00:00.000Z",
+    "currency": null,
+    "exchange_rate": null
   },
   "salesperson": {
     "id": 2,

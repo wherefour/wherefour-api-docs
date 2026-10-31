@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "Line item detail",
-  "description": "A custom line item or note under a document line.",
+  "description": "A custom line item, note or sales tax under a document line.",
   "properties": {
     "id": {
       "type": "integer"
@@ -33,7 +33,7 @@
         "note",
         "tax"
       ],
-      "description": "`custom_line_item` and `note` details can be sent. `tax` details are reserved for sales tax and don't include a rate or amount yet."
+      "description": "`custom_line_item` and `note` details can be sent. `tax` details hold a line's sales tax: Wherefour calculates them, so they can't be sent."
     },
     "position": {
       "type": "integer",
@@ -47,6 +47,16 @@
     "internal_note": {
       "type": "boolean",
       "description": "True for a note meant for your team only. Internal notes aren't shown to customers."
+    },
+    "tax_rate": {
+      "type": "string",
+      "nullable": true,
+      "description": "A decimal, sent as a string. The line's sales tax rate as a percentage, such as `8.25`, for `tax` details."
+    },
+    "tax_amount": {
+      "type": "string",
+      "nullable": true,
+      "description": "A decimal, sent as a string. The line's sales tax in your base currency, for `tax` details."
     },
     "created_at": {
       "type": "string"

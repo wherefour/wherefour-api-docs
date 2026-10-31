@@ -69,6 +69,11 @@
       "type": "string",
       "nullable": true
     },
+    "currency": {
+      "type": "string",
+      "nullable": true,
+      "description": "The currency code new documents for this customer or vendor are in, such as `CAD`. Null for your base currency."
+    },
     "billing_address": {
       "type": "object",
       "properties": {
